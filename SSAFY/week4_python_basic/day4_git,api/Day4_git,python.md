@@ -166,11 +166,20 @@ Issues는 팀원들에게 명령하거나, 팀원이 팀장에게 질문을 할 
 
 - ### branching
 
-  git에서는 branching을 통하여 master line을 건들지 않고, 임시의 가지에 저장을 할 수 있다.
+  - git에서는 branching을 통하여 master line을 건들지 않고, 임시의 가지에 저장을 할 수 있다.
 
-  임시의 가지는 삭제도 가능하고 master line에 병합할 수도 있다.
+  - 임시의 가지는 삭제도 가능하고 master line에 병합할 수도 있다.
 
-  나무를 생각하면 될 듯
+  - 나무를 생각하면 될 듯
+
+  - branch에 branch를 만들 수도 있다.
+  - **git branch 만드는 법**
+    - `git branch` : 모든 branch를 보여준다.
+    - `git branch [브랜치 이름]` : 새 branch 생성
+    - `git checkout [브랜치 이름]` : 해당 브랜치로 이동
+  - 참고로 branch에서 수정한 파일은 다른 가지에서 확인을 할 수 없다. (다른 세계라고 생각하면 편함)
+  - branch에서 만든 파일을 main branch로 옮길 수가 있는데 그 방법이 Git merge를 통해 branch 병합
+    - master branch에서 git merge help를 하면 master branch에 help branch가 병합이된다.
 
 -----------------
 
@@ -184,3 +193,51 @@ Issues는 팀원들에게 명령하거나, 팀원이 팀장에게 질문을 할 
 2. 상태 표시줄을 우클릭한다.
 3. Options 들어가서 Text로 들어간다.
 4. 거기서 Locale은 ko_KR, Character set은 eucKR로 바꾸고 Apply => Save !
+
+---
+
+
+
+- ## 네이버 번역기 이용해서 api 만들기
+
+**api란?** : Application Programming Interface의 약자이다. Interface는 사용자와 제품 사이에 있는 통로, 제품을 조작할 수 있는 것들을 말한다.(리모컨 버튼을 연상) api는 이 interface를 코딩을 통해서만 접근이 가능하다. (python으로서 네이버에 접근시키겠다라고 생각하면 된다. 내가 인터넷을 골라서 들어가면 내가 들어간거잖아 python이 해주면 접근성이 올라가지)
+
+1. naver developers에서 애플리케이션 등록을 하자.
+2. 그리고 api를 활용하는 툴은 c9을 이용하자. 새로운 c9 workspace를 blank로 생성하자.
+   - 참고로 다른 홈페이지에서 '페이스북 아이디로 로그인', '네이버 아이디로 로그인'은 페이스북, 네이버에서 제공하는 API이다. 자기들은 정보가 많으니까 주는거지
+
+
+
+**네이버 코스피 지수 가져오기**
+
+![](image/6.png)
+
+- requests는 우리가 주소창에서 naver.com 쓰는 것을 requests가 대신 해준다.
+- 요청에는 2 가지패턴이 있다.
+  - GET : 정보를 가져올 때 (서버에 요청하는 것이다)
+  - POST: 정보를 입력, 게시하는 행위 (역시나 서버에 요청하는 것이다)
+
+**Papago 정보 가져오기**
+
+얘는 메서드 방식 (요청하는 방식)이 get이 아니라 Post이다.
+
+![](image/7.png)
+
+--------
+
+- **스스로 공부하기**
+
+1. 생활코딩
+
+![](image/9.png)
+
+2. 왼손코딩 - youtube
+
+3. Udacity에서 Introduction To Python Programming
+
+![](image/8.png)
+
+4. w3schools.com/python/
+5. freecodecamp.org
+
+6. programmers 언어 기초에서 python 강의 (미운 코딩새끼, 파이썬 입문, 파이썬을 파이썬 답게)
