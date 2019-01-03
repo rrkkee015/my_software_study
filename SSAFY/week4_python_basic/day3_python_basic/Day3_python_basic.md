@@ -236,7 +236,7 @@ print(nums)
 
 대각선 출력하기
 
-![](/image_week4_day3/1.png)
+![](image/1.png)
 
 ```python
 print("#++++")

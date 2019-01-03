@@ -56,13 +56,13 @@ str(list)도 되지만 잘 안먹음
 
 1. 마스터키가 어느 지점을 가지고 있는지 알아보도록 하자. 우선 마스터키 사이트에 들어가서 예약하기 들어가서 지점 리스트를 보도록하자 그리고 오른쪽 클릭 후 페이지 소스보기를 통해 들어가서 ctrl + f로 원하는 지점을 찾도록 하자.
 
-![](/image/2.png)
+![](image/2.png)
 
 ![](/image/1.png)
 
 2. 그럼 여기서 escape_list안에서 escape_view를 긁으면 될거 같다. 별명이 다 있으니까.
 
-![](/image/3.png)
+![](image/3.png)
 
 ​	요청에 대한 응답이 html로 오니까 beautifulSoup를 쓰자. 서울 이스케이프는 json 이다.
 
@@ -70,29 +70,29 @@ str(list)도 되지만 잘 안먹음
 
    url은 변수는 veiw-source에서 찾은 정보를 지니고 있는 애를 network에서 찾아서 그 request 	URL을 찾도록하자.
 
-![](/image/4.png)
+![](image/4.png)
 
 ![](/image/5.png)
 
 ​	이렇게 기본틀을 잡아주자
 
-![](/image/6.png)
+![](image/6.png)
 
 4. escape list라는 애를 먼저 뽑도록 하자. 별명이 class니까 .클래스이름이고 id인 경우엔 #id 이름을 해주면 된다.
 
-![](/image/7.png)
+![](image/7.png)
 
 5. 여기서 잠깐 많이 실수하는게 있는데 **escape_list**를 뽑게되면 **ul** 태그 시작부터 **ul** 끝날 때까지의 요소 한개를 뽑는다. **escape_view**까지 해줘야 li 태그부터 li 태그까지 하나 그리고 그 다음 **li** 태그부터 **li** 태그까지 하나해서 모두 다 뽑아준다.
 
-![](/image/8.png)
+![](image/8.png)
 
-![](/image/9.png)
+![](image/9.png)
 
 ​	여기서 lis가 배열이 된다는것을 기억하고 lis를 for문으로 순회를 하면서 원하는 정보를 솎아내는 작업을 하도록하자.
 
 6. 잠깐 근데 li 태그 안에 p 태그는 부천점 하나밖에 없네? 그럼 p태그를 바로 뽑으면 부천점이 나온다.
 
-![](/image/10.png)
+![](image/10.png)
 
 ​	그러면 밑에 처럼하면
 
@@ -103,21 +103,21 @@ for li in lis:
 
 ​	결과가 지점 이름으로 쫙 나온다.
 
-![](/image/11.png)
+![](image/11.png)
 
 ​	근데 좀 이상하게 나오네? 뒤에 .text를 붙여주면 해결된다. **근데 여기서 중요한 점 ! 우리가 하나만 뽑는데도 select_one 혹은 select('p')[0].text을 해줘야 값이 먹힌다.**
 
-![](/image/15.png)
+![](image/15.png)
 
 7. 또 우리가 원하는건 주소랑 연락처를 뽑도록하자
 
-![](/image/12.png)
+![](image/12.png)
 
-![](/image/13.png)
+![](image/13.png)
 
 8. NEW 근데 거슬리네 ? NEW 빼보자
 
-![](/image/14.png)
+![](image/14.png)
 
 ​	어차피 문자열이니까 배열일테고 그 뒤에 NEW의 3가지 배열을 제거해주면 된다.
 
@@ -129,25 +129,25 @@ title=li.select_one('p').text #부천점NEW라고 생각하자.
 
 9.  그렇다면 다 정리가 되었으니 변수선언을 하도록하자.
 
-![](/image/16.png)
+![](image/16.png)
 
 ​	여기서 link 자세히 보자
 
-![](/image/18.png)
+![](image/18.png)
 
 ​	우리가 원하는건 a 안에 herf 값이다. 그럴 땐 a 태그 0번째 href value값을 찾으면 된다. 즉 dict value 값 찾듯이 찾으면된다.
 
 ​	그리고 링크에는 항상 'http://www.master-key.co.kr'을 붙여줘야한다.
 
-![](/image/20.png)
+![](image/20.png)
 
 10. 이제 코드를 완성시켜주자
 
-![](/image/21.png)
+![](image/21.png)
 
 ​	이걸 출력해보면?
 
-![](/image/22.png)
+![](image/22.png)
 
 11. 이제 예약하기를 크롤링해보자
 
@@ -157,11 +157,11 @@ title=li.select_one('p').text #부천점NEW라고 생각하자.
 
     일단 reserve라는애가 가장 바깥쪽이고 escape_view가 내가 원하는 정보를 가진 애다.
 
-![](/image/23.png)
+![](image/23.png)
 
 12. 자 그러면 Request URL을 가져와야하는데 예약 날짜가 안적혀있네? 
 
-![](/image/24.png)
+![](image/24.png)
 
 
 
@@ -169,13 +169,13 @@ title=li.select_one('p').text #부천점NEW라고 생각하자.
 
 맨 밑에 Form Data에 있다.
 
-![](/image/26.png)
+![](image/26.png)
 
 ​	params 변수를 따로 만들어주고 date랑 store를 넘겨주도록하자.
 
 ​	그런 다음에 response 변수에 담으면 된다.
 
-![](/image/25.png)
+![](image/25.png)
 
 13. 자 그러면 정보를 다 받았는데 이 정보를 솎아내보자. 일단, bs로 'html parser'를 써서 html 형식으로 받아오고 document에 담자.
 
@@ -197,11 +197,11 @@ ul=documet.select('.reserver .escape_view')
 
 ​	이제 요소 하나를 for 문으로 돌면서 title를 뽑고 예약 정보를 뽑도록하자. col 이라는 애가 예약정보를 가지고 있다.
 
-![](/image/27.png)
+![](image/27.png)
 
 ​	 그리고 p 태그로 뽑아보면 p태그 첫번째가 테마명이고 2번째가 잡다한 정보 3번째가 예약관련이다.
 
-![](/image/28.png)
+![](image/28.png)
 
 ​	그렇다면 첫번째 p태그만 솎아내면 title을 모을 수 있다.
 
@@ -224,7 +224,7 @@ for li in ul:
 
 ​	보면 리스트 형식으로 되어있다. 그러니 리스트를 순회를 하면서 class 타입인 time과 state를 골라내어 출력을 하면 되겠다 !
 
-![](/image/29.png)
+![](image/29.png)
 
 ```python
 for col in li.select('.col'):
@@ -298,7 +298,7 @@ def master_key_info(cd):
 
 15. 우리 근데 store에 숫자 있잖아. 근데 그거 우리가 일일이 하기 싫으니까 숫자를 가져다가 자동으로 뽑을 수 있게 만들어주자. 그 숫자는 링크에 붙어있다. 그럼 그 숫자를 어떻게 솎아낼까??
 
-![](/image/30.png)
+![](image/30.png)
 
 ```python
 #파이썬의 스플릿을 사용하자. join의 반대되는 경운데 split은 문자열을 리스트로 솎아낼 수 있다.
@@ -320,11 +320,11 @@ def master_key_info(cd):
 
 ​	리스트 개념을 알겠으면 이제 솎아내보자 지금 이 master_key_list 자체가 리스트로 되어있으니 for문을 돌려서 숫자를 솎아낼 수 있게 해보자. 밑에 얘는 우리가 쓸건 아니고 그냥 솎아내는 방법을 적어놓은거다.
 
-![](/image/31.png)
+![](image/31.png)
 
 그럼 이제 솎아낸 숫자를 어떻게 넣을까??? 함수 매개변수를 이용해서 넣으면 된다. 저 괄호 안에 숫자를 넣으면 그  cd가 스토어 변수에 들어가게 된다.
 
-![](/image/32.png)
+![](image/32.png)
 
 마지막에 print에서 return으로 봐꿨다. 이렇게 하면 master_key_list()를 실행하면 이 함수 값을 돌려준다. print(master_key_list())을 하면 함수 값을 볼 수 있다.
 
@@ -364,13 +364,13 @@ def master_key_list():
 
 우선 만든 마스터키 함수들을 전부 telegram app.py에 넣어주자. 그런 다음 내가 챗봇에 마스터키라고 치면 지점을 솎아낼 수 있도록 만들어주자.
 
-![](/image/35.png)
+![](image/35.png)
 
 저기 밑에 주석으로 설명한 부분 잘 읽어보자
 
 아 ! 그리고 그 카페리스트도 복사해서 넣어주도록 하자. 제일 위에 "전체도 적어주도록하자"
 
-![](/image/36.png)
+![](image/36.png)
 
 ```python
 from flask import Flask, request
@@ -529,7 +529,7 @@ def set_webhook():
 
 이렇게 하면은 내가 텔레그램에서 마스터키 부천점을 치면 시간을 알려준다.
 
-![](/image/37.png)
+![](image/37.png)
 
 
 
@@ -537,7 +537,7 @@ def set_webhook():
 
 1. url 복사했어 근데 파라미터 빼고 복사했어 우리가 파라미터를 넣어보쟈, 그리고 하던대로 틀 잡아주자
 
-![](/image/38.png)
+![](image/38.png)
 
 2. 이 이상은 내가 기가막히게 정리했지만 공간이 부족해서 적지 않겠다.
 

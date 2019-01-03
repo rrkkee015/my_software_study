@@ -99,9 +99,9 @@ for keyword in momo:
 
 -----
 
-### 이제 github로 공동 프로젝트를 만들어보자
+- ### 이제 github로 공동 프로젝트를 만들어보자
 
-*팀장이 할 일*
+  *팀장이 할 일*
 
 1. 폴더 하나를 새로 만든다. (mkdir collabo) => (cd collabo) => (code .)로 vs를 연다.
 
@@ -114,6 +114,18 @@ for keyword in momo:
 5. 근데 repository 세팅에서 팀원 권한을 미리 줘야한다. collaborators에서 팀원 아이디를 적으면 팀원에게 권한을 줄 수 있다.
 
 6. 팀원이 수정을 마쳤으면 github에서 git pull origin master로 파일을 데리고오자.
+
+7. **근데 git pull 할 때 팀원들이 수정하라고 해놓고 내가 원본 파일을 수정해버리고 pull을 해버리면 서로 충돌이 일어난다. 그리고 git은 둘 중 하나를 선택해라고 한다. (병합을 스스로 해라고 함)**
+
+8. 근데 여기서 무시하고 commit 이름 바꾸고 pull 해버리면 이상하게된다. (두 번째 사진)
+
+9. vs code에서는 merger conflict를 알고 있기 때문에 위에 Accept Current Change / Accept Incoming Change... 에서 원하는 거 클릭하면 필터링이 된다.
+
+   ![](image/4.png)
+
+   ![](image/5.png)
+
+
 
    ```
    이제 여기서 두 갈래로 나뉜다
@@ -134,6 +146,10 @@ for keyword in momo:
 
 
 
+### 여기서 중요한 점은 Push가 되면 수정이 안된다. 그러니 Push를 할 땐 항상 신중하게 ㅎㅎ..
+
+
+
 **상위 탭 Issues**
 
 Issues는 팀원들에게 명령하거나, 팀원이 팀장에게 질문을 할 때 게시판처럼 활용하면 된다.
@@ -146,7 +162,15 @@ Issues는 팀원들에게 명령하거나, 팀원이 팀장에게 질문을 할 
 
 저기 위에 Close를 누르면 Issues를 닫을 수 있다. 이 history도 남는다.
 
+---
 
+- ### branching
+
+  git에서는 branching을 통하여 master line을 건들지 않고, 임시의 가지에 저장을 할 수 있다.
+
+  임시의 가지는 삭제도 가능하고 master line에 병합할 수도 있다.
+
+  나무를 생각하면 될 듯
 
 -----------------
 

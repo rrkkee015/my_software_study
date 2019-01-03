@@ -18,21 +18,21 @@
 1. github_page에서 index 파일을 visual studio로 열자
 2. title은 크롬 주소창 위의 상단 이름을 변경시켜준다.
 
-![1545180282047](/image/0.png)
+![1545180282047](image/0.png)
 
 
 
 3. 본인이 찾고자 하는 부분의 위치가 궁금하면 F12에서 마우스로 클릭하면 주소창 찾아주는 애로 찾으면 된다.
 
-   ![제목 없음 1](/image/1.png)
+   ![제목 없음 1](image/1.png)
 
 4. 프로필 사진은 img 부분에서 src를 바꿔주면 되고 (주소 링크로), Clarence taylor 색깔이 다르니 두 개 속성이 다르다. 이걸 파악해서 두 개 바꿔주면 된다.
 
-   ![제목 없음 2](/image/2.png)
+   ![제목 없음 2](image/2.png)
 
-5. 각종 브랜드 마크는 fontawesome에서 사용하면 된다. 거기서 밑에 스크린샷에 있는 부분 복사해서 원하는 위치에 붙여넣기 하면된다.![제목 없음 3](/image/3.png)
+5. 각종 브랜드 마크는 fontawesome에서 사용하면 된다. 거기서 밑에 스크린샷에 있는 부분 복사해서 원하는 위치에 붙여넣기 하면된다.![제목 없음 3](image/3.png)
 
-![제목 없음 4](/image/4.png)
+![제목 없음 4](image/4.png)
 
 ​	(위에 카피한 애를 밑에 드래그 한 애로 붙여넣기 하면 된다)
 
@@ -48,11 +48,11 @@
 
 3. 얘 자체로도 파이썬이 있는데 버전이 낮다 그래서 파이썬 넣구 플라스크 넣구 할거다.
 
-![제목 없음 5](/image/5.png)
+![제목 없음 5](image/5.png)
 
 4. https://github.com/sspy2/install_python 홈페이지로 들어가보자. 여기서 명령어를 붙혀넣으면 다운 받을 필요 없이 내부에서 업데이트가 된다. 이렇게
 
-![제목 없음 6](/image/6.png)
+![제목 없음 6](image/6.png)
 
 5. 이렇게 하고 환경변수를 한 줄씩 복수 해준다. vi ~/.bashrc 이걸 하면 환경 변수를 자세히 볼 수 있다. 하고나서 나올 땐 esc 연타 하고 :q를 하면 나올 수 있다. source ~/.bashrc로 실제로 source화 시켜주는 애로 마무리. 마지막 reset을 한번 clear해주자
 
@@ -60,15 +60,15 @@
 
 7. 이 파란 창을 터미널이라고 한다. 그리고 이 기본은 리눅스라서 git bash랑 똑같이 적용된다.
 
-   ![제목 없음 7](/image/7.png)
+   ![제목 없음 7](image/7.png)
 
-   ![제목 없음 8](/image/8.png)
+   ![제목 없음 8](image/8.png)
 
 8. 근데 여기까지 하고 파이썬 버전 확인했는데도 3.6.7이다. pyenv global 3.6.7을 해줘야한다. 이렇게 하면 파이썬 버전이 바뀌어져 있다.
 9. 그 동안 챗봇에서는 다 다운이 다 되어있었기 때문에 beautifulsoup를 쓸 수 있었지만 여기선 직접 다운을 해주어야한다.  pip install bs4를 해주자. pip install requests도 해주자 오후엔 Flask (경량화 웹 프레임 워크)를 만들어 볼거다. 그래서 pip install flask를 해주자
 10. 새로운 환경에 있으니까 제대로 돌아가는지 복사해서 붙여넣기를 해보자 touch app1. py를 만들고 챗봇에서 기존에 만든 코드를 만든 app1.py에다가 붙여넣기하자 그리고 터미널에서 python 실행할 땐 python app1.py를 하면된다. (위에 Run 버튼은 안쓰니까 볼 필요 없다.)
 
-![제목 없음 9](/image/9.png)
+![제목 없음 9](image/9.png)
 
 11. 얍얍얍
 12. 
@@ -122,7 +122,7 @@ flask run --host 0.0.0.0 --port 8080
    #그리고 제일 밑 print(toons)를 return"{}".format(toons)로 바꿔야한다.
    ```
 
-   ![제목 없음 11](/image/11.png)
+   ![제목 없음 11](image/11.png)
 
 8. return에서 html 파일을 분리 할거다. 그러기 위해선 from flask import Flask에 render_template(맞춰진 틀에다가 끼워 넣는다는 뜻)을 추가 해야한다. 그 후 밑에 작성
 
@@ -137,15 +137,15 @@ flask run --host 0.0.0.0 --port 8080
    rrkkee015:~/workspace/day3 $ touch templates/naver_toon.html
    ```
 
-![제목 없음 12](/image/12.png)
+![제목 없음 12](image/12.png)
 
 9. 만든 파일 안에 밑에 코드 쩌럼 짠다. h1이니까 글씨가 커지겠지? 그리고 html을 치면 그 밑에 자동으로 html snippet이 뜨는데 구조를 자동으로 만들어준다. 또, body 위에 head 있다고 생각하면 된다.
 
-![제목 없음 13](/image/13.png)
+![제목 없음 13](image/13.png)
 
 10.  그런 후 flask를 실행하면 이렇게 대문 짝만하게 뜬다. 따란~
 
-![제목 없음 15](/image/15.png)
+![제목 없음 15](image/15.png)
 
 11. toons라는 배열에 여러가지 만화가 들어가 있는 상태인데 naver_toon.html에 하나씩 뽑아서 출력을 해야한다. 근데 html 파일에서 python 코드를 실행 할 수 없다. 그러면 우째야 할까?
 
@@ -168,23 +168,23 @@ return render_template('naver_toon.html',t = toons) 이렇게 수정했다.
 알아보니까 {% endfor %}를 안썼다.
 ```
 
-![17](/image/17.png)
+![17](image/17.png)
 
 12.  toons 내용을 썸네일 웹툰제목 웹툰링크로 나눠서 출력을 해보자. t를 생짜로 뽑아보니까 title, img url, url을 key를 가지고 있다. 그 키에 맞게 img tag에 넣어주고 herf tag에 넣어주고 하면 그림도 나오고 한다.
 
     **내가 짠 코드**
 
-![18](/image/18.png)
+![18](image/18.png)
 
 ​	하지만 이미지에서 막혔다 ㅠㅠ
 
 ​	**쌤이 짠 코드**
 
-​	![19](/image/19.png)
+​	![19](image/19.png)
 
 ​	**결과**
 
-​	![20](/image/20.png)
+​	![20](image/20.png)
 
 - **앞으로 할 것**
 
