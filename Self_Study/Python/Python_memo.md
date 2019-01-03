@@ -167,11 +167,11 @@ data[2] : 3
 a=list(map(lambda x: '4' if x=='A' else ('3' if x=='B' else ('2' if x=='C' else '1' if x=='D' else 0)), lis))
 ```
 
-![](/image/11.png)
+![](image/11.png)
 
 - 사용자의 입력이 숫자인지 문자인지 확인이 가능한가?
 
-![](/image/13.png)
+![](image/13.png)
 
 - isdigit은 숫자 문자인지 검사하는 함수이다. 숫자 문자의 경우 True를 반환하고 문자열이 입력된 경우 False를 반환한다.
 
