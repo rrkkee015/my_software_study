@@ -34,3 +34,8 @@ student = Student("홍길동")
 graduate = GraduateStudent("이순신","컴퓨터")
 print(student.name)
 print(graduate.major)
+
+# 1. 부모 클래스에서 __를 쓰면 private 변수로 선언되기 때문에 외부에서 바로 접근이 안 된다.
+# 1-1. 단, self._클래스이름__숨긴변수이름 으로 부를 수 있다.
+# 2. 부모 클래스에서 __를 쓰지 않으면 부모.__init()을 한 후에는 부모의 변수들을 바로 접근할 수 있다.
+# 3. @property는 private된 것에 접근할 수록 있도록 한다.

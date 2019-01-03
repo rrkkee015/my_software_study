@@ -48,7 +48,7 @@ HTML 코드를 소유한 파일을 열고 싶으면 My Coding Journal을 보면�
 
 - **근데 어디에 Title이 나타나요?**
 
-Codecademy에서는 title 안보여줌, 아마 다른 곳에서는 보여 줄거야!![1](/image/1.png)
+Codecademy에서는 title 안보여줌, 아마 다른 곳에서는 보여 줄거야!![1](image/1.png)
 
 
 
@@ -112,7 +112,7 @@ HTML 파일들은 같은 폴더에 종종 저장이 된다. 위에 예시 보다
 
 결과로 이런 창이 뜰거다.
 
-![](/image/2.png)
+![](image/2.png)
 
 - 
 
