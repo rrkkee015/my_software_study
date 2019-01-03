@@ -5,7 +5,7 @@
 ```python
 import webbrowser
 
-webbrowser.open("https://www.daum.net")
+webbrowser.open("https://www.daum.net") #파이썬에서 한번에 변수 url을 열어주는 코드
 
 # 모모랜드 모든 멤버들의 검색 페이지를 한 번에 여는 코드
 
@@ -20,7 +20,7 @@ import webbrowser
 
 webbrowser.open(url)
 
-#webbrowser.open("https://search.daum.net/search?q=검색어") #다음 기존 검색 url
+#webbrowser.open("https://search.daum.net/search?q=검색어") #다음 기존 검색 url #주소창을 변경시키는 행위이다.
 url = "https://search.daum.net/search?q=" + "연우"
 ```
 
@@ -46,7 +46,7 @@ url = "https://search.daum.net/search?q="
 webbrowser.open(url + keyword)
 ```
 
-모모랜드 모든 멤버들의 검색 페이지를 한 번에 여는 코드를 만들어보쟈, **반복문을 사용**
+모모랜드 모든 멤버들의 검색 페이지를 한 번에 여는 코드를 만들어보쟈, **반복문을 사용.** 반복되는 건 무조건 줄이는 것이 컴퓨터 프로그래밍의 기본이다 !
 
 ```python
 import webbrowser
@@ -81,7 +81,7 @@ for keyword in momo:
 
 **내 노트북이라고 가정**
 
-1. clone or download를 해야한다. 그 주소를 home computer의 gitbash에서 git clone 하고 주소를 붙여넣으면 된다.
+1. clone or download를 해야한다. 그 주소를 home computer의 gitbash에서 git clone 하고 주소를 붙여넣으면 된다. (git clone https://www.github.com/rrkkee015/blahblah)
 2. sublime text를 다운받아 실행한다. (집에서 쓰는 에디터라는 가정)
 3. folder을 오픈한다. github에 올린 git_practice 그 폴더를 올린다.
 4. 수정하고 싶은건 수정하자.
@@ -105,7 +105,7 @@ for keyword in momo:
 
 1. 폴더 하나를 새로 만든다. (mkdir collabo) => (cd collabo) => (code .)로 vs를 연다.
 
-2. 거기서 파일 README.md을 만들자
+2. 거기서 파일 README.md을 만들자 (REAME.md로 만들면 repository 들어오면 먼저 뜨는 게시물이 됨)
 
 3. 그 다음 github에 올리자 (init, push 등등)
 
@@ -202,13 +202,14 @@ Issues는 팀원들에게 명령하거나, 팀원이 팀장에게 질문을 할 
 
 **api란?** : Application Programming Interface의 약자이다. Interface는 사용자와 제품 사이에 있는 통로, 제품을 조작할 수 있는 것들을 말한다.(리모컨 버튼을 연상) api는 이 interface를 코딩을 통해서만 접근이 가능하다. (python으로서 네이버에 접근시키겠다라고 생각하면 된다. 내가 인터넷을 골라서 들어가면 내가 들어간거잖아 python이 해주면 접근성이 올라가지)
 
-1. naver developers에서 애플리케이션 등록을 하자.
+1. naver developers에서 애플리케이션 등록을 하자. (로컬에서는 작동 안 하게 되어있다. c9에 접속해서 해당하는 서비스 url을 뽑아내야한다.)
 2. 그리고 api를 활용하는 툴은 c9을 이용하자. 새로운 c9 workspace를 blank로 생성하자.
    - 참고로 다른 홈페이지에서 '페이스북 아이디로 로그인', '네이버 아이디로 로그인'은 페이스북, 네이버에서 제공하는 API이다. 자기들은 정보가 많으니까 주는거지
+3. API는 편지 보낼 때 보내는 사람, 받는 사람 적는 곳 정해져 있듯이, API도 똑같이 정해진 위치에 요구하는 정보만 기입해주면 얼굴인식, 번역 지 알아서 다 해준다.
 
 
 
-**네이버 코스피 지수 가져오기**
+**네이버 코스피 지수 가져오기** (c9에서 naver.py를 만들어줬다.)
 
 ![](image/6.png)
 
@@ -217,11 +218,18 @@ Issues는 팀원들에게 명령하거나, 팀원이 팀장에게 질문을 할 
   - GET : 정보를 가져올 때 (서버에 요청하는 것이다)
   - POST: 정보를 입력, 게시하는 행위 (역시나 서버에 요청하는 것이다)
 
-**Papago 정보 가져오기**
+**Papago 정보 가져오기**(c9에서 Papapgo.py를 만들어줬다.)
 
-얘는 메서드 방식 (요청하는 방식)이 get이 아니라 Post이다.
+얘는 메서드 방식 (요청하는 방식)이 get이 아니라 Post이다. (key랑 비밀번호는 꽁꽁 숨겨야한다. 환경변수에 숨기는 애들임)
+
+![](image/10.png)
 
 ![](image/7.png)
+
+1. headers와 data는 파파고 서버에게 나 이상한 사람 아니니까 쏘지마라 이런 뜻임
+2. source,tage,text는 파파고 서버에서 요구하는 요청 변수이다.
+
+![](image/11.png)
 
 --------
 

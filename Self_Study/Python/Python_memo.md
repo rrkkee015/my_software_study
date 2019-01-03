@@ -159,6 +159,10 @@ for i in enumerate(data):
 data[0] : 1
 data[1] : 2
 data[2] : 3
+    
+names = ["철수","영희","동훈"]
+for i,name in enumerate(names):
+    print("{}번 : {}".format(i+1,name))
 ```
 
 - lambda 함수로 다중 if문 작성하는 법
@@ -225,5 +229,209 @@ print("입력된 값은 {}입니다.".format(lis))
 40
 #출력 값
 입력된 값은 [10, 10, 20, 30, 40]입니다.
+```
+
+- 리스트 내부에 있는 인덱스 혹은 값 없애기, 추가하기, 인덱스 위치 알기
+
+```python
+lis = [1,2,3]
+#인덱스로 골라서 없애기
+del lis[1] #인덱스로 접근하려면 []을 써야한다.
+
+#값을 골라서 없애기
+lis.remove(2) #값을 접근하려면 ()
+
+print(lis)
+#결과
+lis =[1,3]
+
+#추가하기
+lis.append(4) 혹은
+lis = lis + [4] #리스트에 리스트를 더해서 연결해주었다.
+
+#인덱스 위치 알아내기
+lis.index(2)
+#결과
+1
+```
+
+- 리스트에 값이 있는지 없는지 확인하는 코드
+
+```python
+list1 = [1,2,3,4,5,6,9,12]
+n = 12
+if n in list1: #list1에 12가 있으면 print문이 실행됩니다.
+    print("{}가 리스트에 있다.".format(n))
+```
+
+- 모듈 쓰기
+
+```python
+import math # math 모듈을 사용해줘야한다.
+print("파이의 값은 {}입니다.".format(math.pi)) #모듈이름.모듈안의 구성요소
+
+import datetime #날짜모듈
+print(datetime.date.today()) #오늘 날짜 나옴 2019-01-03
+
+import random
+list1=[1,2,3,4,5]
+random.choice(list1) # 리스트 중 하나 뽑는 것
+
+number = random.randint(2,5) # 2<=number<=5 중에 하나 뽑는거
+
+random.shuffle(list1) #list1의 배열을 무작위로 섞는 것
+```
+
+- dictionary 수정하는 법
+
+```python
+dict = {"1월":31,"2월":28,"3월":31}
+dict["2월"]=29 #값 수정
+dict["4월"]=31 #값 추가
+
+del dict["1월"] #값 삭제 혹은
+del(dict["1월"]) #둘 다 됨
+dict.pop("1월") #얘도 되고
+
+dict.clear() # 딕셔너리의 내용을 전부 삭제
+
+products = {"풀":800, "딱풀":1200, "색종이":1000,"색연필":5000,"스케치북":3500}
+catalog = {"겨울용 실내화":12000, "잠자리채":8000, "딱풀":1400}
+#products가 catalog의 정보를 반영하고 싶다면? update 함수를 쓴다.
+products.update(catalog)
+print(products)
+#결과
+{'풀': 800, '딱풀': 1400, '색종이': 1000, '색연필': 5000, '스케치북': 3500, '겨울용 실내화': 12000, '잠자리채': 8000}
+```
+
+- 튜플
+
+```python
+tuple1 = (1,2,3)
+tuple2 = 1,2,3
+list1 = [1,2,3]
+tuple3 = tuple(list1)
+#위에 트리오 다 똑같이 튜플이다.
+
+ages = {'Tod':35,'Jane':23,'Paul':62}
+for a in ages.items(): #items()를 통해서 딕셔너리의 값을 튜플로 받아온다.
+    print('{}의 나이는:{}'.format(ages[0],ages[1]))
+#혹은
+for a in ages.items():
+    print('{}의 나이는:{}'.format(*ages)) #둘 다 같다.
+```
+
+- break와 continue
+
+```python
+#break는 반복문을 종료시키는 기능을 가지고 있다.
+list = [1, 2, 3, 5, 7, 2, 5, 237, 55]
+for val in list:
+    if val % 3 ==0:
+        print(val)
+        break
+#3의 배수 하나만 찾고 끝
+
+#continue는 반복문의 나머지 부분을 보지 않고, 반복문의 처음으로 돌아가는 기능이다.
+for i in range(10):
+    if i % 2 ==0:
+        continue
+    print(i)
+#홀수만 찾는 코드
+```
+
+- try except
+
+```python
+try:
+    a = 3/0 #에러가 발생할 가능성이 있는 코드
+except Exception: #에러 종류
+    print("에러입니다.") #에러가 발생 했을 경우 처리할 코드
+    
+#근데 예외 이름을 모를 땐 어떻게 해?
+try:
+    a = 5
+    b = 0
+    c = a/b
+except Exception as ex: #ex가 에러 종류를 담아주었다. as를 통해서 굳이 Exception as ex가 필요 없지만 없으면 어떤 에러인지 파악하기가 어렵다. Index에러인지, Value에러인지 모름
+    print("{} 에러입니다.".format(ex)) #ex는 발생한 에러의 이름을 받아오는 변수
+    
+#중첩 반복에서 for문을 아예 중단시키고 싶을 경우에 에러를 일부러 발생하기도 한다.
+shops = {
+    "송일문방구": {"가위": 500, "크레파스": 3000},
+    "알파문구": {"풀": 800, "도화지": 300, "A4용지": 8000},
+    "다이소": {"풀": 500, "목공본드": 2000, "화분": 3000}
+}
+try:
+    for shop, products in shops.items():
+        for product, price in products.items():
+            if product =='풀':
+                print("{}: {}원".format(shop, price))
+                raise StopIteration #raise 에러종류를 해준다.
+except StopIteration: #except 에러종류를 해준다.
+    print("에러입니다.")
+    
+#결과
+알파문구: 800원
+에러입니다.
+
+#만약 에러를 일으키지 않고 break를 쓴다면?
+for shop, products in shops.items():
+    for product, price in products.items():
+       if product =='풀':
+            print("{}: {}원".format(shop, price))
+            break
+#결과
+알파문구: 800원
+다이소: 500원
+#이렇게 해버리면 break 내의 for문은 중단되더라도 그보다 더 상위의 break는 종료되지 않는다.
+```
+
+- bool값과 논리연산
+
+`or`연산의 결과는 앞의 값이 True이면 앞의 값을, 앞의 값이 False이면 뒤의 값을 따른다.
+
+```python
+a = True or 1 #True 앞의 값이 True니까 앞의 값을 가져온다.
+b = False or 0 #0   앞의 값이 False니까 뒤에 값을 가져온다.
+c = 0 or False #False 앞의 값이 0 이니까 뒤에 값을 가져온다.
+d = 1 or False #1   앞의 값이 True라서 앞의 값을 가져온다.
+```
+
+- list의 다양한 기능들
+
+```python
+#list에서 값을 이용해서 위치를 찾고 싶을 땐 index()을 이용하자
+list1=[135, 462, 27, 2753, 234]
+print(list1.index(27))
+#index()에서 에러가 발생하지 않도록 처리하려면 value가 my_list안에 있는지 미리 확인하거나, try/except문을 활용하자.
+
+#원하는 위치에 값을 추가하는 법
+#list.insert(index,value)
+list = [1,2,3]
+list.insert(3,4) #list = [1,2,3,4]
+
+#값을 순서대로 정렬
+list = [3,5,2,1,4]
+list.sort() #list = [1,2,3,4,5]
+
+#값을 역순으로 정렬
+list =[1,2,3,4,5]
+list.reverse() #list = [5,4,3,2,1]
+```
+
+- split과 join
+
+```python
+str = "10:35:27"
+lis = str.split(":") #문자열을 ":"기준으로 리스트화
+new_str = ":".join(list) #리스트를 ":"기준으로 문자열화
+
+#또 다른 예
+lis = ["오늘","날씨는","맑음"]
+new_str = " ".join(lis)
+print(new_str)
+#결과
+오늘 날씨는 맑음
 ```
 
