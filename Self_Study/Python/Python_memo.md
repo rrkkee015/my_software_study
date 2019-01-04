@@ -63,7 +63,7 @@ for i in b:
 
 ```python
 x='a string'
-print(x[::-1])
+print(x[::-1]) # ::(숫자) 숫자만큼 징검다리로 뽑아내겠다는 뜻
 
 ####결과값####
 gnirts a
@@ -272,6 +272,8 @@ print("파이의 값은 {}입니다.".format(math.pi)) #모듈이름.모듈안�
 
 import datetime #날짜모듈
 print(datetime.date.today()) #오늘 날짜 나옴 2019-01-03
+datetime.datetime.now() #이렇게 하면 현재 년도 날짜 시간 다나온다.
+#근데 datetime.datetime은 귀찮으니까 import 할때 from datetime import datetime as dt를 하면 dt.now()로 축약이 가능하다. 여기서 dt.now().month를 하면 월이 나오고 dt.now().day를 하면 일이 나온다.
 
 import random
 list1=[1,2,3,4,5]
@@ -420,7 +422,7 @@ list =[1,2,3,4,5]
 list.reverse() #list = [5,4,3,2,1]
 ```
 
-- split과 join
+- **str** : split과 join, str자르기
 
 ```python
 str = "10:35:27"
@@ -433,5 +435,44 @@ new_str = " ".join(lis)
 print(new_str)
 #결과
 오늘 날씨는 맑음
+
+>>>"hello"[1:5]
+'ello'
+>>>"hello"[1:3]
+'el'
+>>>"hello"[4:5]
+'o'
+>>>"hello"[4]
+'o'
+>>>"hello"[:4]
+'hell'
+>>>"hello".replace("o","s")
+'hells'
+>>>"hello"[4] = "s"
+Error
 ```
 
+- 기원센세의 마지막 가르침
+
+```python
+def leehyolee(sys):
+    return str(sys == sys[::-1])
+
+#이렇게하면 sys에 변수를 대입하면 자동으로 bool 형으로 True or False를 반환해주고 이 것은 bool 형식이라서 str 형으로 바꿔주면 굳이 if문 안써도 뿅 나옴
+
+@app.route("/leehyolee/<sys>")
+def leehyolee(sys):
+    if sys == sys[::-1]: #[::-1] 문자열 뒤집기이다. 리스트도 뒤집어짐
+        return "True"
+    else:
+        return "False"
+
+#내가 했던 무식한 방법, 굳이 이렇게 어렵게 안해도 된다.
+
+#삼항연산자로도 해결할 수 있다.
+#참거짓 : 참일때 실행할 문장 : 거짓일때 실행할 문장
+def leehyolee(sys):
+    return "True" if sys == sys[::-1] else "False"
+```
+
+- 
