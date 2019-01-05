@@ -475,4 +475,17 @@ def leehyolee(sys):
     return "True" if sys == sys[::-1] else "False"
 ```
 
-- 
+- **파이썬 입출력 속도 증가시키기**
+
+  - Python에서 `import sys`를 하면 `input() `대신에 `sys.stdin.readline`을 사용할 수 있다. 만약 문자열을 저장하고 싶을 경우 `.rstruo()`을 추가로 해 주는 것이 좋다.
+  - 또한 int 변환이나 split()을 그대로 할 수 있다.
+
+  ```python
+  int(sys.stdin.readline()) #이라던가
+  sys.stdin.readline().split() #을 사용할 수 있다.
+  
+  #주로 input=sys.stdin.readline을 쓴다.
+  
+  #근데 문장이 기니까 input을 바꿔줘도 상관없다.
+  input=sys.stin.readline #이렇게
+  ```
