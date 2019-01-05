@@ -146,7 +146,7 @@ Python은 저장, 조건, 반복만 알면된다. + 함수
        
     #3. while과 for문의 위치를 바꿔서 풀어보자
     n=0 #이렇게 적으면 삼겹살과 꽃등심만 나온다.
-    while n<2:
+    while n<5:
         a=[0,1]
         for i in a:
             print(dish[i])
