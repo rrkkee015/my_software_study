@@ -161,3 +161,80 @@ taxi.name = "택시"
 taxi.run()
 ```
 
+----
+
+### 특수한 메소드
+
+- `__init__` : 인스턴스를 만들 때 실행되는 함수
+
+```python
+class Human():
+    '''인간'''
+    def __init__(self): #__가 있으면 파이썬에서 특수한 메소드라는 뜻
+        '''초기화 함수'''
+        print("__init__실행")
+        
+    def __str__(self):
+        '''문자열화 함수'''
+        
+person = Human() #단지 휴먼클래스에 인스턴스를 person에 저장한 것 뿐인데 init 함수가 실행이 되면서 print문이 실행했다. 즉, init함수는 인스턴스가 만들어질 때 자동으로 실행되는 함수이다.
+#결과
+__init__실행
+```
+
+```python
+class Human():
+    '''인간'''
+    def __init__(self, name, weight): #매개변수도 받을 수 있다.
+        '''초기화 함수'''
+        print("__init__실행")
+        print("이름은 {}, 몸무게는 {}".format(name, weight))
+        
+    def __str__(self):
+        '''문자열화 함수'''
+        
+person = Human("사람",60.5) #매개변수를 바로 넣음 init 함수를 직접 호출하는건 아니지만 실행되면서 자동으로 불러와짐
+```
+
+```python
+
+# init 함수를 사용하면 앞서 사용함 create 함수를 쓸 필요가 없어짐
+class Human():
+    '''인간'''
+    def __init__(self, name, weight):
+        '''초기화 함수'''
+        self.name = name
+        self.weight = weight
+        
+    def __str__(self):
+        '''문자열화 함수'''
+        
+person = Human("사람",60.5)
+print(person.name)
+print(person.weight)
+#결과
+사람
+60.5 #이게 출력이 됐다는 건 Human 인스턴스를 만들 때 넘겨줬던 매개변수가 Human클래스의 매개변수 name,weight에 잘 전달이 됐다.
+```
+
+- `__str__` : 인스턴스 자체를 출력 할 때의 형식을 지정해주는 함수
+  - Human을 string으로 표현할 때 어떻게 표현하는지 형식을 지정해 줌
+
+```python
+class Human():
+    '''인간'''
+    def __init__(self, name, weight):
+        '''초기화 함수'''
+        self.name = name
+        self.weight = weight
+        
+    def __str__(self):
+        '''문자열화 함수'''
+        return "{} (몸무게 {}kg)".format(self.name,self.weight)
+        
+person = Human("사람",60.5)
+print(person) #인스턴스 자체를 불러왔다.
+#결과
+사람(몸무게 60.5kg)
+```
+
