@@ -2,13 +2,5 @@
 #한 줄에 10글자씩 끊어서 출력하는 프로그램을 작성하시오.
 
 N=input()
-s=10
-l=len(N)
-a=0
-i=1
-while l>10:
-    print(N[a*s:s*i])
-    a+=1
-    i+=1
-    l -=10
-print(N[a*s:])
+for i in range(0,len(N),10):
+    print(N[i:i+10])

@@ -489,3 +489,50 @@ def leehyolee(sys):
   #근데 문장이 기니까 input을 바꿔줘도 상관없다.
   input=sys.stin.readline #이렇게
   ```
+
+- **각 자릿 수 더하는 방법**
+
+  - 어떤 수의 각 자릿수를 다 더하는 방법을 찾아보자
+
+    ```python
+    #10000의 자리일 때의 어떤 수 i일 때
+    i//10000 + (i//1000)%10 + (i//100)%10 + (i//10) % 10 + i % 10
+    
+    #근데 이 수가 점점 올라간다면 골치가 많이 아프다. 따라서 이 방법이 있다.
+    result = 0
+    n=i
+    while n !=0:
+        result += n%10
+        n = n//10
+    print(result)
+    
+    #참고로 이렇게 해도 자릿수가 나온다.
+    m=9876
+    #1000의 자리
+    int(m/1000)
+    m=m//10
+    #100의 자리
+    int(m/100)
+    ```
+
+- **함수 에러**
+
+  ```python
+  x=10
+  def func():
+      x += 1
+      print(x)
+  func()
+  #결과
+  UnboundLocalError: local variable 'x' referenced before assignment
+      
+  #전역 변수를 지역 범위에서 사용하고 싶으면 global 표현을 사용해야한다.
+  
+  x=10
+  def func():
+      global x
+      x += 1
+      print(x)
+  func()
+  ```
+
