@@ -165,7 +165,7 @@ for i,name in enumerate(names):
     print("{}번 : {}".format(i+1,name))
 ```
 
-- lambda 함수로 다중 if문 작성하는 법
+- **lambda 함수로 다중 if문 작성하는 법**
 
 ```python
 a=list(map(lambda x: '4' if x=='A' else ('3' if x=='B' else ('2' if x=='C' else '1' if x=='D' else 0)), lis))
@@ -284,7 +284,7 @@ number = random.randint(2,5) # 2<=number<=5 중에 하나 뽑는거
 random.shuffle(list1) #list1의 배열을 무작위로 섞는 것
 ```
 
-- dictionary 수정하는 법
+- dictionary 수정하는 법, **update() 유용한 함수**
 
 ```python
 dict = {"1월":31,"2월":28,"3월":31}
@@ -427,7 +427,7 @@ list.reverse() #list = [5,4,3,2,1]
 ```python
 str = "10:35:27"
 lis = str.split(":") #문자열을 ":"기준으로 리스트화
-new_str = ":".join(list) #리스트를 ":"기준으로 문자열화
+new_str = ":".join(lis) #리스트를 ":"기준으로 문자열화
 
 #또 다른 예
 lis = ["오늘","날씨는","맑음"]

@@ -32,7 +32,7 @@ def telegram():
 @app.route(/"{}".formate(token))
 def telegram():
     
-@app.rout("/set_wehook")
+@app.route("/set_wehook")
 def set_webhook(): #웹훅을 URL(어제는 토큰에 등록을 했다.)에 등록하면 TELEGRAM 서버에 "야 ! TELEGRAM WEB에서 메시지 받으면 그때마다 C9으로 ALERT를 해줘"라고 하는 것이다. alert의 응답은 단지 200으로 주는거다. 근데 우리 사용자한테 200 보내는 걸 원하는게 아니니까 Sendmessage로 설정을 해야한다. "안녕", "야" 라는 응답에 요청할 수 있는 답변을 설정하면 내가 정해준 답변이 가는 것이다.
 #왜 URL을 토큰으로 했을까? URL을 아무거나 해도 되는데, 남들이 알아보기 쉬운 것으로 하면 해킹을 하기 쉬우니까 알아보기 어려운 토큰으로 하는 것이다.
     

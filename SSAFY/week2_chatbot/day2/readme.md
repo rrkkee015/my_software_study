@@ -1,4 +1,4 @@
-## 복습
+복습
 
 - python 문법
 
@@ -50,7 +50,7 @@
   # 작성시 따옴표를 잊지 맙시다.
   # div라는 이름을 가진 애한테 prizeresult라는 별명을 준거고 그 별명의 종류가 class이다. <div class="prizeresult">
   # 혹은
-  # document = sopu.select('.prizeresult') 해도 된다.
+  # document = soup.select('.prizeresult') 해도 된다.
   # 클래스를 찾을 땐 .하고 별명을 적는다. id일 땐 #하고 별명을 적는다.
   # document = soup.select('#slick-slide01 > div.prizeresult > div:nth-child(1)')를 출력하면 빈 [] 괄호가 나온다. 걱정하지말고 사이트에서 찾아보면 됨
   numbers = document.select('span')
@@ -113,10 +113,9 @@
   근데 이걸 내가 출력 했을 때 몇 개 맞췄는지 궁금하지 않아?
 
   - 우선 구글에 로또번호 확인에서 동행복권을 들어가보자
+  - 거기서 F12 들어가서 로또 번호를 찾자. 
 
-  - 거기서 F12 들어가서 로또 번호를 찾자.  찾았다.
 
-    ![](C:\Users\student\Desktop\동훈\스크린샷\week2_day2\제목 없음5.png)
 
 - **미세먼지**
 
@@ -241,7 +240,7 @@
           "url": item.select('dt a')[0]["href"], # 속성을 뽑아내는건 딕셔너리 뽑 듯이 뽑으면 된다.
           "img_url": item.select('.thumb img')[0]["src"] # select는 리스트로 출력하기 때문에 [0]이 꼭 필요하다.
       }
-      toons.append(toond)
+      toons.append(toons)
   print(toons)
   
   ```

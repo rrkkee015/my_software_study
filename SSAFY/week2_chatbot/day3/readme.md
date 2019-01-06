@@ -30,7 +30,7 @@
 
    ![제목 없음 2](image/2.png)
 
-5. 각종 브랜드 마크는 fontawesome에서 사용하면 된다. 거기서 밑에 스크린샷에 있는 부분 복사해서 원하는 위치에 붙여넣기 하면된다.![제목 없음 3](image/3.png)
+5. 각종 브랜드 마크는 **fontawesome**에서 사용하면 된다. 거기서 밑에 스크린샷에 있는 부분 복사해서 원하는 위치에 붙여넣기 하면된다.![제목 없음 3](image/3.png)
 
 ![제목 없음 4](image/4.png)
 
@@ -40,7 +40,7 @@
 
 - **C9** (지금 이 컴퓨터는 리눅스 체제가 아니니까 간단하게 리눅스 체제 컴퓨터 한대를 임대하는 개념이다)
 
-1. 주소창에 c9.io 치면 AWS Clouid9 나오는데 거기서 기존 c9.io 고객용 로그인을 눌러야한다.
+1. 주소창에 c9.io 치면 AWS Cloud9 나오는데 거기서 기존 c9.io 고객용 로그인을 눌러야한다.
 
 2. new workspace를 만들고 workspace name에 이름 적고 Public 하고 blank로 템플릿 두고 create
 
@@ -71,11 +71,12 @@
 ![제목 없음 9](image/9.png)
 
 11. 얍얍얍
-12. 
 
-- **Flask** : BeautifulSoup, requests 처럼 기능 뭉탱이 중에 하나이다. 파이썬으로 쓰여진 경량화 웹 프레임 워크이다. 데이타 베이스도 없고, 많은 것들이 없다.
 
-1. c9에서 app2.py 만들고 열어보자. 근데 이름 바꿔야함 터미널에서 mv app2.py app.py 하면 이름이 바뀐다.(app2->app)
+
+- **Flask** : BeautifulSoup, requests 처럼 기능 뭉탱이 중에 하나이다. **파이썬으로 쓰여진** 경량화 웹 프레임 워크이다. 데이타 베이스도 없고, 많은 것들이 없다.
+
+1. c9에서 app2.py 만들고 열어보자. 근데 이름 바꿔야함 터미널에서 **mv app2.py app.py** 하면 이름이 바뀐다.(app2->app)
 
 ```python
 from flask import Flask

@@ -94,7 +94,7 @@
   </body>
   ```
 
-  위의 예제를 보면 <body> element는 <div> elemnet의 부모다. <hi>와 <p> elements는 <div>의 자식들이다. 왜냐면 둘다 같은 레벨에 있거든 (같은 들여쓰기라서) 그리고 얘들 <hi>와 <p>는 <body>의 손자 손녀다.
+  위의 예제를 보면 <body> element는 <div> elemnet의 부모다. <h1>와 <p> elements는 <div>의 자식들이다. 왜냐면 둘다 같은 레벨에 있거든 (같은 들여쓰기라서) 그리고 얘들 <h1>와 <p>는 <body>의 손자 손녀다.
 
   HTML 계급을 이해하는게 되게 중요한데, 애기 elements들이 부모 element에게 상속 받을 수 있다. CSS 배울 때  webpage 계급을 배울 것이다.
 
