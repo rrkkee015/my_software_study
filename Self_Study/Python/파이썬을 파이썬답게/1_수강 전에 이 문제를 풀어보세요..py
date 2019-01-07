@@ -14,3 +14,7 @@ def solution(mylist):
     for i in mylist:
         mylist[mylist.index(i)]=len(i)
     return mylist
+
+#파이썬처럼 짠 코드는
+mylist = [[1,2],[2,4],[5]]
+print(list(map(len,mylist)))

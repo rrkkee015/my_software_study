@@ -12,6 +12,6 @@ for i in str(num):
 print(sum(li))
 
 #더 쉬운 방법
-num = '3212' #문자열로 해야
+num = '3212' #문자열로 해야함
 base = 5
 answer = int(num, base) #int(값, 진수) 10진수가 생략되어 있다고 생각하면 된다. base 진수로 표현된 값을 10진수로 바꿔준다.
