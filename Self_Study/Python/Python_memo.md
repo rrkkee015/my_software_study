@@ -121,6 +121,10 @@ list(map(two_times,[1,2,3,4]))
 
 #결과
 [2,4,6,8]
+
+#만약에 map 함수에서 함수를 사용하고 싶으면 lambda를 이용한다.
+total = sum(list(map(lambda a: a**2, list (range(1,101)))))
+#리스트 객체 전체에 제곱을 각자 시키기
 ```
 
 - input 한꺼번에 받는법
@@ -536,3 +540,11 @@ def leehyolee(sys):
   func()
   ```
 
+- 쉽게 10진법에서 n진법으로 바꾸기
+
+  ```python
+  n='3212' #문자열이여야함
+  base = 5 #5진수
+  int(n,base)
+  432
+  ```
