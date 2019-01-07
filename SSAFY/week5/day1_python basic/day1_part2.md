@@ -302,3 +302,4 @@ for idx, num in enumerate(numbers):
     else:
         print("break 안됨.")
     ```
+
