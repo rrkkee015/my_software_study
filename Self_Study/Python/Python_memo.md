@@ -491,7 +491,7 @@ def leehyolee(sys):
   #주로 input=sys.stdin.readline을 쓴다.
   
   #근데 문장이 기니까 input을 바꿔줘도 상관없다.
-  input=sys.stin.readline #이렇게
+  input=sys.stdin.readline #이렇게
   ```
 
 - **각 자릿 수 더하는 방법**

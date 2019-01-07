@@ -125,7 +125,7 @@ print(value)
 
 ```python
 num = 2
-print('홀수입니다.') if num % 2 else print('짝수입니다.') #0이면 False이니까
+print('홀수입니다.') if num % 2else print('짝수입니다.') #0이면 False이니까
 ```
 
 
@@ -282,7 +282,7 @@ for idx, num in enumerate(numbers):
 
 - `else`
 
-  - `else`문은 끝까지 반복문을 시행한 이후에 실행됩니다. (`break`를 통해 중간에 종료되지 않은 경우만 실행)
+  - `else`문은 끝까지 반복문을 시행한 이후에 실행됩니다. (`break`를 통해 중간에 종료되면 실행 안함)
 
     ```python
     #break가 안되는 상황을 만들어보자
