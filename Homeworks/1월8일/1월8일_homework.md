@@ -42,13 +42,24 @@
    my_dict = {"A":1,"B":2,"C":3,"Z":26}
    #key만 출력
    for key in my_dict.keys():
-       print("키값 : ".format(key), end=' ')
+       print("키값 : {}".format(key), end=' ')
+   print('')
    #value만 출력
    for value in my_dict.values():
-       print("밸류값 : ".format(value), end=' ')
+       print("밸류값 : {}".format(value), end=' ')
+   print('')
    #key, value 출력
    for key,value in my_dict.items():
-       print("{} {}".format(key,value), end=' ')
+       print("키 : {},밸류 : {}".format(key,value), end=' ')
    ```
 
+4. result에 저장된 값은?
 
+   ```python
+   def my_func(a,b):
+       c=a+b
+       print(c)
+   result =  my_func(1,5)
+   #결과
+   6
+   ```
