@@ -485,14 +485,37 @@ def leehyolee(sys):
   - 또한 int 변환이나 split()을 그대로 할 수 있다.
 
   ```python
-  int(sys.stdin.readline()) #이라던가
-  sys.stdin.readline().split() #을 사용할 수 있다.
+  int(sys.stdin.readlines()) #이라던가
+  sys.stdin.readlines().split() #을 사용할 수 있다.
   
   #주로 input=sys.stdin.readline을 쓴다.
   
   #근데 문장이 기니까 input을 바꿔줘도 상관없다.
-  input=sys.stdin.readline #이렇게
+  input=sys.stdin.readlines #이렇게
   ```
+
+  - sys.stdin과 sys.stdin.readlines()의 차이점
+
+  ```python
+  import sys
+  
+  for i in sys.stdin.readline():
+      print(i)
+  #입력 abc
+  #출력
+  a
+  b
+  c
+  
+  for i in sys.stdin:
+      print(i)
+  #입력 abc
+  #출력
+  abc #그리고 입력이 종료가 안됨 계속 반복함 도르마무
+  
+  #즉, 두개의 차이점은 sys.stdin.readline()은 문자 하나로 받아주고 sys.stdin은 한 줄이 아예 하나의 인덱스가 되어서 i가 그 하나의 인덱스를 출력해준다.
+  ```
+
 
 - **각 자릿 수 더하는 방법**
 
@@ -548,3 +571,43 @@ def leehyolee(sys):
   int(n,base)
   432
   ```
+
+- if, elif
+
+  ```python
+  for i in range(1,10):
+      if ---:
+          ---
+      if ---:
+          --- #위의 if가 결과가 뭐든 간에 밑에 if도 같이 실행됨
+  
+          
+  for i in range(1,10):
+      if ---:
+          ---
+      elif ---:
+          --- #위의 if가 결과가 True이면 elif는 실행안됨
+  ```
+
+- dictionary (key, value 추가하는 법)
+
+  ```python
+  dic = {'a':1}
+  dic['b'] = 1 #key 값이 기존에 dic에 없어도 그냥 입벌리고 집어넣어버림
+  dic = {'a':1,'b':1} #뿅
+  ```
+
+- **dictionary를 인자로 넘기는 방법**
+
+  `**dict`를 통해 함수에 인자로 넘길 수 있다.
+
+  ```python
+  def d(a,b,c):
+      return "{} {} {}".format(a,b,c)
+  a = {'a':1,'b':2,'c':3}
+  print(d(**a))
+  #결과
+  1 2 3 #값은 keys로 받지만 뱉는건 values 값을 뱉는 것을 유의하자.
+  ```
+
+
