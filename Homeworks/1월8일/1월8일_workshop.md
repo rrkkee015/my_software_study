@@ -27,5 +27,17 @@ c = palindrome('바밤바바밤바봐')
 print(a)
 print(b)
 print(c)
+
+#선생님 version
+def is_palindrome(word):
+    list_word = list(word)
+    for i in range(len(list_word) // 2):
+        if list_word[i] != list_word[-i-1]:
+            return False
+        else:
+            return True
+
+print(is_palindrome('level'))
+print(is_palindrome('apple'))
 ```
 

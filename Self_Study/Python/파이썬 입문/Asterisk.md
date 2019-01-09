@@ -11,6 +11,8 @@
 
 - 이건 다들 알고 있잖니
 
+
+
 ## 2. 리스트형 컨테이너 타입의 데이터를 반복 확장하고자 할 때
 
 - 파이썬에서는 *을 숫자형 데이터 뿐만 아니라 리스트형 컨테이너 타입에서 데이터를 반복적으로 확장하기 위해 사용 가능하다.
@@ -25,6 +27,8 @@
   for i, vector in enumerate(vector_list *3):
       print("{} : {}".format((i + 1),[(i + 1) * for e in vector]))
   ```
+
+
 
 ## 3. 가변인자(Variadic Parameters)를 사용하고자 할 때
 
@@ -73,8 +77,45 @@ save_ranking('ming','alice','tom','wilson','roy')
 ### keyword arguments만 받을 때
 
 ```python
-def save_rankin(**kwargs):
+def save_ranking(**kwargs):
     print(kwargs)
-save_ranking(first='ming',)
+save_ranking(first='ming', second='alice', fourth='wilson',third='tom',fifth='roy')
+# {'first': 'ming', 'second': 'alice', 'fourth': 'wilson', 'third': 'tom', 'fifth': 'roy'}
 ```
 
+### positional arguments 와 keyword arguments를 모두 받을 때
+
+```python
+def save_ranking(*args, **kwargs):
+    print(args)
+    print(kwargs)
+save_ranking('ming','alice','tom',fourth='wilson',fifth='roy')
+# ('ming', 'alice', 'tom')
+# {'fourth': 'wilson', 'fifth': 'roy'}
+```
+
+- 위에서 `*args`는 임의의 갯수의 positional arguments를 받음을 의미하며, `**kwargs`는 임의의 갯수의 keyword arguments를 받음을 의미한다. 이 때 `*args`,`**kwargs` 형태로 가변인자를 받는걸 packing이라고 한다.
+
+  위의 예시에서 볼 수 있듯이, 임의의 갯수와 임의의 키값을 갖는 인자들을 전달하고 있다. positional 형태로 전달되는 인자들은 `args` 라는 tuple에 저장되며, keyword 형태로 전달되는 인자들은 `kwargs`라는 dict에 저장된다.
+
+  아까 positional과 keyword의 선언 순서를 언급했었는데, keyword는 positional보다 앞에 선언할 수 없기 때문에 다음의 코드는 에러를 발생시킨다.
+
+  ```python
+  def save_ranking(**kwargs, *args):
+      ...
+  ```
+
+  이 가변인자는 매우 일반적으로 사용도는 기능이다.
+
+  보통 오픈소스의 경우 코드의 일관성을 위해 `*args`이나 `**kwargs`와 같이 관례적으로 사용되는 인자명을 사용하지만, `*requiresd`나 `**optional`과 같이 인자명은 일반 변수와 같이 원하는대로 지정이 가능하다.(관례적으로 `*args`와 `**kwargs`와 같이 관례를 따르는게 좋다.)
+
+
+## 4. 컨테이너 타입의 데이터를 Unpacking 할 때
+
+- *는 컨테이너 타입의 데이터를 unpacking하는 경우에도 사용될 수 있다. 이는 3번과 유사한 원리로, 종종 사용할만한 기능(연산)이다. 가장 쉬운 예로, `list`나 `tuple` 또는 `dict`형태의 데이터를 가지고 있고 어떤 함수가 가변인자를 받는 경우에 사용할 수 있다.
+
+  ```python
+  from functools import reduce
+  
+  primes = [2,3,5,7,11,13]
+  ```
