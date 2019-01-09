@@ -30,12 +30,13 @@ print(my_abs(3+4j),my_abs(0.0),my_abs(-5))
 def my_all(x):
     for i in x:
         if bool(i) == False:
-            return False
-        	break
-   		else:
-            return True
+            result = False
+            break
+        else:
+            result = True
+    return result
 print(my_all([1, 2, 5, '6']))
-print(my_all([[], 2, 5, '6']))
+print(my_all([0, 2, 5, 1]))
 ```
 
 ### any(x)
@@ -46,13 +47,15 @@ print(my_all([[], 2, 5, '6']))
 
 ```python
 def my_any(x):
-    if False in x:
-        return False
-    else:
-        return True
-
+    for i in x:
+        if bool(i) == True:
+            result = True
+            break
+        else:
+            result = False
+    return result
 print(my_any([1, 2, 5, '6']))
-print(my_any([[], 2, 5, '6']))
+print(my_any([0, 2, 5, '6']))
 ```
 
 ### bin(x) - 난이도 높음

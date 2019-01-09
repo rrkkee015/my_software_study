@@ -301,7 +301,7 @@ def my_max(*args):
             result = value
         else:
             if result < value:
-                result = result
+                result = value
    	return result
 ```
 
@@ -375,6 +375,8 @@ print(user(**my_account))
   - `B`uilt-in scope : 파이썬안에 내장되어 있는 함수 또는 속성
 
 > 만약 str을 변수로 쓰면?
+
+- `str=4`를 선언한 뒤
 
 - `str()` 코드가 실행되면
 - str을 Global scope에서 먼저 찾아서 `str=4`를 가져오고

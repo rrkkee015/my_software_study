@@ -610,4 +610,29 @@ def leehyolee(sys):
   1 2 3 #값은 keys로 받지만 뱉는건 values 값을 뱉는 것을 유의하자.
   ```
 
+- map, filter, reduce
 
+  ```python
+  #map
+  result = list(map(lambda x:x**2, range(1, 11)))
+  [1, 4, 9, 16, 25, 36, 49, 64 ,81, 100]
+  #밑에 식과 같다.
+  result = [(lambda x:x**2)(i) for i in range(1, 11)]
+  ```
+
+  ```python
+  #filter
+  result = [1, 4, 9, 16, 25, 36, 49, 64 ,81, 100]
+  filter_result=list(filter(lambda x : x< 50, result))
+  [1, 4, 9, 16, 25, 36, 49]
+  ```
+
+  ```python
+  #reduce
+  from functools import reduce #reduce는 이거 해줘야한다.
+  reduce_result = reduce(lambda x,y: x+y,result)
+  385
+  
+  reduce_result = reduce(lambda x,y: if x<y else y, result)
+  1
+  ```
