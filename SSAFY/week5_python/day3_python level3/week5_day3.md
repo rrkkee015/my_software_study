@@ -197,6 +197,14 @@ print(positive_sum([-1, -2, -3, -4]))
 
 def positive_sum(x):
     return int(sum(filter(lambda a: a>0, x)))
+
+#선생님 방법
+def positive_sum(numbers):
+    sum = 0
+    for i in numbers:
+        if i > 0:
+            sum += i
+    return sum
 ```
 
 ### Collatz
@@ -233,6 +241,14 @@ print(collatz(6))
 print(collatz(16))
 print(collatz(27))
 print(collatz(626331))
+
+#선생님 방법
+def collatz(num):
+    for i in range(500):
+        num = num / 2 if num % 2 ==0 else num * 3 + 1
+        if num == 1:
+            return i + 1
+    return -1
 ```
 
 ### 솔로 천국 만들기
@@ -255,6 +271,25 @@ def lonely(x):
         else:
             count +=1
     return x
+print(lonely([1, 1, 3, 3, 0, 1, 1]))
+print(lonely([4,4,4,3,3]))
+
+#선생님 방법
+def lonely(numbers):
+    result = []
+    for n in numbers:
+        if not result or result[-1] != n:
+            result.append(n)
+    return result
+
+def lonely(numbers):
+    result = []
+    for idx, n in enumerate(numbers):
+        if idx == 0:
+            result.append(n)
+        elif result[-1] != n:
+            result.append(n)
+    return result
 print(lonely([1, 1, 3, 3, 0, 1, 1]))
 print(lonely([4,4,4,3,3]))
 ```

@@ -32,6 +32,16 @@
 
   123456 이렇게 한 줄로 출력된다
 
+  ```python
+  def add(*args):
+      result = 0
+      for idx, num in enumerate(args,1): #1이 있어서 idx가 1부터 시작한다.
+          result += idx * num
+      return result
+  ```
+
+- 기존의 index 디폴트가 0으로 되어있는데, 이렇게 하면 1부터 시작한다.
+
 - reverse() 얘 reverse 한 값을 주는게 아니라 그냥 바꿔주는 애다. x.reverse() 하더라도 출력 해주는 값은 없다. 그걸 주의하도록
 
 ```python
