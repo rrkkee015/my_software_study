@@ -24,6 +24,13 @@ if n == 0:
     return 1:
 else:
     return n x f (n-1)
+
+def df(x):
+    if x != 0 :
+        return x*df(x-1)
+    else:
+        return 1
+print(df(5))
 ```
 
 > 5가 들어왔다고 치면 5 x f(4) ==> 5 x 4 x f(3) ==> 5 x 4 x 3 x f(2) ==> 5 x 4 x 3 x 2 x f(1) ==> 5 x 4 x 3 x 2 x 1 x f(0) ==> 5 x 4 x 3 x 2 x 1 x 1

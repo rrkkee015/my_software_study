@@ -18,6 +18,17 @@ def my_abs(x):
         else:
             return x
 print(my_abs(3+4j),my_abs(0.0),my_abs(-5))
+
+def my_abs(x):
+    if type(x) == type(1j):
+        return round((x.imag**2 + x.real**2)**(1/2),2)
+    else:
+        if x<0:
+            return x*(-1)
+        return x
+print(my_abs(19))
+print(my_abs(-10))
+print(my_abs(4+4j))
 ```
 
 ### all(x)
@@ -37,6 +48,19 @@ def my_all(x):
     return result
 print(my_all([1, 2, 5, '6']))
 print(my_all([0, 2, 5, 1]))
+
+def my_all(x):
+    result = True
+    for i in x:
+        if bool(i) == False:
+            result = False
+            break
+        else:
+            result = True
+    return result
+print(my_all([1,2,4,'6']))
+print(my_all([[],2,4,'1']))
+print(my_all([2,4,0,'1']))
 ```
 
 ### any(x)
@@ -56,6 +80,20 @@ def my_any(x):
     return result
 print(my_any([1, 2, 5, '6']))
 print(my_any([0, 2, 5, '6']))
+
+def my_all(x):
+    result = True
+    for i in x:
+        if bool(i) == True:
+            result = True
+            break
+        else:
+            result = False
+    return result
+print(my_all([1,2,4,'6']))
+print(my_all([[],2,4,'1']))
+print(my_all([2,4,0,'1']))
+print(my_all([0,0,0,0]))
 ```
 
 ### bin(x) - 난이도 높음
@@ -76,6 +114,16 @@ def my_bin(x):
     return "0b{}".format(int(''.join(result)))
 
 print(my_bin(10))
+def my_bin(x):
+    result=[]
+    while x>0:
+        result.append(x%2)
+        x=x//2
+    return "0b{}".format(int(''.join(list(map(str,reversed(result))))))
+
+print(my_bin(10))
+print(my_bin(16))
+
 ```
 
 ### 종합소득세 계산하기
@@ -122,6 +170,14 @@ def tax(won):
     return result
 
 print(tax(1100))
+
+def tax(n):
+    return n*0.06 if 1200>=n else (72 + (n-1200)*0.15 if 4600>= n else (72 + 510 + (n-4600)*0.35 if n>4600 else 0))
+    return n
+
+print(tax(1200))
+print(tax(4600))
+print(tax(5000))
 ```
 
 ### 카쉐어링 요금 계산하기
@@ -162,6 +218,14 @@ def fee(x,y):
 print(fee(600, 50))
 print(fee(600, 110))
 
+import math
+def fee(a,b):
+    b=100*170 + (b-100)*85 if b>100 else b*170
+    a = 120*600 + math.ceil(600/30)*525
+    return a+b
+print(fee(600,50))
+print(fee(600,110))
+
 #성진이 답변
 def fee(minute,distance):
     result = minute * 1200 + ((minute-1)//30 + 1) *525
@@ -192,6 +256,12 @@ def positive_sum(x):
 
 print(positive_sum([1,-4,7,12]))
 print(positive_sum([-1, -2, -3, -4]))
+
+def positive_sum(x):
+    return sum([i for i in x if i > 0])
+
+print(positive_sum([1,-4,7,12]))
+print(positive_sum([-1,-4,-7,-12]))
 
 #성진이 방법
 
@@ -242,6 +312,13 @@ print(collatz(16))
 print(collatz(27))
 print(collatz(626331))
 
+def collatz(x):
+    for i in range(0,500):
+        x = x*3+1 if x%2 else x/2
+        if x == 1:
+            return i+1
+    return -1
+
 #선생님 방법
 def collatz(num):
     for i in range(500):
@@ -271,6 +348,14 @@ def lonely(x):
         else:
             count +=1
     return x
+print(lonely([1, 1, 3, 3, 0, 1, 1]))
+print(lonely([4,4,4,3,3]))
+
+def lonely(x):
+    for i in range(0,len(x)-1):
+        if x[i] == x[i+1]:
+            x[i] = ''
+    return [i for i in ''.join(list(map(str,x)))]
 print(lonely([1, 1, 3, 3, 0, 1, 1]))
 print(lonely([4,4,4,3,3]))
 
