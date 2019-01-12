@@ -59,7 +59,7 @@ print(":".join(a))
 
 바꿀 대상 글자를 새로운 글자로 바꿔서 반환합니다.
 
-count를 지정하면 해당 갯수만큼만 시행합니다.
+count를 지정하면 해당 갯수만큼만 시행합니다. (왼쪽에서부터)
 
 ```python
 a = "Hello World"
@@ -94,9 +94,9 @@ oh!  #왼쪽 공백이 있음
 
 #### 탐색 및 검증
 
-**`.find(x)`** : x의 첫 번째 위치를 반환합니다. 없으면, -1을 반환합니다.
+**`.find(x)`** : x의 첫 번째 위치를 반환합니다. 없으면, **-1**을 반환합니다.
 
-**`.index(x)`** : x의 첫 번째 위치를 반환합니다. 없으면, 오류가 뜹니다.
+**`.index(x)`** : x의 첫 번째 위치를 반환합니다. 없으면, **오류**가 뜹니다.
 
 ```python
 a='apple'
@@ -114,7 +114,7 @@ print(a.index('p'))
 
 #### 다양한 확인 메소드 : 참/거짓 반환
 
-> .isalpha(), .isdecimal(), .isdigit(), .isnumeric(), .isspace(), .issuper(), .istitle(), .islower()
+> **.isalpha()**, .isdecimal(), .isdigit(), .isnumeric(), .isspace(), .issuper(), .istitle(), **.islower()**,**.isupper()**
 
 **`split()`**
 
@@ -356,7 +356,7 @@ print(copy_ab)
 
   num = [1, 2, 3]
 
-- 위와 같이 변수를 생성하면 um이라는 객체를 생성하고, 변수에는 객체의 주소가 저장됩니다.
+- 위와 같이 변수를 생성하면 num이라는 객체를 생성하고, 변수에는 객체의 주소가 저장됩니다.
 
 - 변경가능한(mutable) 자료형과 변경불가능한(immutable) 자료형은 서로 다르게 동작합니다.
 
@@ -497,10 +497,9 @@ print(result)
 1. list comprehension만 사용해보세요.
 
 ```python
-words = 'Life is too short, you need python!'
-li = "aeiou"
-result = [i for i in words if i not in li]
-print("".join(result))
+def df(a):
+    return ''.join(i for i in a if i not in 'aeiou')
+print(df('Life is too short, you need python!'))
 ```
 
 ```python
