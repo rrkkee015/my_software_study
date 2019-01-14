@@ -282,7 +282,7 @@ for idx, num in enumerate(numbers):
 
 - `else`
 
-  - `else`문은 끝까지 반복문을 시행한 이후에 실행됩니다. (`break`를 통해 중간에 종료되면 실행 안함)
+  - `else`문은 반복문을 끝까지 시행한 이후에 실행됩니다. **(`break`를 통해 중간에 종료되면 실행 안함)**
 
     ```python
     #break가 안되는 상황을 만들어보자
@@ -292,7 +292,8 @@ for idx, num in enumerate(numbers):
         	break
     else:
         print("break 안됨.")
-        
+    #결과값
+    break 안됨.
         
     #break가 되는 상황을 만들어보자
     for i in range(3):
@@ -301,5 +302,6 @@ for idx, num in enumerate(numbers):
         break
     else:
         print("break 안됨.")
+    #결과값 없음
     ```
 

@@ -34,3 +34,24 @@
    greeting이 호출되면, 아래와 같이 문자열을 반환한다.
 
 ![](image/7.png)
+
+```python
+#Person 클래스를 정의하자
+class Person:
+    def __init__(self,name,age=0):
+        self.name=name
+        self.age=age
+#greeting() 메서드를 만들자.
+    def greeting(self):
+        return f'안녕하세요. {self.name}입니다. {self.age}살입니다'
+    
+#이름은 '홍길동', 나이가 20인 p1 인스턴스 객체를 만들어보자
+p1=Person('홍길동',20)
+#이름은 '둘리', 나이가 0인 p2 인스턴스 객체를 만들어보자
+p2=Person('둘리')
+
+print(p1.greeting())
+print(p2.greeting())
+```
+
+![](image/1.png)
