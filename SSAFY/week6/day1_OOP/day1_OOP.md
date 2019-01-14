@@ -4,11 +4,11 @@
 
 - 온라인으로 시험을 봅니다.
 
-- 이제는 git lab을 쓸겁니다. (git hub와 같이 써야함) 귀찮은게 `pusy` 두 번 해야함
+- 이제는 git lab을 쓸겁니다. (git hub와 같이 써야함) 귀찮은게 `push` 두 번 해야함
 
 - github는 origin(origin master 기억하시죠? github의 별명임)이고 gitlab은 second임
 
-- gitlab에서 `git remote rename origin old-origin` origin 말고 `lab`으로 별명을 지어주자
+- gitlab에서 `git remote rename *origin* old-origin` `origin` 말고 `lab`으로 별명을 지어주자
 
 - git init 된 폴더에서 아래와 같이 작성하자
 
@@ -83,6 +83,11 @@ c:\Users\student\scripts\hello.bat
 2. 이렇게 하고 `windows + R`에서 `hello`를 하면 앞서 했던 url 웹 창이 뜬다.
 
 3. `hello.bat`에서 문장 앞에 @를 붙이면 프롬포터가 깔끔해진다.
+
+   ```python
+   @python c:\Users\student\scripts\hello.py %*
+   @pause
+   ```
 
    ![](image/2.png)
 
@@ -242,7 +247,7 @@ c:\Users\student\scripts\hello.bat
    __main__
    ```
 
-   하지만 `b.py`를 실행하면 아래와 같이 결과값이 뜬다.
+   하지만 `b.py`를 실행하면 아래와 같이 결과값이 뜬다. (`a.py` 내부에 있는 `print(__name__)`을 실행했을 때)
 
    ```python
    a #파일 이름임
@@ -266,7 +271,7 @@ c:\Users\student\scripts\hello.bat
 - 컴퓨터는 저장, 계산 밖에 못한다. 얘들한테 지시를 하는게 프로그래밍이다. 프로그래밍의 3형식이 있는데 아래와 같다.
   - 저장
   - 계산 - 조건, 반복
-  - 저장, 조건, 반복 = Turing complexe (튜링 완전 언어)
+  - **저장, 조건, 반복** = Turing complexe (튜링 완전 언어)
 - 옛날에는 이 3가지로 다 해결 가능한데 오늘 날에는 그렇지가 않다. 왜냐면 오늘날엔 제공해야할 서비스가 너무 많고 인간은 생각할 때 알고리즘대로 생각하지 않기 때문이다. 그렇기 때문에 최대한 인간이 보기 간편한 것이 필요하다.
   - 그러기 위해선 주어(주부,Subject)와 동사((서)술부, Predicate)로만 표현하는 것이 좋다.
   - 프로그램으로 말하면 **Object & Method** (어떤 Object(주어)가 Method(동사,**행위**)하다)
@@ -558,7 +563,7 @@ print(cr)
 
 ```python
 cr.greeting() #하면 결과값대로 인사할 것인데
-Person.greeting(cr) #해도 결과값이 똑같다.
+Person.greeting(cr) #해도 결과값이 똑같다. 이걸 사용하려면 매개변수의 오브젝트 타입이 person클래스와 같거나 하위 개념이여야 한다.
 ```
 
 ---
