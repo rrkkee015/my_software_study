@@ -15,3 +15,7 @@ if k%2!=0:
     print('{}/{}'.format(1+(x-n),k-(x-n)))
 if k%2==0:
     print('{}/{}'.format(k-(x-n),1+(x-n)))
+#a=1+(x-n)
+#b=k-(x-n)
+#print('{}/{}'.format(*((a,b if k%2 else b,a))))
+#이렇게하면 언패킹되서 각각 들어간다.
