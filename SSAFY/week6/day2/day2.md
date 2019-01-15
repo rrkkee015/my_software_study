@@ -17,7 +17,7 @@
   ```python
   from tkinter import * #*는 쓰면 안되지만 오늘만 쓰도록 하자
   
-  root = Tk()
+  root = Tk() #Tk()를 통해서 객체를 만들었다.
   
   label = Label(root, text="Hello") #Label(어떤 tkinter 윈도우/프로그램에 넣을지, text="")
   								  #클래스에 써서 하나의 instance를 만들었다.
@@ -65,7 +65,7 @@
       
   root = Tk()
   
-  label = Label(root, text="Hello")
+  label = Label(root, text="Hello",fg="green",bg="blue")#fg는 폰트색, bg는 배경색
   label2 = Label(root, text="Dong hun widget")
   
   btn = Button(root, text="This is a button", command=browser) #3번째 인자로 command를 넣을 수 있다.
@@ -78,27 +78,6 @@
   ```
 
   근데 위젯 키려면 내가 파이썬 들어와서 하기 너무 귀찮다. 그래서 배치 스크립트를 만들어 볼 것이다.
-
-  ```python
-  from tkinter import *
-  import webbrowser
-  
-  def browser():
-      webbrowser.open("https://www.naver.com")
-      
-  root = Tk()
-  
-  label = Label(root, text="Hello",fg="green",bg="blue")#fg는 폰트색, bg는 배경색
-  label2 = Label(root, text="Dong hun widget")
-  
-  btn = Button(root, text="This is a button", command=browser)
-  
-  label.pack()
-  btn.pack()
-  label2.pack()
-  
-  root.mainloop()
-  ```
 
   ----
 
@@ -141,7 +120,7 @@
   add_two=add #이러면 add_two가 선언된 add 함수 주소를 찾아가게 된다.
   add_two(5,2) #실제로 돌아간 함수는 add이다.
   
-  #결론 : 가르치는 함수 명이 있으면 괄호 없이 인자로 사용이 가능하다. (주소를 가르킨다)
+  #결론 : 가르키는 함수 명이 있으면 괄호 없이 인자로 사용이 가능하다. (주소를 가르킨다)
   #호출은 괄호()가 해주는 것이다. (일을 시킨다)
   ```
 
@@ -163,7 +142,8 @@
       func()
       
   print(greeter(hello))
-  #이러면 None / greeter 함수에 return이 없으니까
+  #이러면 결과는 None
+  #greeter 함수에 return이 없으니까
   
   def hello():
       return "hello"
@@ -184,6 +164,13 @@
   print(hi())
   hi
   #이렇게 해도 출력이 된다
+  hi = lambda a : "hi"
+  print(hi())
+  #결과
+  Error
+  print(hi(1))
+  #결과
+  hi
   ```
 
 - map 함수를 직접 만들어보자
@@ -226,6 +213,17 @@
   
   print(my_filter(lambda x: x%2, [1,2,3,4,5])) #짝수만 출력함
   print(my_filter(is_even,[1,2,3,4,5])) #홀수만 출력함
+  
+  #틀린코드
+  def my_filter(func,input_list):
+      result = []
+      for i in input_list:
+          if func(i) == True:
+              result.append(func(i)) #func(i) => i로 바꿔야함
+      return result
+  print(my_filter(lambda a : a>20,[11,25,40,30,19]))
+  #결과
+  [True, True, True]
   ```
 
 - 다른 애를 만들어보쟈
@@ -281,7 +279,9 @@
 
 - 인스턴스의 어트리뷰트(인스턴스에 속한 변수들)가 변경되면, 변경된 데이터를 인스턴스 객체 이름 공간에 저장한다. (즉, 다른 인스턴스 변수는 변하지 않는다.)
 
-- 즉, 인스턴스에서 특정한 어트리뷰트에 접근하게 되면 인스턴스 -> 클래스 순으로 탐색을 한다. (아래 예시 참고 '호날두'), 인스턴스 스스로가 가지고 있지 않으면 인스턴스를 찍어낸 클래스를 탐색하게된다. 있다면 (`def __init__` 안에 있겠지?)
+  > 무조건 인스턴스 내에 변수 선언이 되었다고 어트리뷰트가 아니고 그 인스턴스의 속성으로 꺼내올 수 있는 친구들이 어트리뷰트이다. (Person.age, Person.name 이런식으로 접근이 가능한 애들)
+
+- 즉, 인스턴스에서 특정한 어트리뷰트에 접근하게 되면*(이런 식으로 (Person.age))* 인스턴스 -> 클래스 순으로 탐색을 한다. (아래 예시 참고 '호날두'), 인스턴스 스스로가 가지고 있지 않으면 인스턴스를 찍어낸 클래스를 탐색하게된다. (있다면 `def __init__` 안에 있겠지?)
 
   ```python
   name = '?'
@@ -421,9 +421,15 @@
   
   print(Person.population)
   print(cr.population)
+  print(me.population)
+  print(you.population)
+  
   #결과
   10
-  11 #왜냐면 
+  11
+  11
+  11
+  11
   ```
 
   ```python
@@ -497,16 +503,16 @@ del hong
 ```python
 class Person:
     def __init__(self, name):
-        print('사람이 생성되었습니다.')
-        self.naem = name
+        self.name = name
+        print(f'{self.name}이 생성되었습니다.')
     def __del__(self):
-        print('사람이 죽었습니다.')
+        print(f'{self.name}이 죽었습니다.')
 cr = Person('호날두')
 cr = Person('우리흥')
 #결과
-사람이 생성되었습니다.
-사람이 생성되었습니다.
-사람이 죽었습니다. #del 한적이 없는데..? 왜냐면 겹쳐서 하나가 없어진거다. '호날두'가 사라진거임
+호날두이 생성되었습니다.
+우리흥이 생성되었습니다.
+호날두이 죽었습니다. #del 한적이 없는데..? 왜냐면 겹쳐서 하나가 없어진거다. '호날두'가 사라진거임
 ```
 
 *지금 굳이 소멸자까지는 할 필요가 없지만, 장고 배우면 그 때 써야한다.*
@@ -580,7 +586,7 @@ class Person:
     population = 0
     def __init__(self,name="no name"): 
         self.name = name
-        self.population += 1
+        Person.population += 1
         print(f'인구가 증가하여 {Person.population}명이 되었습니다.')
         
     def __del__(self):
@@ -589,17 +595,31 @@ class Person:
         
     def greeting(self):
         print(f'안녕하세요 저는 {self.name}입니다.')
-john = Person('john')
-print(jon.greeting())
-#결과
-안녕하세요 저는 john입니다.
 
-Person.greeting()
+john = Person('john')
+print(john.greeting())
+#결과
+인구가 증가하여 1명이 되었습니다.
+안녕하세요 저는 john입니다.
+None
+
+Person.greeting() #인스턴스로 메서드를 호출할 땐 self자리에 인스턴스가 자동으로 들어가는데 Class 명으로 접근을 하면 self 자리에 자동으로 인스턴스를 자동으로 넣어주지 못해서 작동하지 않는다.
 #결과
 Error
 Person.greeting(john) #얘는 왜 될까?
 #결과
 안녕하세요 저는 john입니다.
+```
+
+> 중요한 고민 중 하나였던 왜 Person.greeting()과 Person.greeting(john)의 차이 비유
+
+```python
+#간단하게 생각하자
+#Person.greeting() 얘와 Person.greeting(john)의 차이는
+#str.upper()과 str.upper('abc')와 같다. 우리는 전자와 같이 쓰지 않는다 후자와 같이 쓰던가
+#아니면 'abc'.upper() 이렇게 쓰지
+
+#즉, 객체.메서드() 이렇게 써야하고 클래스.메서드(객체) 이런 방식으로 써야한다 !!
 ```
 
 ```python
@@ -612,7 +632,7 @@ class Dog:
         Dog.num_of_dogs +=1
 
     def bark(self):
-        print(f'멍멍, 저는 {self.name}, {self.age}살 입니다.')
+        print(f'멍멍, 저는 {self.name}, {self.age} 입니다.')
 
 puppy = Dog('멍멍이','1살')
 poodle = Dog('보송이','3살')
@@ -638,19 +658,23 @@ class Dog:
         print(f'멍멍, 저는 {self.name}, {self.age}살 입니다.')
         
     @staticmethod #만약에 이게 없으면 puppy.info()가 Error가 뜬다.
-   	def info(): #self를 넣지 않은 메소드 이런 애들은 static 메소드이다. 위에다가 @staticmethod라고 써주는 것이 관례이다.(없어도 됨)
-        print("강아지입니다.")
+   	def info(): #self를 넣지 않은 메소드 이런 애들은 static 메소드이다.
+        print("강아지입니다.") #클래스에 대한 아주 일반적인 정보를 담을 때 사용한다.
 
 puppy = Dog('멍멍이','1살')
 poodle = Dog('보송이','3살')
 nurung = Dog('누렁이','5살')
 
-print(Dog.info())
-print(puppy.info())
+Dog.info()
+puppy.info()
 #결과
 강아지입니다.
 강아지입니다.
 ```
+
+> 약간 스태틱 메소드는 클래스가 하도 인스턴스(객체) 지들이 self 붙은 메소드 속에서 지들끼리 노니까 샘이 났음 그래서 혼자 놀려고 안에 self를 한 놈 빼버림 근데 혼자 놀다보니 외롭고해서 같이 공용으로 쓸 수 있는 @staticmethod 간판을 달아서 인스턴스(객체)를 초대해서 놀려고 했음. 그래서 둘다 안에 내용물이 없어도 쓸 수 있다.
+
+> 클래스 메소드는 인스턴스, 객체가 지들끼리 puppy.eat() 이러고 놀기 너무 미안한거야 왜냐면 클래스는 항상 자기 데리고 가서 놀아야하니까 귀찮기도 하고 Dog.eat(puppy) 그래서 어떻게 이걸 해결 해줄까 하다가 간판을 붙힌거지 @classmethod라고 여기는 너가 혼자 입장해도 괜찮을 거라고 알려주는 곳이다.
 
 - 클래스 메서드와 인스턴스 메서드의 차이점
 
@@ -666,12 +690,12 @@ class Dog:
     def bark(self):
         print(f'멍멍, 저는 {self.name}, {self.age}살 입니다.')
         
-    @staticmethod  
+    @staticmethod #@는 데코레이터라고 한다.
    	def info(): #인자가 필요없다.
         print("강아지입니다.")
         
     @classmethod #클래스 메서드가 있으면 Dog.count()를 불러도 앞에 클래스 인자를 자동으로 생성해줘서 Dog.count(Dog)로 실행이 된다.
-    def count(cls): #class는 예약어라 못 쓰니까 cls로 쓴거다. 사실 뭐가 되든 상관없다. 클래스 메서드이다.
+    def count(cls): #class는 예약어라 못 쓰니까 cls로 쓴거다. 사실 뭐가 되든 상관없다. 클래스 메서드이다. 
         #print(Dog.num_of_dogs)라고 접근을 이전에 했었다. 하지만 이젠 다르다 !
 		print(f'{cls.num_of_dogs}마리 생존중')
         
@@ -695,6 +719,7 @@ Dog.count() #내용물 없어도 상관없다. 파이썬이 알아서 classmetho
 - 클래스 메서드 : 첫번째 인자로 **클래스**를 받는 메서드
 
   ```python
+  @classmethod
   class Person:
       #클래스 메서드
       def count(cls): #첫 번째 인자로 들어가는 친구가 클래스이다.
@@ -704,9 +729,55 @@ Dog.count() #내용물 없어도 상관없다. 파이썬이 알아서 classmetho
 
   ```python
   #인자로 아무것도 받지 않는 메서드 (데이터 조작을 하지 않는 함수/ 메서드)
+  @staticmethod
   class Person:
       def info():
   ```
+
+> 내가 짠 인스턴스, 클래스, 스테틱 메소드 예시 코드
+
+```python
+# #붙은 애들 전부 에러
+class Dog:
+    nums=0
+    def __init__(self, name, age):
+        self.age = age
+        self.name = name
+        Dog.nums += 1
+    
+    def bark(self):
+        print(f'멍멍 나는 {self.name}이고, {self.age}살 입니다.')
+    @staticmethod    
+    def info():
+        print(f'이 친구는 강아지입니다.')
+    @classmethod
+    def count(cls):
+        print(f'총 강아지 수는 {cls.nums}마리 입니다.')
+        
+york=Dog('요크',4)
+poodle=Dog('푸들',7)
+maltiz=Dog('말티즈',2)
+
+york.bark()
+poodle.bark()
+maltiz.bark()
+#Dog.bark()
+Dog.bark(york)
+#york.info()
+#poodle.info()
+#maltiz.info()
+
+Dog.info()
+york.info() #static이 붙기 전엔 얘가 안됐음
+
+york.count() #된다.
+#Dog.count(york) #class가 붙기 전엔 얘가 안됐음
+#Dog로 클래스를 첫번째 인자로 집어넣었는데 york 하나 더 있네? 
+#근데 걔는 넣을 곳이 없다. 그래서 에러
+Dog.count() 
+```
+
+
 
 ```python
 # 아래에 코드를 작성해주세요.
@@ -1032,6 +1103,7 @@ s1.greeting()
 > Teacher 클래스를 만들어보고 Student와 Teacher 클래스에 각각 다른 행동의 메소드들을 하나씩 추가해봅시다.
 
 ```python
+# 아래에 코드를 작성해주세요.
 class Person:
     def __init__(self, name, age, email):
         self.name=name
@@ -1044,8 +1116,6 @@ class Person:
         return f'{self.name} 먹는다.'
     def age(self):
         return f'{self.age} 살이다.'
-
-    def __gt__(self, obj): #작냐, 크냐가 중요한게 아니고 만약 작거나 크거나 비교를 했을 때 무엇을 반환을 하게 만드는지를 만드는 것이 이 놈이다.
         
     
 class Student(Person):
@@ -1066,7 +1136,9 @@ class Teacher(Person):
     
 donghun = Student('donghun',27,'pok_winter@naver.com',100)
 sungjin = Teacher('sungjin',25,'sungjin@naver.com','개쌤')
-print(donghun>sungjin)
+
+donghun.study()
+sungjin.teach()
 ```
 
 ### 실습2
@@ -1078,6 +1150,37 @@ print(donghun>sungjin)
 > 변수나, 메소드는 자유롭게 만들어봅시다.
 
 ```python
+# 아래에 코드를 작성해주세요.
+class Animal:
+    def __init__(self, legs, power, species):
+        self.legs=legs
+        self.power=power
+        self.species=species
+        print(f'{self.species} 탄생 !')
+    
+    def eat(self):
+        return f'{self.species} 먹는다.'
+    def sleep(self):
+        return f'{self.species} 잔다.'
+    
+class Person(Animal):
+    def __init__(self, legs, power, species, clothes):
+        self.legs=legs
+        self.power=power
+        self.species=species
+        self.clothes=clothes
+        print(f'{self.species} 탄생 !')
+    
+    def kill(self,x):
+        return f'{self.species}은 {x.species}를 죽인다 ㅠ'
+    
+hapu = Animal(3,60,'hapu')
+human = Person(2,40,'human','blue')
 
+human.kill(hapu)
+#결과
+동물탄생 !
+사람탄생 !
+human은 hapu를 죽인다 ㅠ
 ```
 
