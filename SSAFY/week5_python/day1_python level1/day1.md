@@ -31,6 +31,19 @@
   type(str(5))
   #결과
   'str' object is not callable
+  
+  class Person:
+      def __init__(self, name):
+          self.name=name
+  
+      def sleep(self):
+          print(f'{self.name}')
+  
+  person1=Person('donghun')
+  type(Person('donghun'))
+  Person=1
+  type(Person('donghun'))
+  #위에 예랑 똑같다.
   ```
 
   *이러면 내가 선언한 변수가 우선순위가 더 높아짐*

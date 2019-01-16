@@ -866,7 +866,7 @@ cal.add(5, 3)
 
 class Person:
     def __init__(self, name, age, asset, height, gpa):
-        self.naem = name
+        self.name = name
         self.age = age
         self.asset = asset
         self.height = height
