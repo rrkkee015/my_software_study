@@ -1,0 +1,60 @@
+<총 25문제, 객관식 + 주관식>
+
+<전체 진도, 중요한 내용은 ★>
+식별자
+인코딩 선언
+주석
+코드 라인
+자료형
+- 수치형 type() 정수, 실수, 복소수
+- Bool
+- 문자열, 이스케이프 문자열★ (필요한 이스케이프 문자열)
+연산자
+- 비교 연산자
+- 논리 연산자
+형변환
+- 기초 형변환
+- 명시적 형변환
+시퀀스 자료형, 불변값★ (불변값 나열하기)
+- 리스트, 인덱스★ (인덱스 몇 번까지할지 혹은 결과 예측)
+- 튜플
+- 레인지★ (결과 예측하기)
+- 문자열
+- 바이너리
+조건문 ★ (결과 예측하기)
+- 조건 표현식
+반복문 ★ (결과예측하기)
+함수 ★ (함수 정의하기, 빈칸 채우기)
+- 기본값
+- 키워드 인자
+- 가변 인자 *args ★
+- 정의되지 않은 인자들 **kwargs ★
+이름 공간 및 스코프
+재귀함수 ★ (빈칸에 들어갈 내용? 결과?)
+문자열 메소드 활용하기
+- 변형 capitalize, title, upper, lower, swapcase, join, replace, strip
+- 탐색 및 검증 find
+- 참 거짓 isalpha, isdecimal, isdigit, isnumeric, isspace, issuper, istitle, islower
+- split()
+리스트 메소드 활용하기
+- 값 추가 삭제 append, extend, insert, remove, pop
+- 탐색 및 정렬 index, count, sort, reverse
+- 복사 = 는 얕은 복사, import copy후 copy.deepcopy(대상)은 깊은 복사 ★
+- 삭제 리스트이름.clear()
+- List Comprehension ★
+딕셔너리 메소드 활용
+- 추가 및 삭제 pop, update, get
+- dictionary comprehension
+- map, zip, filter ★
+세트 메소드 활용
+- 추가 및 삭제 add, update, remove, discard, pop
+OOP
+- 클래스, 메소드, 인스턴스 개념 ★
+ex) sorted()와 .sort()의 다른 점 2 가지 결과를 반환하지 않고, 원본 데이터를 건드린다. ★
+- 클래스 -인스턴스 간의 이름 공간 ★
+- 생성자 / 소멸자
+- 클래스 변수 / 인스턴스 변수 ★
+- 정적 메서드 / 클래스 메서드 ★
+- 연산자 오버로딩
+- 상속 ★
+오버라이딩, super()
