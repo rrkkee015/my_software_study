@@ -211,12 +211,14 @@ greeting(27,'동훈')
 greeting(name='동훈', age=27) #age=27이 뒤에 있어야함
 greeting(27, name='동훈')
 greeting(27)
+greetubg('동훈',age=27) #얘도 된다.
 greeting(age=27,'동훈') #age=27이 뒤에 있어야 함
 
 동훈는 27살입니다
 동훈는 27살입니다
 동훈는 27살입니다
 ssafy는 27살입니다.
+동훈는 27살입니다
 Error
 ```
 
@@ -333,7 +335,7 @@ def func(**kwargs):
 ```
 
 ```python
-def my_fake_dict(**args):
+def my_fake_dict(**args): #packing
     return args
 
 my_fake_dict(한국어='안녕', 영어='hi', 독일어='Guten Tag')
@@ -356,11 +358,22 @@ def user(username, password, password_confirmation):
         return "{} 회원가입 완료".format(username)
     else:
         return "다시 입력하세여"
+   
+def user(username,password,password_confirmation):
+    if password == password_confirmation:
+        return f"{username} 회원가입 완료"
+    else:
+        return f"다시 시도 부탁드립니다."
+user(username="한동훈",password='0901',password_confirmation='0901')
 ```
 
 ```python
-my_account = {'username':'rrkkee015','password':'1234','password_confirmation':'1234'}
-print(user(**my_account))
+def user(password,password_confirmation,username):
+    if password == password_confirmation:
+        return f"{username} 회원가입 완료"
+    else:
+        return f"다시 시도 부탁드립니다."
+user(**{'username':'rrkkee015','password':'1234','password_confirmation':'1234'})
 ```
 
 ---
