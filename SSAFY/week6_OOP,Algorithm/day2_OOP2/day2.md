@@ -734,6 +734,43 @@ Dog.count() #내용물 없어도 상관없다. 파이썬이 알아서 classmetho
       def info():
   ```
 
+- 클래스와 스태틱 메서드의 차이
+
+  ```python
+    class Language:
+        default_language = "English"
+      
+        def __init__(self):
+            self.show = '나의 언어는' + self.default_language
+      
+        @classmethod
+        def class_my_language(cls):
+            return cls()
+      
+        @staticmethod
+        def static_my_language():
+            return Language()
+      
+        def print_language(self):
+            print(self.show)
+      
+      
+    class KoreanLanguage():
+        default_language = "한국어"
+  ```
+
+  ```python
+    >>> from language import *
+    >>> a = KoreanLanguage.static_my_language() 
+    >>> b = KoreanLanguage.class_my_language()
+    >>> a.print_language()
+    나의 언어는English
+    >>> b.print_language()
+    나의 언어는한국어
+  ```
+
+### Classmethod와 Staticmethod도 객체에서 접근이 가능합니다 !!
+
 > 내가 짠 인스턴스, 클래스, 스테틱 메소드 예시 코드
 
 ```python
@@ -774,10 +811,8 @@ york.count() #된다.
 #Dog.count(york) #class가 붙기 전엔 얘가 안됐음
 #Dog로 클래스를 첫번째 인자로 집어넣었는데 york 하나 더 있네? 
 #근데 걔는 넣을 곳이 없다. 그래서 에러
-Dog.count() 
+Dog.count()
 ```
-
-
 
 ```python
 # 아래에 코드를 작성해주세요.
