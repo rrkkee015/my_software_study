@@ -1,14 +1,24 @@
 import sys
 sys.stdin=open('sample_input.txt','r')
 
-T=int(input())
-for j in range(1,T+1):
+testcase=int(input())
+
+def my_max(li):
+    result = 0
+    for max_ in li:
+        if result <max_:
+            result =max_
+    return result
+
+def my_min(li):
+    result=li[0]
+    for min_ in li:
+        if result>min_:
+            result=min_
+    return result
+
+for k in range(testcase):
     N=int(input())
-    L=list(map(int,input().split()))
-    for i in range(len(L)-1,0,-1):
-        for k in range(0,i):
-            if L[k] > L[k+1]:
-                L[k], L[k+1] = L[k+1], L[k]
-        r=L[-1]-L[0]
-    print(f'#{j} {r}')
+    ai=list(map(int,input().split()))
+    print(f'#{k+1} {my_max(ai)-my_min(ai)}')
         

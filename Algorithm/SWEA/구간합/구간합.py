@@ -1,11 +1,39 @@
 import sys
 sys.stdin=open('sample_input.txt','r')
 
-t=int(input())
-for i in range(t):
-    n,m=tuple(map(int,input().split()))
-    li=list(map(int,input().split()))
-    result = []
-    for a in range(0,n-m+1):
-        result.append(sum(li[a:a+m]))
-    print(f'#{i+1} {max(result)-min(result)}')
+def my_sum(li):
+    result = 0
+    for i in li:
+        result += i
+    return result
+
+def M_sum(li,M):
+    result=[]
+    for i in range(len(li)-M+1):
+        result.append(my_sum(li[i:i+M]))
+    return result
+
+def my_max(li):
+    result=0
+    for i in li:
+        if result<i:
+            result=i
+    return result
+
+def my_min(li):
+    result = li[0]
+    for i in li:
+        if result>i:
+            result=i
+    return result
+
+def result(li):
+    return my_max(li)-my_min(li)
+
+testcase=int(input())
+
+for test in range(testcase):
+    N,M=tuple(map(int,input().split()))
+    ai=list(map(int,input().split()))
+    li=M_sum(ai,M)
+    print(result(li))

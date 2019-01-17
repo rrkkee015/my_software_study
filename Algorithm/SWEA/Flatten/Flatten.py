@@ -1,13 +1,28 @@
 import sys
 sys.stdin=open('input.txt','r')
 
-for i in range(10):
-    t=int(input())
+testcase=10
+
+def my_max(li):
+    result=0
+    for i in li:
+        if result<i:
+            result=i
+    return result
+
+def my_min(li):
+    result =li[0]
+    for i in li:
+        if result>i:
+            result=i
+    return result
+        
+for test in range(testcase):
+    n=int(input())
     li=list(map(int,input().split()))
-    for i in range(t):
-        if 0<max(li)-min(li)<2:
-            print(max(li)-min(li))
-        else:
-            li[li.index(max(li))]-=1
-            li[li.index(min(li))]+=1
-    print(f'#{i+1} {max(li)-min(li)}')
+    N=0
+    while N!=n:
+        N+=1
+        li[li.index(my_max(li))]=my_max(li)-1
+        li[li.index(my_min(li))]=my_min(li)+1
+    print(f'#{test+1} {my_max(li)-my_min(li)}')
