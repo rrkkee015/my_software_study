@@ -33,4 +33,29 @@
    hi(*[1,2,3])
    ```
 
-5. 
+---
+
+# Week6_day4
+
+- 어제 했었던 조망권 문제 리뷰
+
+  ```python
+  def getMax(idx): #되도록이면 라이브러리를 쓰지말자
+      tmax = heights[idx - 2]
+      
+      if tmax < heights[idx-1]: tmax = heights[idx-1]
+      if tmax < heights[idx+1]: tmax = heights[idx+1]
+      if tmax < heights[idx+2]: tmax = heights[idx+2]
+          
+  TC=10
+  for tc in range(1,TC+1):
+      N=int(input())
+      heights=list(map(int,input().split()))
+      view=0 #얘가 테스트케이스가 끝나면 초기화 해야하는 걸 잊지말자
+      
+      for i in range(2,N-2):
+          side=getMax(i) #i라는 건물 입장에서
+          if side < heights[i]:
+              view += heights[i]-side
+    	print("#%d %d"%(tc, view))
+  ```
