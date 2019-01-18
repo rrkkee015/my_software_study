@@ -391,3 +391,10 @@ print(data["main"]["temp"]) #main에 숨고있는 temp 값을 또 끄집고 나�
     - 즉, git add . (엔터) git commit -m "second commit" (엔터) 여기까지
   - 그 후 git push를 하면 수정된 버전의 자료를 github에 푸시푸시
 
+
+
+
+
+
+
+https://github.com/sspy2/install_python
