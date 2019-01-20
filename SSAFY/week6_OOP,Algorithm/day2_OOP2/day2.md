@@ -200,7 +200,7 @@
   def my_filter(func, input_list):
       result = []
       for i in input_list:
-          if func(i) == i:
+          if func(i) == true:
               result.append(i)
       return result
   
@@ -676,6 +676,8 @@ puppy.info()
 
 > 클래스 메소드는 인스턴스, 객체가 지들끼리 puppy.eat() 이러고 놀기 너무 미안한거야 왜냐면 클래스는 항상 자기 데리고 가서 놀아야하니까 귀찮기도 하고 Dog.eat(puppy) 그래서 어떻게 이걸 해결 해줄까 하다가 간판을 붙힌거지 @classmethod라고 여기는 너가 혼자 입장해도 괜찮을 거라고 알려주는 곳이다.
 
+> self라는 인자 없이 인스턴스가 접근하려면 @staticmethod 필요 / 클래스 메서드가 인자로 받고 싶다면 @classmethod가 필요 (대신 변수는 클래스 변수를 받음)
+
 - 클래스 메서드와 인스턴스 메서드의 차이점
 
 ```python
@@ -755,7 +757,7 @@ Dog.count() #내용물 없어도 상관없다. 파이썬이 알아서 classmetho
             print(self.show)
       
       
-    class KoreanLanguage():
+    class KoreanLanguage(Language):
         default_language = "한국어"
   ```
 
@@ -831,8 +833,8 @@ Calculator.add(5, 3)
 Calculator.sub(5, 3)
 
 cal = Calculator()
-cal.sub(5, 3)#스태틱 메서드는 첫 번째 self 인자가 없어도 두 번째 세 번째 인자로 처리를 다 해준다.
 cal.add(5, 3)
+cal.sub(5, 3)#스태틱 메서드는 첫 번째 self 인자가 없어도 두 번째 세 번째 인자로 처리를 다 해준다.
 #cal.add(cal, 5, 3)과 똑같다. 위에거랑 그래서 첫 번째 인자로 cal을 받을 self가 필요하다.
 #결과
 2
@@ -1060,9 +1062,11 @@ john = Person('john')
 donghun = Student('donghun','123')
 john.sleep()
 print(donghun.student_id)
+print(donghun.name)
 #결과
 쿨쿨
 123
+Error
 ```
 
 - 이 코드의 중복된 부분을 수정해보자

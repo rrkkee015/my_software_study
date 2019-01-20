@@ -106,7 +106,7 @@ print(a.index('p'))
 ```
 
 ```python
-0
+0 #'apple'을 찾았음
 0
 1
 #오류를 반환하거나 안하거나의 차이가 find와 index이다.
