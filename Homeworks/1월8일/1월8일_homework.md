@@ -23,7 +23,7 @@
 
    ```python
    my_list = ['a','b','c','d','e','z']
-   for index,value in enumerate(my_list):
+   for index,value in enumerate(my_list,2):
        print("index : {}, value : {}".format(index, value))
    #결과
    index : 0, value : a
