@@ -4,8 +4,8 @@ sys.stdin=open('sample_input.txt','r')
 testcase=int(input())
 
 def my_max(li):
-    result = 0
-    for max_ in li:
+    result = 0 #여기서 li[0]으로 둬도 상관없다.
+    for max_ in li: 
         if result <max_:
             result =max_
     return result
