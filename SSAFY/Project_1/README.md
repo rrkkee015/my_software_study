@@ -47,7 +47,7 @@ images/
 
 *.jpg
 
-## 5.결과
+## 5.결과 (주석 참고)
 
 ```python
 import requests
