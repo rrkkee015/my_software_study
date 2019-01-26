@@ -1,0 +1,112 @@
+.my_font{
+    font-family: 'Noto Sans KR', sans-serif;
+    color:rgb(225, 231, 227) !important;
+}
+
+h4{
+    display:inline;
+}
+
+.moviename_font{
+    font-family: 'Noto Sans KR', sans-serif;
+    color:rgb(71,71,71);
+    font-weight: 550
+}
+
+.basic_font{
+    font-family: 'Noto Sans KR', sans-serif;
+    color:rgb(71,71,71);
+}
+
+.button_font{
+    font-family: 'Noto Sans KR', sans-serif;
+    color:rgb(255, 255, 255);
+}
+
+.header{
+    display : flex;
+    background-image:url(images/eternal_sunshine.jpg);
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight:bold;
+    align-items: center;
+    justify-content: center;
+    height:350px;
+    color:rgb(107, 116, 111) !important;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-between;
+    color:rgb(225, 231, 227);
+    font-family: 'Noto Sans KR', sans-serif !important; 
+    align-items: center;
+    height:50px;
+    background-color:rgb(107,116,111);
+}
+
+.footer_left{
+    padding-left:3rem;
+    padding-right:0.5rem;
+}
+
+.footer_right{
+    color:rgb(225,231,227);
+    padding-right:3rem;
+}
+
+.center{
+    text-align:center
+}
+
+.nav_color{
+    background-color:rgb(107, 116, 111);
+}
+
+.sub_margin{
+    margin-top:3rem;
+    margin-bottom:3rem;
+    display:flex;
+    justify-content:center;
+    font-family: 'Noto Sans KR', sans-serif;
+    color:rgb(71, 71, 71);
+}
+
+.line{
+    background-color:rgb(107, 116, 111);
+    width:70px;
+    height:2px;
+}
+
+.movieline{
+    background-color:rgb(199, 199, 199);
+    height:1px;
+}
+
+.badge {
+    display: inline-block;
+    margin-left:0.4rem;
+    padding: .25em .4em;
+    font-size: 100%;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+
+.cardwidth{
+    width:0px;
+}
+
+.modal-dialog{
+    max-width:664px;
+}
+
+.modal-body-story{
+    padding-top:0rem;
+}
+
+.modal-body-info{
+    padding-bottom:0rem;
+}

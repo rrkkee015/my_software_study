@@ -1,51 +1,40 @@
-# import  sys
-# sys.stdin = open('sample_input.txt','r')
-#
-# testcases=int(input())
-#
-# for test in range(testcases):
-def my_sort(lis):
-    for i in range(len(lis)-1,0,-1):
-        for k in range(0,i):
-            if lis[k]>lis[k+1]:
-                lis[k],lis[k+1]=lis[k+1],lis[k]
-    return lis
+# 짝수는 최댓값에서 작아지고,
+# 홀수는 최솟값에서 커진다.
+# 1. 처음 시작 기준 애들끼리 대소 비교한다.
+# 2. 짝수(2*i)이고 홀수 뒤에 있는 리스트를 비교하면서 작은 값을 가져온다.
+# 3. 홀수(2*i+1)이고 본인 뒤에 있는 리스트를 비교하면서 인덱스를 가져와 지한테 박는다.
+# 4. 2,3 실행했으면 i+=1
+# 5. 1번부터 다시 반복 (5번 돌리면 10개를 뽑을 수 있다.)
+import sys
+sys.stdin=open('sample_input.txt','r')
+testcases=int(input())
 
-def my_reverse(lis):
-    new_lis=[0]*len(lis)
-    for i in range(len(lis)-1,-1,-1):
-        new_lis[(len(lis)-1)-i]=lis[i]
-    return new_lis
+def my_sort(li):
+    z=0
+    for i in range(5):
+        maxIndex=2*z
+        minIndex=2*z+1
+        initial=maxIndex
+        initial_2=minIndex
 
-def my_join(lis):
-    result =''
-    for i in lis:
-        if not i == lis[-1]:
-            result+=str(i) +' '
-        else:
-            result+=str(i)
-    return result
+        if li[maxIndex]<li[minIndex]:
+            li[maxIndex],li[minIndex]=li[minIndex],li[maxIndex]
 
-# lis_len=int(input())
-# li=list(map(int,input().split()))
+        for k in range(2*(z+1),len(li)):
+            if li[maxIndex]<li[k]:
+                maxIndex=k
+        li[initial],li[maxIndex]=li[maxIndex],li[initial]
 
-sorted_li=my_sort(li)
-reversed_li=my_reverse(sorted_li)
+        for j in range(2*(z+1),len(li)):
+            if li[minIndex]>li[j]:
+                initial=minIndex
+                minIndex=j
+        li[initial_2],li[minIndex]=li[minIndex],li[initial_2]
 
-result=[0]*10
+        z+=1
+    return ' '.join(list(map(str,li[:10])))
 
-cnt = 0
-odd = 0
-even = 0
-
-while cnt != 10:
-    cnt+=1
-    if  cnt % 2:
-        result[cnt-1]=reversed_li[odd]
-        odd+=1
-    else:
-        result[cnt-1]=sorted_li[even]
-        even+=1
-print(result)
-
-    # print(f'#{test+1} {my_join(result)}')
+for test in range(testcases):
+    n=input()
+    li=list(map(int,input().split()))
+    print(f'#{test+1} {my_sort(li)}')

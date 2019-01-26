@@ -1,0 +1,47 @@
+.my_font{
+    font-family: 'Noto Sans KR', sans-serif;
+    color:rgb(225, 231, 227) !important;
+}
+
+.header{
+    display : flex;
+    background-image:url(images/eternal_sunshine.jpg);
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight:bold;
+    align-items: center;
+    justify-content: center;
+    height:350px;
+    color:rgb(107, 116, 111) !important;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-between;
+    color:rgb(225, 231, 227);
+    font-family: 'Noto Sans KR', sans-serif !important; 
+    align-items: center;
+    height:50px;
+    background-color:rgb(107,116,111);
+}
+
+.footer_left{
+    padding-left:3rem;
+    padding-right:0.5rem;
+}
+
+.footer_right{
+    color:rgb(225,231,227);
+    padding-right:3rem;
+}
+
+body {
+    height: 1900px;
+}
+
+.center{
+    text-align:center
+}
+
+.nav_color{
+    background-color:rgb(107, 116, 111);
+}
