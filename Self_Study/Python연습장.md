@@ -86,3 +86,329 @@
 
 - 변수는 `=`을 통해 할당 된다.
 - 자료형 확인은 `type()`을 활용, 메모리 주소는 `id()`를 활용한다.
+
+## 수치형
+
+### int (정수)
+
+- 모든 정수는 `int`로 표현된다.
+- 8진수 :`0o`,  2진수:`0b`, 16진수:`0x`
+
+### float (부동소수점, 실수)
+
+- 실수는 `float`로 표현
+
+### complex (복소수)
+
+- 복소수는 허수부를 `j`로 표현함
+
+  ```python
+  a = 3 - 4j
+  print(type(a))
+  print(a.imag)
+  print(a.real)
+  print(a.conjugate())
+  ```
+
+  > 결과
+
+  ```python
+  -4
+  3
+  (3+4j)
+  ```
+
+### Bool
+
+- 파이썬에는 `True`와 `False`로 이뤄진 `bool` 타입이 있다.
+- 0, 0.0, (), [], {}, '', None 은 `False`이다.
+
+### None
+
+- 파이썬에서는 값이 없음을 표현하기 위해 `None` 타입이 존재한다.
+
+### 문자형(String)
+
+- `'`, `"`을 활용하여 표현 가능. 단, 시작과 끝은 같아야 한다.  안에는 같은 따옴표를 사용 못하지만 `\` 이스케이프 문자로 표현이 가능하다.
+- 여러 줄에 걸쳐있다면 `"""`을 반드시 써야한다. 얘는 `string interpolation`에서도 사용 가능하다.
+
+### 이스케이프 문자열
+
+`\`를 활용하여 이를 구분한다.
+
+| 예약문자 | 내용(의미) |
+| -------- | ---------- |
+| \n       | 줄바꿈     |
+| \t       | 탭         |
+| \r       | 캐리지리턴 |
+| \0       | 널(Null)   |
+| `\\`     | \          |
+
+### String interpolation
+
+1. `%-formatting`
+2. `str.format()`
+3. `f-strings` : 파이썬 3.6 이후
+
+## 연산자
+
+### 산술 연산자
+
+| 연산자 | 내용     |
+| ------ | -------- |
+| +      | 덧셈     |
+| -      | 뺄셈     |
+| *      | 곱셈     |
+| /      | 나눗셈   |
+| `//`   | 몫       |
+| %      | 나머지   |
+| **     | 거듭제곱 |
+
+- divmod는 나눗셈과 관련된 함수이다.
+
+  ```python
+  print(divmod(5, 3))
+  q, r = divmod(5, 3)
+  print(q, r)
+  ```
+
+  > 결과
+
+  ```python
+  (1, 2)
+  1, 2
+  ```
+
+### 비교 연산자
+
+| 연산자 | 내용     |
+| ------ | -------- |
+| a>b    | 초과     |
+| a<b    | 미만     |
+| a>=b   | 이상     |
+| a<=b   | 이하     |
+| a==b   | 같음     |
+| a!=b   | 같지않음 |
+
+```python
+3.0 == 3
+"Ho" == "ho"
+```
+
+```python
+True
+False
+```
+
+### 논리 연산자
+
+| 연산자  | 내용                         |
+| ------- | ---------------------------- |
+| a and b | a와 b 모두 True시만 True     |
+| a or b  | a와 b 모두 False시만 False   |
+| not a   | True -> False, False -> True |
+
+`&`와 `|`은 파이썬에서 비트 연산자이다.
+
+### 복합 연산자
+
+| 연산자 | 내용   |
+| ------ | ------ |
+| a+=b   | a=a+b  |
+| a-=b   | a=a-b  |
+| a*=b   | a=a*b  |
+| a/=b   | a=a/b  |
+| a//=   | a=a//b |
+| a%=b   | a=a%b  |
+| a**=b  | a=a**b |
+
+```python
+count = 0
+while count <5:
+    print(count)
+    count += 1
+```
+
+```python
+0
+1
+2
+3
+4
+```
+
+### 기타 연산자
+
+- 자료형을 `+`으로 합칠 수 있기에 `Concatenation` 연산자가 있다.
+
+- `in` 연산자를 통해 속한지 안 속한지 여부를 확인 가능하다. `Containment Test`
+
+  ```python
+  5 in list(range(5))
+  5 in range(5)
+  5 in range(6)
+  5 in list(range(6))
+  ```
+
+  ```python
+  False
+  False
+  True
+  True
+  ```
+
+- `is` 연산자를 통해 동일한 object 인지 확인하는 `Identity` 연산자가 있다.
+
+- `Indexing/Slicing`
+
+### 연산자 우선순위
+
+0. `()`을 통한 grouping
+1. Slicing
+2. Indexing
+3. 제곱연산자 **
+4. 단항연산자 +,- (음수/양수 부호)
+5. 산술연산자 *, /, %
+6. 산술연산자 +, -
+7. 비교연산자, `in`, `is`
+8. `not`
+9. `and`
+10. `or`
+
+## 형변환
+
+### 기초 형변환
+
+- 암시적 형변환
+
+  - bool
+
+    ```python
+    True + 5
+    ```
+
+    ```python
+    6
+    ```
+
+  - Numbers
+
+    ```python
+    print(type(int + float))
+    print(type(int + complex))
+    ```
+
+    ```python
+    float
+    complex
+    ```
+
+- 명시적 형변환
+
+  - string - > intger : 형식에 맞는 숫자만 가능
+
+  - intger -> string : 모두 가능
+
+  - `int()` : string, float을 int로 변환
+
+  - `float()` : string, int를 float로 변환
+
+  - `str()` : int, float, list, tuple, dictionary를 문자열로 변환
+
+    ```python
+    a='3.5'
+    int(a)
+    ```
+
+    ```python
+    ValueError
+    ```
+
+## 시퀀스(Sequence) 자료형
+
+- `시퀀스`는 데이터의 순서대로 나열된 형식을 나타낸다. (정렬되었다는 뜻은 아니다)
+
+  1. 리스트(list) => mutable
+
+  2. 튜플(tuple) => immutable
+
+  3. 레인지(range) => immutable
+
+     ```python
+     list(range(0,-5))
+     list(range(0,-5,-1))
+     ```
+
+     ```python
+     [] #Error가 아니다.
+     [0,-1,-2,-3,-4]
+     ```
+
+  4. 문자열(string) => immutable
+
+  5. 바이너리(binary) ==> 얘는 안 함
+
+### 시퀀스에서 활용할 수 있는 연산자/함수
+
+| operation  | 설명                    |
+| ---------- | ----------------------- |
+| x in s     | containment test        |
+| x not in s | containment test        |
+| s1 + s2    | concatenation           |
+| s * n      | n번만큼 반복하여 더하기 |
+| s[i]       | indexing                |
+| s[i:j]     | slicing                 |
+| s[i:j:k]   | k 간격으로 slicing      |
+| len(s)     | 길이                    |
+| min(s)     | 최솟값                  |
+| max(s)     | 최댓값                  |
+| s.count(x) | x의 갯수                |
+
+```python
+location = ['서울','머전','머구','팡주','부산']
+print(location[1:4])
+print(location[4:10])
+```
+
+```python
+['머전','머구','팡주'] # 4는 안 읽는다.
+['부산'] # 에러 안남
+```
+
+- list에 담긴 애들은 많은 메소드로 관리가 가능하다.
+
+  ```python
+  l = [1,2,3,4,5,6,7,8,9]
+  del l[3] # 인덱스로 접근
+  del l[5:] # slicing 사용 가능
+  l.remove(3) # value 값을 직접 접근
+  l.insert(1,20) # index 값에다가 value 값을 삽입
+  l.append(4) # 원하는 요소 맨 뒤에 추가
+  l.pop() # 맨 뒤에 값 반환해주고 (출력은 없다), 그 값 삭제
+  k = l.pop() #오류 안 뜸
+  l.sort() # 리스트 정렬 (출력은 없다)
+  ```
+
+## set, dictionary
+
+- 기본적으로 서순이 없는 친구
+
+### set => mutable
+
+- 집합과 같은 친구 `{}` 중괄호를 통해 만들며, 순서가 없고, 중복된 값이 없다.
+
+| 연산자/함수       | 설명   |
+| ----------------- | ------ |
+| a-b               | 차집합 |
+| a\|b              | 합집합 |
+| a&b               | 교집합 |
+| a.union(b)        | 합집합 |
+| a.intersection(b) | 교집합 |
+
+### dictionary => mutable
+
+- `key`와 `value`가 쌍으로 이뤄져있다. 궁극의 자료구조
+- `{}`를 통해 만들며, `dict()`로 만들 수 있다.
+- `key`는 immutable한 모든 것이 가능 (string, integer,float,boolean,tuple,range)
+- `value`는 `list`, `dictionary`를 포함한 모든 것이 가능
+

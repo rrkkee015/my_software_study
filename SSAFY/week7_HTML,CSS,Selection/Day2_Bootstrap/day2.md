@@ -481,12 +481,12 @@
         ![](image/29.png)
 
         ```css
-            <div class='bg-info rounded-pill'>
-                radius-test
-            </div>
+        <div class='bg-info rounded-pill'>
+        	radius-test
+        </div>
         ```
 
-  5. **display**
+  9. **display**
 
      1. `.d-block`
 
@@ -498,6 +498,7 @@
             <button class='btn btn-primary'>
                 버튼 2
             </button>
+        </body>
         ```
 
      2. `.d-inline`

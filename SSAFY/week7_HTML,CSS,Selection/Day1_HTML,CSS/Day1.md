@@ -43,7 +43,7 @@ a2=a1
 
 ```python
 def func(a, b = 1, c = 2, *args, **kwargs):
-    d = sum([n+2 for n in args if n>2])
+    d = sum([n*2 for n in args if n>2])
     e = sum([v*v for k, v in kwargs.items()])
     return a + b + c + d + e
 
@@ -359,7 +359,7 @@ my_func_1 실행 종료
 
 - **css 파일 만들기**
 
-  ```css
+  ```html
   .salmon{
   	color : pink;
       font-size : 50px;
@@ -367,6 +367,9 @@ my_func_1 실행 종료
   li{
       font-weight : bold;
   }
+  
+  <!--불러와줘야한다-->
+  <link rel="stylesheet" href="style.css">
   ```
 
 
