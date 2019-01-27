@@ -412,3 +412,66 @@ print(location[4:10])
 - `key`는 immutable한 모든 것이 가능 (string, integer,float,boolean,tuple,range)
 - `value`는 `list`, `dictionary`를 포함한 모든 것이 가능
 
+
+
+## 조건문
+
+- 제어문은 크게 반복문과 조건문이 있는데 조건문 부터 알아보자
+  1. `if`문은 `조건식`과 함께 사용이 되어야한다. `if <조건식>`
+  2. 참이면 `:` 이후의 문장을 수행
+  3. 거짓이면 `else:` 이후의 문장을 수행
+
+- 조건문을 2개 이상 사용할 거면 `elif <조건식>`을 사용
+
+### 조건 표현식
+
+- if 문을 한 줄로 표현하는 것, 조건에 따라 값을 정할 때 많이 활용된다.
+- `true_value if <조건식> else false_value`
+
+## 반복문
+
+- While 문 
+
+  - 참인 경우 반복적으로 코드 실행
+  - 반드시 종료조건을 설정해야한다.
+
+- for 문
+
+  - 정해진 범위 내 (시퀀스)에서 순차적으로 코드를 실행한다.
+
+  - `enumerate()`를 활용하면, `index`값과 `value`값을 같이 데리고 올 수 있다.
+
+    - `dict`에도 `enumerate()`를 쓸 수 있는데, 키 값만 가져온다.
+
+      ```python
+      fruit = {'apple':'a','orange':'o'}
+      for idx,value in enumerate(fruit):
+          print(idx, value)
+      ```
+
+      ```python
+      0 apple
+      1 oragne
+      ```
+
+    - `enumerate()`의 인덱스 시작 값을 정해줄 수 있다.
+
+      ```python
+      print(list(enumerate(fruit, start=2)))
+      fruit = {'apple':'a','orange':'o'}
+      ```
+
+      ```python
+      2 apple
+      3 orange
+      ```
+
+- dictionary 반복문 활용하기
+
+  - `for`문 그냥 사용하면 키 값만 가져옴. `dict_keys(), dict_values(), dict_items()` 맘대로 쓰자.
+
+- `break`, `continue`, `else`
+
+  - break는 반복문을 끝낸다. 참고로 얘가 속한 반복문 하나만 끝내준다.
+  - continue는 이후의 코드를 수행하지않고, 반복문을 한 번 더 실행해준다.
+  - else는 반복문이 끝까지 돌고, 그 이후에 실행한다. break로 종료되면 실행 안한다.

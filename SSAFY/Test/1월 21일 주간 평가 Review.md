@@ -114,5 +114,131 @@ my_func_1 실행 종료
 
 ### Copy
 
+- 어떤 친구가 틀렸을 까?
 
+```python
+import copy
+
+list1 = [3, 'a', 'b']
+list2 = [1, 2, list1]
+list3 = list1[:] #얕은 복사
+list4 = copy.copy(list2) #얕은 복사
+list5 = copy.deepcopy(list2) #깊은 복사
+```
+
+```python
+list1 == list3의 결과는 True이다.
+list4[2][0] = 4라는 코드 입력 후, 'print(list2[2][0])'의 출력 값은 4이다.
+list4[2] = 5라는 코드 입력 후, 'print(list2[2])'의 출력 값은 5이다.
+list5[2][1] = 3라는 코드 입력 후, 'print(list2[2][1])'의 결과값은 'a'이다.
+```
+
+### String slicing
+
+```python
+word = 'Python'
+a = word[3:8]
+print(a)
+```
+
+```python
+hon
+```
+
+### List
+
+```python
+L = [0 for i in range(5)]
+print(L)
+```
+
+```PYTHON
+[0,0,0,0,0]
+```
+
+### Dictionary
+
+```python
+d1 = {'d':dict()}
+d2 = dict(d = {})
+```
+
+```python
+두 개가 같다.
+{'d':{}}
+```
+
+### 뭔지 몰라
+
+```python
+@app.route('/')
+def index():
+    a='hello'
+    b='world'
+    return render_template('index.html', a=a, b=b)
+
+#flask.py
+def render_template(XXXXX, **kwargs):
+    
+#index.html
+{{a}}
+```
+
+### my_sum
+
+```python
+def my_sum(a, b):
+    c = a + b
+    print(c)
+    
+result = my_sum(5, 8)
+print(result)
+```
+
+```python
+13
+None
+```
+
+### .real
+
+```python
+complex_num = 3 + 4j
+complex_num.real()
+```
+
+```python
+#오류 뜬다.
+TypeError
+```
+
+### type 확인
+
+```python
+num = 1
+type(num) == int
+```
+
+```python
+True
+```
+
+### args
+
+```python
+def func(c = '5', *args):
+    a, c, b = args
+    return a + b + c
+print(func('3', '4', '1', '2'))
+```
+
+```python
+421
+```
+
+### 내장 함수 아닌 친구
+
+```python
+sqrt() ==> 얘는 import math하고 사용해야하는 친구다.
+```
 
