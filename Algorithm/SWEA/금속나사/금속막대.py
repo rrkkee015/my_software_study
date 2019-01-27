@@ -31,3 +31,39 @@ for test in range(testcases):
         for i in range(len(nasa[k])):
             real_result += str(nasa[k][i])+ ' '
     print(f'#{test+1} {real_result}')
+
+# 보라에몽 코드
+testcase = int(input())
+for tc in range(testcase):
+    num = int(input())
+    ary = list(map(int, input().split()))
+    a, s = [], []
+
+    # 암수 리스트 업데이트
+    for i in range(0, len(ary), 2):
+        a.append(ary[i])
+        s.append(ary[i+1])
+
+    # 진행 방향 1 앞으로 2 뒤로
+    stat = 1
+    cur = a[0]
+    ans = []
+    fcheck = 0
+    while len(ans) != len(ary):
+        for j in range(len(a)):
+            if stat == 1:
+                # 앞으로 갈 때는 암에서 찾아서 수에 있는 수를
+                if cur == a[j]:
+                    ans.extend([a[j], s[j]])
+                    cur = s[j]
+                # for문 다 돌았는데, 뒤에 수가 없으면 방향 전환
+                if fcheck > len(a):
+                    stat = 2
+                    cur = ans[0]
+            elif stat == 2 and cur == s[j]:
+                # 뒤에서 갈 때는 수에서 찾아서 암에 있는 수를
+                ans = [a[j], s[j]] + ans
+                cur = a[j]
+        fcheck += 1
+
+    print("#%d" % (tc+1), ' '.join(map(str, ans)))

@@ -336,7 +336,127 @@ my_func_1 실행 종료
 
 ### 이렇게 3가지를 직접 해보았다. inline / class로 따로 떼어놓기 / 파일을 따로 만들기 이거 3개 시험에 나온다 ! (구분 세미콜론 `;` 쓰는 것을 인지하자)
 
+- 우선순위는 inline -> html 파일 내부에서 class로 따로 떼어놓기 -> 파일을 따로 만들기 순으로 인지한다. inline이 제일 강함.
+
+- **inline**
+
+  ```html
+  <h3 style="color:green">
+    	얍얍
+  </h3>
+  ```
+
+- **class로 따로 떼어놓기**
+
+  ```html
+  <style>
+      li{
+          color : pink;
+          font-size : 50px;
+      }
+  </style>
+  ```
+
+- **css 파일 만들기**
+
+  ```css
+  .salmon{
+  	color : pink;
+      font-size : 50px;
+  }
+  li{
+      font-weight : bold;
+  }
+  ```
+
+
 `h1 {color:blue;font-size:15px;}` python에서 key값에 위치하는 친구가 property이다. 그리고 value 자리에는 `키워드(rgb), 색깔(255,255,255)/(#FFFFFF), 크기단위(픽셀)`=>픽셀은 상대적인 값이다. 브라우저에서는 절대화 시키긴했다. (1px을 기준으로 1/96 인치)
 
 - 참고로 #FFFFFF는 흰색인데 16진수로 나타낸것이다. 즉 rgb(255,255,255)와 같다. 16*16=256인데 0을 포함하니까 255
 
+
+
+## `<div>` `<p>` 태그의 차이점
+
+1. `<div>` 태그나 `<p>` 태그는 왼쪽에서 오른쪽으로 하나의 가로 영역(Block) 전체를 차지하는 태그들이다.
+
+   Block - level Element이다.
+
+2. `<div>` 태그는 html 문서를 위에서부터 아래로 분할하는 역할을 한다.
+
+3. `<p>` 태그는 html 문서 안에서 문장의 단락을 나타내는 태그이다. (긴 글의 단락)
+
+4. 각 태그들을 2번 3번 처럼 목적에 맞춰서 사용하여 html 문서를 작성하면 의미적/구조적으로 잘 짜여진 html 문서가 되며 다른 장ㅊ들과의 호환을 극대화 할 수 있다.
+
+5. `<p>` 태그는 태그 자체에 상/하 마진을 가지고 있다.
+
+```html
+<html>
+	<body>
+		<p>first paragraph</p>
+		<p>second paragraph</p>
+		<p>
+			new line<br>
+			third paragraph
+		</p>
+	</body>
+</html>
+```
+
+> 결과
+
+```html
+first paragraph
+
+second paragraph
+
+new line
+third paragraph
+```
+
+```html
+<html>
+	<body>
+		<div style="background-color:cyan">구역1</div>
+		<div style="width:100px; height:100px; background-color:#CF0">구역2</div>
+	</body>
+</html>
+```
+
+> 결과
+
+![](image/div.png)
+
+## `<span>` 태그
+
+1. `<span>` 태그는 자신이 갖고 있는 고유한 영역이 없이 자신이 둘러싸고 있는 내용물의 양과 크기에 의존한다.
+2. 그 높이는 한 줄에 대한 높이이고, 그 길이는 태그가 열리는 곳부터 닫히는 곳 까지이다.
+3. 다시말 해 span 태그는 블락이 아닌 줄의 단위다.
+4. 이런 애들은 Inline-level Element이다.
+
+```html
+<html>
+<body>
+	<span style="background-color:red">span1</span>
+	<span style="background-color:blue">span2</span>
+	<span style="background-color:green">span3</span>
+</body>
+</html>
+```
+
+> 결과
+
+```html
+span1 span2 span3
+```
+
+## `<a>` 태그
+
+1. 하이퍼링크를 걸어주는 태그이다.
+2. href : 클릭시 이동 할 링크
+3. target : 링크를 여는 방법
+   - _self : 현재 페이지 (default)
+   - _blank : 새 탭
+   - _parent : 부모 페이지로, iframe 등이 사용된 환경에서 쓰인다.
+   - _top : 최상위 페이지로, iframe 등이 사용된 환경에서 쓰인다.
+   - 프레임이름 : 직접 프레임 이름을 명시해서 사용
