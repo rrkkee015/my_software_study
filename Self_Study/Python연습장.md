@@ -475,3 +475,126 @@ print(location[4:10])
   - break는 반복문을 끝낸다. 참고로 얘가 속한 반복문 하나만 끝내준다.
   - continue는 이후의 코드를 수행하지않고, 반복문을 한 번 더 실행해준다.
   - else는 반복문이 끝까지 돌고, 그 이후에 실행한다. break로 종료되면 실행 안한다.
+
+## 함수(function) 기초
+
+**활용법**
+
+```python
+def func(parameter1, parameter2 ...):
+    code line1
+    code line2
+    return value
+```
+
+- 함수 선언은 `def`로 시작하여 `:`로 끝난다.
+- 함수는 `매개변수(parameter)`를 넘겨줄 수 있다.
+- `return`을 통해 결과값을 전달 할 수 있다. 없으면 `None`
+- 함수 호출은 `func(val1, val2 ...)`
+
+### 기본 값
+
+- 함수가 호출될 때, 인자를 지정하지 않아도 기본 값을 설정할 수 있다.
+
+**활용법**
+
+```python
+def func(p1=v1):
+    return p1
+```
+
+```python
+def hi(a='익명'):
+    return f'안녕 {a}야'
+print(hi())
+print(hi('홍길동'))
+```
+
+```python
+안녕 익명야
+안녕 홍길동야
+```
+
+### 키워드 인자
+
+```python
+def greeting(age, name='ssafy'):
+    print(f'{name}은 {age}살 입니다.')
+    
+greeting(27,'동훈')
+greeting('동훈',27)
+greeting(27,name='동훈')
+greeting(27)
+greeting(age=27,'동훈') #에러
+greeting(age=27,name='동훈')
+greeting('동훈',age=27) #에러
+greeting(name='동훈',27) #에러
+```
+
+- print 함수도 키워드 인자가 내포되어 있다.
+
+  `print(*objects, end='\n')`
+
+  end가 default가 되어있다.
+
+### 가변 인자 리스트
+
+- 앞서 `print()`함수처럼 정해지지 않은 임의의 숫자의 인자를 받기 위해선 가변인자를 활용한다.
+
+  가변인자는 `tuple`형태로 처리가 되며, `*`로 표현된다.
+
+**활용법**
+
+```python
+def func(*args):
+```
+
+### 정의되지 않은 인자들 처리하기
+
+- 정의되지 않은 인자들은 `dict`형태로 처리 되며, `**`로 표현함
+
+  주로 `kwargs`라는 이름을 사용, `**kwargs`를 통해 인자를 받아 처리할 수 있다.
+
+**활용법**
+
+```python
+def func(**kwargs):
+```
+
+```python
+def my_fake_dict(**kwargs):
+    return kwargs
+print(my_fake_dict(한국어='안녕', 영어='hi', 독일어 ='Guten Tag'))
+```
+
+### dictionary를 인자로 넘기기
+
+`**dict`를 통해 함수에 인자를 넘길 수 있다.
+
+```python
+def user(password,password_confirmation,username):
+    if password==password_confirmation:
+        return '회원가입 완료'
+    else:
+        return '다시 시도 부탁드립니다.'
+    
+print(user(**{'username':'rrkkee015','password':'1234','password_confirmation':'1235'}))
+```
+
+### 이름공간 및 스코프
+
+- LEGB 순으로  변수의 값을 찾아간다. (Local, Enclosed, Global, Built-in)
+
+- `str()` 코드가 실행되면
+
+  str을 Global scope에서 먼저 찾아서 `str=4`를 가져오고
+
+  이는 함수가 아니라 변수이기 때문에 `not callable`하다라는 오류를 뱉는다.
+
+  우리가 원하는 `str()`은 Builit-in scope에 있기 때문이다.
+
+- built-in scope : 파이썬이 실행된 이후부터 끝까지
+
+- Global scope : 모듈이 호출된 시점 이후 혹은 이름 선언된 이후부터 끝까지
+
+- Local/Enclosed scope : 함수가 실행된 시점 이후부터 리턴할 때까지

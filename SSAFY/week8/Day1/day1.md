@@ -99,7 +99,7 @@
 
 ### 제작
 
-1. index.html에서 form에다가 새로운 속성을 붙여야한다.
+1. index.html에서 form에다가 새로운 속성을 붙여야한다. `/ask`Url로 이동을 해야하니까
 
    > index.html
 
@@ -142,6 +142,9 @@
    > app.py
 
    ```python
+   from flask import Flask, render_template, request
+   ...
+   ...
    @app.route('/ask')
    def ask():
        quest = request.args.get('question') #request를 사용하기 위해선 앞서서 import request를 해야한다. 그리고 이 변수를 quest에다가 담아 주었다.
@@ -367,7 +370,7 @@
        <title>Document</title>
        <!--꾸미기 위해서 style을 추가했다.-->
        <style>
-           table, tr, td {
+           table, tr, td, th {
                border : 1px solid black;
            }
        </style>
@@ -418,7 +421,7 @@
 
 ### 데이터 베이스 기본 용어 정리
 
-- 스키마(schemae)
+- 스키마(schema)
 
   - 데이터베이스에서 자료의 구조, 표현방법, 관계등을 정의한 구조.
 
