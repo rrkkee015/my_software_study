@@ -796,11 +796,159 @@ print(my_dict)
 {'apple': '사과', 'banana': '바나나', 'melon': '멜론', '마틴': '기타', '깁슨': '얍'}
 ```
 
+`.get(key[, default])` : key를 통해 value를 가져온다. **절대 Key Error가 안난다.**
+
 ### Dictionary comprehension
 
 dictionary도 comprehension을 활용하여 만들 수 있습니다.
 
-- 하지만 zip, map을 배우고 하겠다.
+```python
+cubic = {x:x**3 for x in range(1,5)}
+print(cubic)
+```
+
+```python
+{1:1,2:8,3:27,4:64}
+```
+
+```python
+dusts = {'서울':72,'경기':82,'대전':29,'중국':200}
+{key : value for key, value in dusts.items() if value >80}
+```
+
+```python
+{'경기':82,'중국':200}
+```
+
+```python
+{key:'매우나쁨' if value >150 else '나쁨' if value > 80 else '보통' if value >30 else '좋음' for key, value in dusts.items()}
+```
+
+### map(), zip(), filter()
+
+`map(function, iterable)`
+
+- iterable의 모든 원소에 function을 적용한 후 그 결과를 돌려준다.
+- iterable = list, dict, set, str, bytes, tuple, range
+- return은 map_object 형태로 된다.
+
+```python
+a = [1, 2, 3]
+print(''.join(map(str,a)))
+type(''.join(map(str,a)))
+```
+
+```python
+123
+str
+```
+
+```python
+a = ['1', '2', '3']
+list(map(int,a))
+```
+
+```python
+[1, 2, 3]
+```
+
+```python
+[int(x) for x in a]
+```
+
+```python
+def cube(n):
+    return n**3
+a = [1, 2, 3]
+print(list(map(cube,a)))
+```
+
+```python
+[1, 8, 27]
+```
+
+`zip(*iterables)`
+
+- 복수 iterable한 것들을 모은다.
+- 결과는 튜플의 모음으로 구성된 zip object를 반환한다.
+
+```python
+girls = ['jane', 'iu', 'mary']
+boys = ['justin', 'david', 'kim']
+list(zip(girls, boys))
+```
+
+```python
+[('jane','justin'),('iu','david'),('mary','kim')]
+```
+
+```python
+{x:y for x in girls for y in boys}
+#이렇게 하면 key는 유일하니까 마지막 값으로 덮어씌어진다.
+```
+
+```python
+{'jane':'kim','iu':'kim','mary':'kim'}
+```
+
+```python
+{x:y for x,y in zip(girls, boys)}
+```
+
+```python
+{'jane':'justin','iu':'david','mary':'kim'}
+```
+
+- 이것도 가능하다.
+
+```python
+a='123'
+b='567'
+
+for digit_a, digit_b in zip(a,b):
+    print(digit_a,digit_b)
+```
+
+```python
+1 5
+2 6
+3 7
+```
+
+- zip은 반드시 길이가 같을 때 사용 가능하다. 아니면 가장 짧은 것을 기준으로 한다. 아닐 때도 할 수 있지만 사용하지말자.
+
+```python
+a = [1, 2, 3]
+b = ['1', '2']
+print(list(zip(a,b)))
+```
+
+```python
+[(1,'1'),(2,'2')]
+```
+
+`filter(function, iterable)`
+
+- iterable에서 function의 반환된 결과가 참인 것들만 구성하여 반환한다.
+
+```python
+def even(n):
+    return not n%2
+a = [1, 2, 3]
+print(list(filter(even, a)))
+```
+
+```python
+[2]
+```
+
+```python
+[x for x in [1,2,3] if even(x)]
+```
+
+```python
+[2]
+```
 
 ## 세트 메소드 활용
 
