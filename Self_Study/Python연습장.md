@@ -598,3 +598,43 @@ print(user(**{'username':'rrkkee015','password':'1234','password_confirmation':'
 - Global scope : 모듈이 호출된 시점 이후 혹은 이름 선언된 이후부터 끝까지
 
 - Local/Enclosed scope : 함수가 실행된 시점 이후부터 리턴할 때까지
+
+## 문자열 메소드 활용하기
+
+### 변형
+
+`.capitalize()` : 앞글자를 대문자로 만들어 반환 (return 값이 있다)
+
+`.title()` : 어포스트로피나 공백 이후를 대문자로 만들어 반환 (return 값이 있다)
+
+`.upper()` : 모두 대문자로 만들어 반환 (return 값이 있다)
+
+`lower()` : 모두 소문자로 만들어 반환 (return 값이 있다)
+
+`swapcase()` : 대<=>소문자로 변경하여 반환 (return 값이 있다)
+
+`.join(iterable)` : 변수를 값 사이에 집어 넣고 반환한다.
+
+```python
+a='사이'
+a.join('abc')
+```
+
+```python
+a사이b사이c
+```
+
+`.replace(old, new[, count])` : 바꿀 대상 글자를 새로운 글자로 바꿔서 반환한다. count를 지정하면 해당 갯수만큼만 시행한다.
+
+```python
+a='aaaabbbbcccc'
+a.replace('a','z')
+a='aaaabbbbcccc'
+a.replace('a','z',2)
+```
+
+```python
+zzzzbbbbcccc
+zzaabbbbcccc
+```
+
