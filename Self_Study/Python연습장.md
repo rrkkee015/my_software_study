@@ -638,3 +638,180 @@ zzzzbbbbcccc
 zzaabbbbcccc
 ```
 
+`.strip([char])` : 문자를 지정하면, 양쪽을 제거하거나 왼쪽을 제거하거나 오른쪽을 제거한다.(lstrip, rstrip)
+
+```python
+a='aaabbbaabbaa'
+a.strip('a')
+```
+
+```python
+bbbaabb
+```
+
+`.find(x)`, `.index(x)` : x의 첫 번째 위치를 반환한다. find는 없으면 -1 반환 / index는 없으면 오류
+
+`참 / 거짓 반환하는 문자열 메소드`
+
+```
+.isalpha(), .isdecimal(), .isdigit(), .isnumerice(), .isspace(), .issupper(), .istitle(), .islower()
+```
+
+`split()` : 문자열을 특정한 단위로 나누어 리스트로 반환합니다.
+
+```python
+a='1:2:3:4'
+a.split(':')
+```
+
+```python
+['1','2','3','4']
+```
+
+## 리스트 메소드 활용하기 (얘들은 대부분 반환값이 없다.)
+
+### 값 추가 및 삭제
+
+`.append(x)` : 리스트에 값을 추가
+
+`.extend(iterable)` : 리스트에 iterable 값을 붙일 수 있다. (for문 돌 수 있는 자료들)
+
+`.insert(i, x)` : 정해진 위치 `i`에 x를 추가합니다. (`i`가 길이를 넘어서면 마지막에 하나 붙음)
+
+`.remove(x)` : 리스트에서 값이 x인 것을 삭제한다. (제일 앞에 있는 거 하나씩 삭제)
+
+`.pop(i)` : 정해진 위치 `i`에 있는 값을 삭제하며, 그 항목을 **반환**한다. `i`가 지정되지 않으면 마지막 항목을 삭제하고 **반환**한다.
+
+`.index(x)` : 원하는 값을 찾아 **index 값**을 **반환**한다.
+
+`.count(x)` : `x`의 값의 갯수를 확인하고 **반환**한다.
+
+`.sort()` : 정렬을 합니다. **sorted()**와는 다르게 원본 list를 변형시키고, **None을 리턴**한다.
+
+`.reverse()` : 뒤집뒤집. 마찬가지로 **reversed()**와는 다르게 원본 list를 변형시키고, **None을 리턴**한다.
+
+### 복사
+
+```python
+a=[1,2,3,4]
+b=a
+a[0]=4
+print(b)
+```
+
+```python
+[4,2,3,4]
+```
+
+```python
+a=[1,2,3,4]
+b=a[:]
+a[0]=4
+print(b)
+```
+
+```python
+[1,2,3,4]
+```
+
+```python
+a=[1,2,[3,4]]
+b=a[:] #b=copy.copy(a)
+a[2][0] = 'aaa'
+print(b)
+```
+
+```python
+[1,2,['aaa',4]]
+```
+
+```python
+import copy
+a=[1,2,[3,4]]
+b=copy.deepcopy(a)
+a[2][0]='aaa'
+print(b)
+```
+
+```python
+[1,2,[3,4]]
+```
+
+### 삭제 **반환 없다**
+
+```python
+numbers = list(range(1,46))
+numbers.clear()
+print(numbers)
+```
+
+```python
+[]
+```
+
+### List Comprehension
+
+- 한 줄로 표현하는 List
+- (x<y<z<50)내에서 피타고라스 방정식의 해를 찾아보세여
+
+```python
+pita = [(x,y,z) for x in range(1,50) for y in range(x+1,50) for z in range(y+1,50) if x**2 + y**2 == z**2]
+```
+
+## 딕셔너리 메소드 활용
+
+`.pop(key[, default])` : key가 딕셔너리에 있으면 제거하고 그 값을 돌려줍니다. 그렇지 않으면 default를 반환합니다. default가 없는 상태에서 딕셔너리에 없으면 KeyError가 발생합니다. **반환 있음**
+
+```python
+my_dict = {'apple':'사과','banana':'바나나'}
+my_dict.pop('apple')
+my_dict.pop('melon','멜론은 안파는데요')
+```
+
+```python
+사과
+멜론은 안파는데요
+```
+
+`.update()` : 값을 제공하는 key, value로 덮어씁니다. **반환 없다**
+
+```python
+my_dict = {'apple':'사과','banana':'바나나','melon':'멜론'}
+my_dict.update(apple='애뽀올')
+print(my_dict)
+```
+
+```python
+{'apple':'애뽀올','banana':'바나나','melon':'멜론'}
+```
+
+```python
+my_dict = {'apple': '사과', 'banana': '바나나', 'melon': '멜론'}
+your_dict = {'마틴':'기타','깁슨':'얍'}
+my_dict.update(your_dict)
+print(my_dict)
+```
+
+```python
+{'apple': '사과', 'banana': '바나나', 'melon': '멜론', '마틴': '기타', '깁슨': '얍'}
+```
+
+### Dictionary comprehension
+
+dictionary도 comprehension을 활용하여 만들 수 있습니다.
+
+- 하지만 zip, map을 배우고 하겠다.
+
+## 세트 메소드 활용
+
+### 추가 및 삭제
+
+`.add(elem)` : elem을 세트에 추가합니다. **반환 값 없다**
+
+`.update(*others)` : 여러가지의 값을 순차적으로 추가합니다. 여기서 반드시 iterable한 값을 넣어야합니다. **반환 값 없다.**
+
+`.remove(elem)` : elem을 세트에서 삭제하고, 없으면 KeyError가 발생한다. **반환 값 없다**
+
+`.discard(elem)` : x를 세트에서 삭제하고 없어도 에러가 발생하지 않습니다. **반환 값 없다**
+
+`.pop()` : 제일 마지막 원소를 제거해 **반환**합니다.
