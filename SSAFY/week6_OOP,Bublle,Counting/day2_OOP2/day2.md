@@ -530,6 +530,7 @@ class Person:
 john = Person()
 print(john.name)
 #결과
+생성될 때 자동으로 호출되는 메서드입니다.
 john
 ```
 
@@ -707,7 +708,7 @@ nurung = Dog('누렁이','5살')
 
 Dog.count() #내용물 없어도 상관없다. 파이썬이 알아서 classmethod를 찾아서 채워준다.
 #결과
-6마리 생존중
+3마리 생존중
 ```
 
 - 인스턴스 메서드 : 메서드의 첫번째 인자로 **인스턴스,객체**를 받는 메서드
@@ -1054,6 +1055,7 @@ class Person:
 class Student(Person):
     def __init__(self, name, student_id):
         self.student_id=student_id #이렇게 하면 Student 인스턴스, 객체 만들 때 자기만의 것을 만들 수 있다.
+        #self.name=name을 해야한다.
         
     def study(self):
         print('공부')

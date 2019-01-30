@@ -967,12 +967,19 @@ print(list(filter(even, a)))
 ## OOP
 
 - 객체 지향 프로그래밍이란?
+
   - 객체들의 모임을 파악하고자 하는 프로그래밍이다.
+
 - **class**
+
   - 속성과 행위를 담아서 집단을 만든 데이터형
+
 - **instance**
+
   - 클래스에서 정의한 행위를 수행할 수 있는 클래스의 속성을 가지는 캐릭터
+
 - **method**
+
   - 클래스로부터 생성된 객체에 명령을 내리는 것
 
 - Class 예시
@@ -1025,5 +1032,130 @@ print(list(filter(even, a)))
   iu.name #이지은
   iu.name='아이유'
   iu.name #아이유
-  iu.greeting
+  iu.greeting() # 안녕, 나는 아이유이야, 내 생일은 0516야
+  Person.greeting(iu)
   ```
+
+  자동차 class를 만들어보자
+
+  ```python
+  class Car:
+      def __init__(self,brand,model,yunbi,color):
+          self.brand=brand
+          self.model=model
+          self.yunbi=yunbi
+          self.color=color
+          
+      def drive(self):
+          return '부릉부릉'
+      def stop(self):
+          return '끼익'
+  my_car=Car('쉐보레','카마로','연비모름','흰색')
+  my_car.brand
+  my_car.drive()
+  my_car.stop()
+  ```
+
+- **용어 정리**
+
+  ```python
+  class Person: #클래스 선언:클래스 객체 생성
+      name = '호날두' #멤버 변수(데이터 어트리뷰트)
+      def greeting(self): #멤버 메서드(메서드)
+          print(f'{self.name}')
+  iu=Person() #인스턴스 객체 생성
+  iu.name #데이터 어트리뷰트 호출
+  iu.greeting() #메서드 호출
+  ```
+
+- 일급 객체 함수
+
+  ```python
+  def hello():
+      return 'hello'
+  hi = hello
+  print(hi())
+  ```
+
+- ```python
+  class Person:
+      population = 0
+      
+      def __init__(self, name):
+          self.name = name
+          population = 20
+          self.population += 1
+          Person.population +=1
+          
+  cr = Person('호날두')
+  me = Person('john')
+  you = Person('Donghun')
+  print(cr.population)
+  print(me.population)
+  print(you.population)
+  print(Person.population)
+  ```
+
+  ```python
+  1
+  2
+  2
+  ```
+
+- **생성자 / 소멸자**
+
+  ```python
+  class Moosang:
+      def __init__(self):
+          print('저는 생성자입니다.')
+      def __del__(self):
+          print('저는 소멸자입니다.')
+  life = Moosang()
+  del life
+  ```
+
+  ```python
+  class Person:
+      def __init__(self, name):
+          self.name = name
+          print(f'{self.name}이 생성되었습니다.')
+      def __del__(self):
+          prinnt(f'{self.name}이 죽었습니다.')
+  god = Person('호날두')
+  god = Person('손흥민')
+  #결과
+  호날두이 생성되었습니다.
+  손흥민이 생성되었습니다.
+  호날두이 죽었습니다.
+  ```
+
+- **기본값**
+
+  ```python
+  class Person:
+      name = 'john'
+      
+      def __init__(self,name='no name'):
+          print('생성 메서드 호출')
+          self.name=name
+      def __del__(self):
+          print('소멸 메서드 호출')
+  john = Person()
+  print(john.name)
+  #결과
+  no name
+  ```
+
+- 클래스 메소드 사용하는 방법
+
+  객체.메서드() 혹은 클래스.메서드(객체) 이런 방식으로 사용해야한다.
+
+- ```python
+  def Person(student):
+      def __init__(self, name, age, number, email,id)
+      	super().__init__(name,age,number,email)
+          self.id=id
+  ```
+
+- 
+
