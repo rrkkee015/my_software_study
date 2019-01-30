@@ -963,3 +963,67 @@ print(list(filter(even, a)))
 `.discard(elem)` : x를 세트에서 삭제하고 없어도 에러가 발생하지 않습니다. **반환 값 없다**
 
 `.pop()` : 제일 마지막 원소를 제거해 **반환**합니다.
+
+## OOP
+
+- 객체 지향 프로그래밍이란?
+  - 객체들의 모임을 파악하고자 하는 프로그래밍이다.
+- **class**
+  - 속성과 행위를 담아서 집단을 만든 데이터형
+- **instance**
+  - 클래스에서 정의한 행위를 수행할 수 있는 클래스의 속성을 가지는 캐릭터
+- **method**
+  - 클래스로부터 생성된 객체에 명령을 내리는 것
+
+- Class 예시
+
+  ```python
+  name = '성지니'
+  birthday = '0206'
+  class Person: #클래스 이름을 Person이라고 지었다.
+      name = 'HDH'
+      birthday = '12/13'
+      phone = '01051910337'
+      
+      def greeting(self): #class 내에서는 self라는 애를 첫번째 인자로 받게 된다. #greeting은 이제 인스턴스가 사용가능한 메소드가 되었다.
+          print(f'안녕, 나는 {self.name}이야, 내 생일은 {self.birthday}야')
+          #self가 없으면 전역변수인 성지니, 0206을 가지고온다.
+          
+  me=Person() #이 과정을 intantiate이다. #Person 클래스의 청사진에 맞게 me를 만든 것이다.
+  me.greeting()
+  ```
+
+  이렇게 된다면 어느 누구를 intantiate 하더라도 name, birthday, phone이 같다. 그 것을 달리 해보고 싶다.
+
+  ```python
+  class Person:
+      def __init__(self,name,birthday,phone):
+          self.name=name
+          self.birthday=birthday
+          self.phone=phone
+          
+      def greeting(self):
+          print(f'안녕, 나는 {self.name}이야, 내 생일은 {self.birthday}야')
+  
+  me=Person('HDH','1213','01051910337')
+  you=Person('KSJ','0206','010--------')
+  me.name
+  you.name
+  me.greeting()
+  you.greeting()
+  ```
+
+  ```python
+  안녕, 나는 HDH이야, 내 생일은 1213야
+  안녕, 나는 KSJ이야, 내 생일은 0206야
+  ```
+
+  이렇게 간단하고 편리하기 위해서 만든 것이 OOP이다. 값을 변경하고 싶을 땐 변경도 가능하다.
+
+  ```python
+  iu=Person('이지은','0516','01051910337')
+  iu.name #이지은
+  iu.name='아이유'
+  iu.name #아이유
+  iu.greeting
+  ```

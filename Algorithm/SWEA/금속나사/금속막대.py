@@ -11,8 +11,10 @@ for test in range(testcases):
         result[k] = [li[i],li[i+1]]
         i+=2
     ##################
-
-    ##################
+    dic={}
+    for idx,value in enumerate(result):
+        dic[value[0]]=idx
+    ########
     for i in result:
         x=0
         nasa = [0] * n

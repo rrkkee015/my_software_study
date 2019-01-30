@@ -427,13 +427,15 @@ in_my_pocket(me)
 - 앞서 했던 것을 하나의 분류체계를 만들어 보자. 우선 Person이라는 클래스를 선언하고, 안에 내용을 채우자.
 
 ```python
+name = '성지니'
+birthday = '0206'
 class Person:
     name = "HDH"
     birthday = "1213"
     phone = "01051910337"
     
     def greeting(self): #class 내에서는 self라는 애를 첫번째 인자로 받게 되는데 인스턴스가 사용하는 메소드이다.
-     	print(f"안녕, 나는 {self.name}야, 내 생일은 {self.birthday}야.") #self.name,self.birthday로 바꿔줘야한다.
+     	print(f"안녕, 나는 {self.name}야, 내 생일은 {self.birthday}야.") #self.name,self.birthday로 바꿔줘야한다. #self가 없으면 전역변수인 성지니, 0206을 가지고온다.
   
 me = Person() #이 과정을 intantiate이라고 하는 것인다 Person class의 속성을 가진 me라는 인스턴스를 만드는 것이다.  즉, 붕어빵 틀에서 붕어빵을 만들어 내는 과정 혹은 사람에서 '한동훈'을 만들어 내는 과정, 설계도에서 건물을 만들어내는 과정이다.
 print(me.name)
