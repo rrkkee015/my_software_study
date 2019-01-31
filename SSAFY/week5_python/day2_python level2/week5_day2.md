@@ -401,3 +401,27 @@ user(**{'username':'rrkkee015','password':'1234','password_confirmation':'1234'}
 - built-in scope : 파이썬이 실행된 이후부터 끝까지
 - Global scope : 모듈이 호출된 시점 이후 혹은 이름 선언된 이후부터 끝까지
 - Local/Enclosed scope : 함수가 실행된 시점 이후부터 리턴할때 까지
+
+
+
+## 유클리드 호제법
+
+```python
+# 여기에 코드를 작성하세요
+def solution(a, b):
+    mod = a % b
+    l = a
+    s = b
+    while mod > 0:
+        l = s
+        s = mod
+        mod = l % s
+    gcd = s
+    lcm = int(gcd*(a/gcd)*(b/gcd))
+    return([gcd, lcm])
+
+print(solution(3, 12))
+print(solution(3, 11))
+print(solution(55, 55))
+```
+

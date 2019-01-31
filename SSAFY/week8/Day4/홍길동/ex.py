@@ -1,12 +1,27 @@
 # 파일명 변경 금지
 # 아래에 클래스 Point와 Circle을 선언하세요.
 
+class Point:
+    def __init__(self, x, y):
+        self.x=x
+        self.y=y
 
-
-
-
-
-
+class Circle:
+    def __init__(self,center,r):
+        self.center=center
+        self.r=r
+    
+    def get_area(self):
+        return round(3.14*self.r*self.r,2)
+    
+    def get_perimeter(self):
+        return round(3.14*2*self.r,2)
+    
+    def get_center(self):
+        return (self.center.x,self.center.y)
+    
+    def print(self):
+        print(f'Circle: ({self.center.x}, {self.center.y}), r: {self.r}')
 
 # 아래의 코드는 수정하지마세요. 
 p1 = Point(0, 0)
