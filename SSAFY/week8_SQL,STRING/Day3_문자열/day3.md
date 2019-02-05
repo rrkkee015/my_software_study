@@ -184,11 +184,33 @@ def BruteForce(p, t):
   - 해쉬를 사용한다.
   - 중간에 있는 정보를 재 사용하는 것
   - O(M+N) 시간 복잡도인데 최악일 경우 O(MN)를 넘어간다.
+
 - KMP 알고리즘
   - 본문과 패턴이 있다. 본문을 한 번 읽으면서 결과를 냈으면 좋겠다는 사람들이 고안한 알고리즘
-  - abcd의 패턴엔 a,ab,abc,abcd가 있다. 또한 d, cd, bcd, abcd 
   - 시간 복잡도가 O(M+N)
-  - 만약 abcdabcef라는 문자열과 찾으려는 패턴
+
+  ```python
+  P='ABABCBABABD'
+  T='ABABD'
+  
+  result=[0]
+  
+  for i in range(1,len(T)):
+      j=result[i-1]
+      while j>0 and T[i] != T[j]:
+          j=result[j-1]
+      result.append(j+1 if T[i]==T[j] else j)
+  
+  for i in range(len(P)):
+      while j>0 and P[i] != T[j]:
+          j=result[j-1]
+      if P[i]==T[j]:
+          if j == len(T)-1:
+              print(i-j)
+          else:
+              j+=1
+  
+  ```
 
 - 보이어-무어 알고리즘
   - 맨 마지막 글자를 비교함
