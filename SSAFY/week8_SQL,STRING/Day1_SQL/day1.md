@@ -167,7 +167,7 @@
        #csv 파일로 저장하기
        with open('question.csv','a') as f: #w는 쓰기 위해서 a는 데이터를 쌓기 위해서
            writer = csv.writer(f) #쓸 수 있는 친구로 만들기 위해서 wirter에 담았다.
-           writer.writerow([quest]) #특정한 파일을 쓸 수 있게하는 메소드 근데 writerow 안에는 무조건 리스트가 들어가야한다.
+           writer.writerow([quest]) #특정한 파일을 쓸 수 있게하는 메소드 근데 writerow 안에는 무조건 리스트가 들어가야한다. #리스트로 안 넣고 '안녕'이라는 단어를 csv에 넣으면 '안,녕' 이렇게 찍히고 리스트로 하면 '안녕' 이렇게 찍힌다.
        return render_template('ask.html', quest=quest)
    ```
 
