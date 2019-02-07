@@ -36,7 +36,7 @@
      1. question.csv에 있는 파일 내용을 읽어와서
      2. quest.html에서 보여준다. (csv.reader를 사용하고 for문을 통해서 리스트를 벗겨야한다.(2중 for문이라서))
 
-### 실습 
+### 실습 (저번주는 csv파일로 했는데 이번엔 db파일로 만듬)
 
 1. c9.io에서 새로운 workspace를 만들자 (이름은 asked)
 

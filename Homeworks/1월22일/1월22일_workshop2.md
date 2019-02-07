@@ -22,8 +22,3 @@ Responsive Web의 이해
 | 스마트폰  | 480px      |
 | 태블릿 PC | 800px      |
 | 노트북    | 1920px     |
-
-```html
-
-```
-
