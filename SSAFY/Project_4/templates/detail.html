@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Noto+Sans+KR" rel="stylesheet">
+    <style>
+        .blog-header{
+            border-bottom:1px solid #e5e5e5;
+        }
+        .header{
+            font-family:"Playfair Display", Georgia, "Times New Roman", serif;
+            font-size:2.25rem;
+        }
+        .container{
+            max-width:1140px;
+        }
+        .btn{
+            padding:.25rem .5rem;
+            font-size:.875rem;
+        }
+        .text-color{
+            color:#6c757d!important;
+        }
+        .rounded{
+            border-radius:0rem!important;
+        }
+        .nanum{
+            font-family: 'Nanum Myeongjo', serif;
+        }
+        .noto{
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .container{
+            max-width:1140px;
+        }
+        .moviename{
+            color:#343a40;
+        }
+        .flex-column{
+            flex-direction:column!important;
+        }
+        input{
+            margin-top:5px;
+        }
+        img{
+            width:530px;
+            height:756px;
+        }
+        span{
+            font-family: 'Nanum Myeongjo', serif;
+            font-size:.875rem;
+            padding:.5rem 0rem;
+            font-weight:bold;
+            color:#6c757d;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header class="blog-header mt-2">
+            <div class="row align-items-center">
+                <div class="col-4 pt-1">
+                    <i class="text-color fab fa-instagram"></i><a class="text-color" href="https://www.instagram.com/pok_winter" style="margin-left:2.5px">pok_winter</a>
+                </div>
+                <div class="col-4 header text-center">
+                    <a style="color:#343a40" href="/movies">Rotten Kimchi</a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <button type="button" class="btn btn-light"><a class="text-color" href="/movies/new">New movie</a></button>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-6">
+                <img src='{{movie.poster_url}}'/>
+            </div>
+            <div class="col-6" style="vertical-align:space-between">
+                <p class="noto"><span>Title</span><br>{{movie.title}}</p>
+                <p class="noto"><span>Title_en</span><br>{{movie.title_en}}</p>
+                <p class="noto"><span>Audiences</span><br>{{movie.audience}}</p>
+                <p class="noto"><span>Open Date</span><br>{{movie.open_date.strftime('%Y-%m-%d')}}</p>
+                <p class="noto"><span>Genre</span><br>{{movie.genre}}</p>
+                <p class="noto"><span>Grade</span><br>{{movie.watch_grade}}</p>
+                <p class="noto"><span>Score</span><br>{{movie.score}}</p>
+                <p class="noto"><span>Description</span><br>{{movie.description}}</p>
+            </div>
+        </div>
+        <footer class="mt-4" style="border-top:1px solid #e5e5e5">
+            <div class="mt-2" style="float:right">
+                <a class="btn btn-light text-color mr-2" href='/movies'>목록</a><a class="btn btn-light text-color mr-2" href='/movies/{{movie.id}}/edit'>수정</a><a class="btn btn-light text-color mr-2" href='/movies/{{movie.id}}/delete'>삭제</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

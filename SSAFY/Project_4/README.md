@@ -329,7 +329,7 @@ def delete(movie_id): #해당 값을 삭제하기 위해서 detail.html에서 id
 
 
 
-## 4. 결과
+## 4. 결과 (Bootstrap 전)
 
 ```
 Project_4/
@@ -346,7 +346,6 @@ Project_4/
 		edit.html
 		movies.html
 		new.html
-		index.html
 ```
 
 > app.py
@@ -379,10 +378,6 @@ class Movie(db.Model):
 
 db.create_all()
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-    
 @app.route('/movies')
 def movies():
     movies = Movie.query.all()
@@ -488,23 +483,6 @@ def delete(movie_id):
 </html>
 ```
 
-> index.html
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <a href='/movies'>입장</a>
-</body>
-</html>
-```
-
 > new.html
 
 ```html
@@ -591,8 +569,530 @@ def delete(movie_id):
 
 
 
+## 5.결과 (Bootstrap 후)
+
+>app.py
+
+```python
+from flask import Flask, render_template, request, redirect
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+
+
+app = Flask(__name__)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db_flask.sqlite3'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+class Movie(db.Model):
+    __tablename__="movies"
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True) #id키
+    title = db.Column(db.String, nullable=False) #영화명
+    title_en = db.Column(db.String, nullable=False) #영화명(영문)
+    audience = db.Column(db.Integer, nullable=False) #누적 관객수
+    open_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow) #개봉일
+    genre = db.Column(db.String, nullable=False) #장르
+    watch_grade = db.Column(db.String, nullable=False) #관람등급
+    score = db.Column(db.Float, nullable=False) #평점
+    poster_url = db.Column(db.String, nullable=False) #포스터 이미지 URL
+    description = db.Column(db.String, nullable=False) #영화소개
+
+db.create_all()
+    
+@app.route('/movies')
+def movies():
+    movies = Movie.query.all()
+    return render_template('movies.html', movies=movies)
+    
+@app.route('/movies/new')
+def new():
+    return render_template('new.html')
+    
+@app.route('/movies/create')
+def create():
+    title = request.args.get('title')
+    title_en = request.args.get('title_en')
+    audience = request.args.get('audience')
+    
+    open_date = request.args.get('open_date')
+    year=int(open_date[:4])
+    month=int(open_date[5:7])
+    date=int(open_date[8:10])
+    dt = datetime(year, month, date)
+    
+    genre = request.args.get('genre')
+    watch_grade = request.args.get('watch_grade')
+    score = request.args.get('score')
+    poster_url = request.args.get('poster_url')
+    description = request.args.get('description')
+    
+    movie = Movie(title=title, title_en=title_en, audience=audience, open_date=dt, genre=genre, watch_grade=watch_grade, score=score, poster_url=poster_url, description=description)
+    db.session.add(movie)
+    db.session.commit()
+    
+    idx = Movie.query.order_by(Movie.id.desc()).first().id
+    return redirect('/movies/{}'.format(idx))
+    
+@app.route('/movies/<int:movie_id>')
+def detail(movie_id):
+    movie = Movie.query.get(movie_id)
+    return render_template('detail.html', movie=movie)
+    
+@app.route('/movies/<int:movie_id>/edit')
+def edit(movie_id):
+    movie = Movie.query.get(movie_id)
+    return render_template('edit.html', movie=movie)
+
+@app.route('/movies/<int:movie_id>/update')
+def update(movie_id):
+    title = request.args.get('title')
+    title_en = request.args.get('title_en')
+    audience = request.args.get('audience')
+    
+    open_date = request.args.get('open_date')
+    year=int(open_date[:4])
+    month=int(open_date[5:7])
+    date=int(open_date[8:10])
+    dt = datetime(year, month, date)
+    
+    genre = request.args.get('genre')
+    watch_grade = request.args.get('watch_grade')
+    score = request.args.get('score')
+    poster_url = request.args.get('poster_url')
+    description = request.args.get('description')
+    
+    movie = Movie.query.get(movie_id)
+    movie.title=title
+    movie.title_en=title_en
+    movie.audience=audience
+    movie.open_date=dt
+    movie.genre=genre
+    movie.watch_grade=watch_grade
+    movie.score=score
+    movie.poster_url=poster_url
+    movie.description=description
+    db.session.commit()
+    return redirect('/movies/{}'.format(movie_id))
+    
+@app.route('/movies/<int:movie_id>/delete')
+def delete(movie_id):
+    movie=Movie.query.get(movie_id)
+    db.session.delete(movie)
+    db.session.commit()
+    return redirect('/movies')
+```
+
+> movies.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Noto+Sans+KR" rel="stylesheet">
+    <style>
+        .blog-header{
+            border-bottom:1px solid #e5e5e5;
+        }
+        .header{
+            font-family:"Playfair Display", Georgia, "Times New Roman", serif;
+            font-size:2.25rem;
+        }
+        .container{
+            max-width:1140px;
+        }
+        .btn{
+            padding:.25rem .5rem;
+            font-size:.875rem;
+        }
+        .text-color{
+            color:#6c757d!important;
+        }
+        .rounded{
+            border-radius:0rem!important;
+        }
+        .nanum{
+            font-family: 'Nanum Myeongjo', serif;
+        }
+        .noto{
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .container{
+            max-width:1140px;
+        }
+        .moviename{
+            color:#343a40;
+        }
+        .flex-column{
+            flex-direction:column!important;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header class="blog-header mt-2">
+            <div class="row align-items-center">
+                <div class="col-4 pt-1">
+                    <i class="text-color fab fa-instagram"></i><a class="text-color" href="https://www.instagram.com/pok_winter" style="margin-left:2.5px">pok_winter</a>
+                </div>
+                <div class="col-4 header text-center">
+                    <a style="color:#343a40" href="/movies">Rotten Kimchi</a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <button type="button" class="btn btn-light"><a class="text-color" href="/movies/new">New movie</a></button>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="container mt-4">
+        <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+            <div class="col-md-6 px-0">
+                <h1 class="display-4 nanum" style="margin-bottom:32px">이왕 보는거 제대로</h1>
+                <p style="font-size:1.25rem" class="my-3 nanum">개차반 인생</p>
+                <p style="font-size:1.25rem" class="mb-0 nanum">영화 한 편만이라도 <strong>제대로</strong></p>
+            </div>
+        </div>
+        <div class="row mb-2">
+            {% for i in range(movies[-1].id) %}
+            <div class="col-md-6">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <p class="mb-2 noto">{{movies[i].genre}}</p>
+                        <h3><strong><a class="moviename noto" href="/movies/{{movies[i].id}}">{{movies[i].title}}</a></strong></h3>
+                        <div class="mb-1 text-color noto">{{movies[i].open_date.strftime('%Y-%m-%d')}}</div>
+                        <p class="noto">평점 : {{movies[i].score}}</p>
+                        <p class="noto mb-5">{{movies[i].description[:50] + "..."}}</p>
+                        <a style="font-size:.875rem" href="/movies/{{movies[i].id}}">자세히 보기</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
+```
+
+> new.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Noto+Sans+KR" rel="stylesheet">
+    <style>
+        .blog-header{
+            border-bottom:1px solid #e5e5e5;
+        }
+        .header{
+            font-family:"Playfair Display", Georgia, "Times New Roman", serif;
+            font-size:2.25rem;
+        }
+        .container{
+            max-width:1140px;
+        }
+        .btn{
+            padding:.25rem .5rem;
+            font-size:.875rem;
+        }
+        .text-color{
+            color:#6c757d!important;
+        }
+        .rounded{
+            border-radius:0rem!important;
+        }
+        .nanum{
+            font-family: 'Nanum Myeongjo', serif;
+        }
+        .noto{
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .container{
+            max-width:1140px;
+        }
+        .moviename{
+            color:#343a40;
+        }
+        .flex-column{
+            flex-direction:column!important;
+        }
+        input{
+            margin-top:5px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header class="blog-header mt-2">
+            <div class="row align-items-center">
+                <div class="col-4 pt-1">
+                    <i class="text-color fab fa-instagram"></i><a class="text-color" href="https://www.instagram.com/pok_winter" style="margin-left:2.5px">pok_winter</a>
+                </div>
+                <div class="col-4 header text-center">
+                    <a style="color:#343a40" href="/movies">Rotten Kimchi</a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <button type="button" class="btn btn-light"><a class="text-color" href="/movies/new">New movie</a></button>
+                </div>
+            </div>
+        </header>
+    </div>
+    <form class="container mt-4" action="/movies/create">
+        <p class="noto">Title<br><input type="text" name="title" placeholder="title"/></p>
+        <p class="noto">Tilte_en<br><input type="text" name="title_en" placeholder="title_en"/></p>
+        <p class="noto">Audiences<br><input type="number" min="0" name="audience" placeholder="audience"/></p>
+        <p class="noto">Open Date<br><input type="date" name="open_date" placeholder="date"/></p>
+        <p class="noto">Genre<br><input type="text" name="genre" placeholder="genre"/></p>
+        <p class="noto">Grade<br><input type="text" name="watch_grade" placeholder="watch_grade"/></p>
+        <p class="noto">Score<br><input type="number" min="0" max="10" step="0.01" name="score" placeholder="score"/></p>
+        <p class="noto">Poster URL<br><input type="text" name="poster_url" placeholder="poster_url"/></p>
+        <p class="noto">Description<br><textarea name="description" rows="4" cols="50" placeholder="description"></textarea></p>
+        <input class="btn btn-light text-color" type="submit" value="Submit"/>
+    </form>
+</body>
+</html>
+```
+
+> detail.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Noto+Sans+KR" rel="stylesheet">
+    <style>
+        .blog-header{
+            border-bottom:1px solid #e5e5e5;
+        }
+        .header{
+            font-family:"Playfair Display", Georgia, "Times New Roman", serif;
+            font-size:2.25rem;
+        }
+        .container{
+            max-width:1140px;
+        }
+        .btn{
+            padding:.25rem .5rem;
+            font-size:.875rem;
+        }
+        .text-color{
+            color:#6c757d!important;
+        }
+        .rounded{
+            border-radius:0rem!important;
+        }
+        .nanum{
+            font-family: 'Nanum Myeongjo', serif;
+        }
+        .noto{
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .container{
+            max-width:1140px;
+        }
+        .moviename{
+            color:#343a40;
+        }
+        .flex-column{
+            flex-direction:column!important;
+        }
+        input{
+            margin-top:5px;
+        }
+        img{
+            width:530px;
+            height:756px;
+        }
+        span{
+            font-family: 'Nanum Myeongjo', serif;
+            font-size:.875rem;
+            padding:.5rem 0rem;
+            font-weight:bold;
+            color:#6c757d;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header class="blog-header mt-2">
+            <div class="row align-items-center">
+                <div class="col-4 pt-1">
+                    <i class="text-color fab fa-instagram"></i><a class="text-color" href="https://www.instagram.com/pok_winter" style="margin-left:2.5px">pok_winter</a>
+                </div>
+                <div class="col-4 header text-center">
+                    <a style="color:#343a40" href="/movies">Rotten Kimchi</a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <button type="button" class="btn btn-light"><a class="text-color" href="/movies/new">New movie</a></button>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-6">
+                <img src='{{movie.poster_url}}'/>
+            </div>
+            <div class="col-6" style="vertical-align:space-between">
+                <p class="noto"><span>Title</span><br>{{movie.title}}</p>
+                <p class="noto"><span>Title_en</span><br>{{movie.title_en}}</p>
+                <p class="noto"><span>Audiences</span><br>{{movie.audience}}</p>
+                <p class="noto"><span>Open Date</span><br>{{movie.open_date.strftime('%Y-%m-%d')}}</p>
+                <p class="noto"><span>Genre</span><br>{{movie.genre}}</p>
+                <p class="noto"><span>Grade</span><br>{{movie.watch_grade}}</p>
+                <p class="noto"><span>Score</span><br>{{movie.score}}</p>
+                <p class="noto"><span>Description</span><br>{{movie.description}}</p>
+            </div>
+        </div>
+        <footer class="mt-4" style="border-top:1px solid #e5e5e5">
+            <div class="mt-2" style="float:right">
+                <a class="btn btn-light text-color mr-2" href='/movies'>목록</a><a class="btn btn-light text-color mr-2" href='/movies/{{movie.id}}/edit'>수정</a><a class="btn btn-light text-color mr-2" href='/movies/{{movie.id}}/delete'>삭제</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+```
+
+> edit.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Noto+Sans+KR" rel="stylesheet">
+    <style>
+        .blog-header{
+            border-bottom:1px solid #e5e5e5;
+        }
+        .header{
+            font-family:"Playfair Display", Georgia, "Times New Roman", serif;
+            font-size:2.25rem;
+        }
+        .container{
+            max-width:1140px;
+        }
+        .btn{
+            padding:.25rem .5rem;
+            font-size:.875rem;
+        }
+        .text-color{
+            color:#6c757d!important;
+        }
+        .rounded{
+            border-radius:0rem!important;
+        }
+        .nanum{
+            font-family: 'Nanum Myeongjo', serif;
+        }
+        .noto{
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .container{
+            max-width:1140px;
+        }
+        .moviename{
+            color:#343a40;
+        }
+        .flex-column{
+            flex-direction:column!important;
+        }
+        input{
+            margin-top:5px;
+        }
+        img{
+            width:530px;
+            height:756px;
+        }
+        span{
+            font-family: 'Nanum Myeongjo', serif;
+            font-size:.875rem;
+            padding:.5rem 0rem;
+            font-weight:bold;
+            color:#6c757d;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header class="blog-header mt-2">
+            <div class="row align-items-center">
+                <div class="col-4 pt-1">
+                    <i class="text-color fab fa-instagram"></i><a class="text-color" href="https://www.instagram.com/pok_winter" style="margin-left:2.5px">pok_winter</a>
+                </div>
+                <div class="col-4 header text-center">
+                    <a style="color:#343a40" href="/movies">Rotten Kimchi</a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <button type="button" class="btn btn-light"><a class="text-color" href="/movies/new">New movie</a></button>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="container mt-4">
+        <form action="/movies/{{movie.id}}/update">
+            <p class="noto">Title<br><input type="text" name="title" value="{{movie.title}}" placeholder="title"/></p>
+            <p class="noto">Tilte_en<br><input type="text" name="title_en" value="{{movie.title_en}}" placeholder="title_en"/></p>
+            <p class="noto">Audiences<br><input type="number" min="0" name="audience" value="{{movie.audience}}" placeholder="audience"/></p>
+            <p class="noto">Open Date<br><input type="date" name="open_date" value="{{movie.open_date.strftime('%Y-%m-%d')}}" placeholder="date"/></p>
+            <p class="noto">Genre<br><input type="text" name="genre" value="{{movie.genre}}" placeholder="genre"/></p>
+            <p class="noto">Grade<br><input type="text" name="watch_grade" value="{{movie.watch_grade}}" placeholder="watch_grade"/></p>
+            <p class="noto">Score<br><input type="number" min="0" max="10" step="0.01" name="score" value="{{movie.score}}" placeholder="score"/></p>
+            <p class="noto">Poster URL<br><input type="text" name="poster_url" value="{{movie.poster_url}}" placeholder="poster_url"/></p>
+            <p class="noto">Description<br><textarea name="description" rows="4" cols="50" placeholder="description">{{movie.description}}</textarea></p>
+            <input class="btn btn-light text-color" type="submit" value="Submit"/>
+        </form>
+    </div>
+</body>
+</html>
+```
+
+
+
 ## 5. 프로젝트 후기
 
 - Python 코드만으로 `db`, `sqlite3`등과 같은 데이터베이스 파일을 다룰 수 있다는 점이 신기했습니다.
 - ORM을 이해하여서 좀 더 `cursor`로 접근하는 방법보다 간단하게 `CRUD`를 하는 법을 알 수 있었습니다.
 
+- Bootstrap을 이용하여서 나만의 웹을 꾸며볼 수 있었고, 응용하는 방법을 알게되었습니다.
