@@ -1,31 +1,29 @@
-inp=[1, 2, 1, 3, 2, 4, 2, 5, 4, 6, 5, 6, 6, 7, 3, 7]
-matrix=[[0 for i in range(7)] for j in range(7)]
-for i in range(0, len(inp), 2):
-    matrix[inp[i]-1][inp[i+1]-1]=1
-    matrix[inp[i+1]-1][inp[i]-1]=1
-#행렬을 만들었다.
-stack=[0 for i in range(7)] #숫자가 7까지니까
-visited=[False for i in range(7)]
-#stack과 visited를 초기화 하였다.
+inp=[1,2,1,4,1,3,1,5,2,6,2,3,2,5,3,2,3,5,3,7,3,6,2,3,4,6,5,6]
+mat=[[0 for i in range(10)] for j in range(10)]
+for i in range(0,len(inp),2):
+    mat[inp[i]][inp[i+1]]=1
+    mat[inp[i+1]][inp[i]]=1
+stack=[0 for i in range(10)]
+visited=[False for k in range(10)]
 
-def push(lis, i):
-    global top
-    top+=1
-    lis[top]=1
-    return lis
+top=-1
+v=1
+visited[1]=True
+result='1'
 
-def my_pop(lis):
-    global top
-    if len(lis)=0:
-        return 'error'
-    else:
-        result=lis[top]
-        lis[top]=0
-        top-=1
-        return result
-
-st=1
 while True:
-    for i in range(lis[st-1]):
-        if lis[st-1][i]==1:
-            stack = push(stack,i+1)
+    for i in range(len(mat[v])):
+        if mat[v][i]==1 and visited[i]==False:
+            top+=1
+            visited[i] = True
+            stack[top]=i
+            v=i
+            result+='-'+str(i)
+            break
+    else:
+        v=stack[top]
+        stack[top]=0
+        top-=1
+    if top == -1:
+        print(result)
+        break
