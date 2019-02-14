@@ -1,4 +1,4 @@
-inp=[1,2,1,4,1,3,1,5,2,6,2,3,2,5,3,2,3,5,3,7,3,6,2,3,4,6,5,6]
+inp=[1,4,1,3,2,3,2,5,4,6]
 mat=[[0 for i in range(10)] for j in range(10)]
 for i in range(0,len(inp),2):
     mat[inp[i]][inp[i+1]]=1
@@ -21,9 +21,12 @@ while True:
             result+='-'+str(i)
             break
     else:
-        v=stack[top]
+        # v=stack[top]
+        # stack[top]=0
+        # top-=1 #여기 틀림
         stack[top]=0
         top-=1
+        v=stack[top]
     if top == -1:
         print(result)
         break

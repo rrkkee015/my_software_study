@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0b2f7fe-c288-4f35-83b2-06c2e096b42a" name="Default Changelist" comment="" />
+    <list default="true" id="f0b2f7fe-c288-4f35-83b2-06c2e096b42a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/SWEA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SWEA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/깊이우선탐색.py" beforeDir="false" afterPath="$PROJECT_DIR$/깊이우선탐색.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,19 +16,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/깊이우선탐색.py">
+        <entry file="file://$PROJECT_DIR$/작업순서/작업순서.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="20" />
+            <state relative-caret-position="20">
+              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/스택_연습문제(괄호).py">
+        <entry file="file://$PROJECT_DIR$/4871_그래프_경로/혜희.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+            <state relative-caret-position="416">
+              <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -40,6 +45,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>]</find>
+      <find>`</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -48,10 +54,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/연습문제1.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/6311_내장함수_4.py" />
-        <option value="$PROJECT_DIR$/practice_1.py" />
         <option value="$PROJECT_DIR$/practice2.py" />
         <option value="$PROJECT_DIR$/project_2.py" />
         <option value="$PROJECT_DIR$/practice_2.py" />
@@ -95,15 +97,20 @@
         <option value="$PROJECT_DIR$/4843_특별한_정렬(좋은_문제)/특별한_정렬_iphone.py" />
         <option value="$PROJECT_DIR$/GNS/GNS3.py" />
         <option value="$PROJECT_DIR$/연습문제(괄호).py" />
-        <option value="$PROJECT_DIR$/깊이우선탐색.py" />
         <option value="$PROJECT_DIR$/스택_연습문제(괄호).py" />
+        <option value="$PROJECT_DIR$/4869_종이붙히기/4869_종이붙히기.py" />
+        <option value="$PROJECT_DIR$/4866_괄호검사/4866_괄호검사.py" />
+        <option value="$PROJECT_DIR$/깊이우선탐색.py" />
+        <option value="$PROJECT_DIR$/4871_그래프_경로/4871_그래프_경로.py" />
+        <option value="$PROJECT_DIR$/4873_반복문자_지우기/4873_반복문자_지우기.py" />
+        <option value="$PROJECT_DIR$/작업순서/작업순서.py" />
+        <option value="$PROJECT_DIR$/4871_그래프_경로/혜희.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="51" />
-    <option name="y" value="25" />
-    <option name="width" value="999" />
+    <option name="x" value="-7" />
+    <option name="width" value="1792" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -121,6 +128,11 @@
             <path>
               <item name="SWEA" type="b2602c69:ProjectViewProjectNode" />
               <item name="SWEA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SWEA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SWEA" type="462c0819:PsiDirectoryNode" />
+              <item name="4871_그래프_경로" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -148,7 +160,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.스택_연습문제(괄호)">
+  <component name="RunManager" selected="Python.혜희">
     <configuration name="깊이우선탐색" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SWEA" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -170,7 +182,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="GNS3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="작업순서" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SWEA" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -178,11 +190,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GNS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/작업순서" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GNS/GNS3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/작업순서/작업순서.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -191,7 +203,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="연습문제(괄호)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="혜희" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SWEA" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -199,11 +211,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/4871_그래프_경로" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/연습문제(괄호).py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/4871_그래프_경로/혜희.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -212,7 +224,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="스택_연습문제(괄호)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="4871_그래프_경로" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SWEA" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -220,11 +232,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/4871_그래프_경로" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/스택_연습문제(괄호).py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/4871_그래프_경로/4871_그래프_경로.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -233,7 +245,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="특별한_정렬_iphone" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="4873_반복문자_지우기" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SWEA" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -241,11 +253,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/4843_특별한_정렬(좋은_문제)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/4873_반복문자_지우기" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/4843_특별한_정렬(좋은_문제)/특별한_정렬_iphone.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/4873_반복문자_지우기/4873_반복문자_지우기.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -256,11 +268,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.스택_연습문제(괄호)" />
-        <item itemvalue="Python.연습문제(괄호)" />
+        <item itemvalue="Python.혜희" />
+        <item itemvalue="Python.작업순서" />
+        <item itemvalue="Python.4873_반복문자_지우기" />
+        <item itemvalue="Python.4871_그래프_경로" />
         <item itemvalue="Python.깊이우선탐색" />
-        <item itemvalue="Python.GNS3" />
-        <item itemvalue="Python.특별한_정렬_iphone" />
       </list>
     </recent_temporary>
   </component>
@@ -278,15 +290,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="25" width="999" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="1792" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17273673" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09464082" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3298731" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3263965" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39868566" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32603937" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39824945" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -299,31 +312,18 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/4866_괄호검사/4866_괄호검사.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/practice_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/행렬_Sum.py" />
-    <entry file="file://$PROJECT_DIR$/행렬_Sum/행렬_Sum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/행렬_Sum/practice.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice_3.py" />
-    <entry file="file://$PROJECT_DIR$/4843_특별한_정렬/4843_특별한_정렬_2.py" />
     <entry file="file://$PROJECT_DIR$/4843_특별한_정렬/4843_특별한_정렬.py" />
     <entry file="file://$PROJECT_DIR$/금속막대.py" />
     <entry file="file://$PROJECT_DIR$/금속나사/ss.py" />
@@ -470,20 +470,54 @@
     <entry file="file://$PROJECT_DIR$/4843_특별한_정렬(좋은_문제)/특별한_정렬_iphone.py" />
     <entry file="file://$PROJECT_DIR$/GNS/GNS3.py" />
     <entry file="file://$PROJECT_DIR$/Ladder1/Ladder.py" />
-    <entry file="file://$PROJECT_DIR$/연습문제(괄호).py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/깊이우선탐색.py">
+    <entry file="file://$PROJECT_DIR$/연습문제(괄호).py" />
+    <entry file="file://$PROJECT_DIR$/스택_연습문제(괄호).py" />
+    <entry file="file://$PROJECT_DIR$/4866_괄호검사/4866_괄호검사.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="20" />
+        <state relative-caret-position="48">
+          <caret line="3" selection-start-line="3" selection-end-line="35" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/스택_연습문제(괄호).py">
+    <entry file="file://$PROJECT_DIR$/깊이우선탐색.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        <state relative-caret-position="480">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4871_그래프_경로/4871_그래프_경로.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4873_반복문자_지우기/4873_반복문자_지우기.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" selection-start-line="3" selection-end-line="20" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4869_종이붙히기/4869_종이붙히기.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/작업순서/작업순서.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4871_그래프_경로/혜희.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
         </state>
       </provider>
     </entry>
