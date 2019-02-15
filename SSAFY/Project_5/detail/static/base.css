@@ -1,0 +1,36 @@
+header{
+    color:white;
+    background-image:url(/static/ocean.jpg);
+}
+
+footer{
+    display:flex!important;
+    justify-content:space-between;
+    height:50px;
+    align-items:center;
+}
+
+a{
+    text-decoration: none!important;
+}
+
+.pok_winter{
+    margin-left:.5rem;
+}
+
+.content{
+    height:50px!important;
+}
+
+.fixed_position{
+    position: fixed;
+}
+
+.card_line{
+    border: 1px solid rgba(0, 0, 0, 0)!important;
+}
+
+.image{
+    height:350px;
+    width:350px;
+}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1 class="noto d-flex justify-content-center mt-4 mb-4">Q & A</h1>
+<form class="container">
+    <div class="row">
+        <div class="form-group col-12 col-lg-6">
+            <label for="exampleInputEmail1">제목</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="제목">
+        </div>
+        <div class="form-group col-12 col-lg-6">
+            <label for="exampleInputPassword1">이메일</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="이메일">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">내용</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
