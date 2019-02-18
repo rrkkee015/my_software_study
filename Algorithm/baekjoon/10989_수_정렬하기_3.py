@@ -17,8 +17,8 @@
 # for i in C:
 #     print(i)
 
-# import sys
-#
+import sys
+
 # N=int(input())
 # NUM=[0]*10001
 # for i in range(N):
@@ -28,14 +28,20 @@
 #     if NUM[i]!=0:
 #         for c in range(NUM[i]):
 #             print(i)
-dic={}
+# dic={}
 N=int(input())
+# for i in range(N):
+#     a=int(input())
+#     if a not in dic:
+#         dic[a]=1
+#     else:
+#         dic[a]+=1
+# for key,value in sorted(dic.items()):
+#     for i in range(value):
+#         print(key)
+
+result=[0]*10001
 for i in range(N):
-    a=int(input())
-    if a not in dic:
-        dic[a]=1
-    else:
-        dic[a]+=1
-for key,value in sorted(dic.items()):
-    for i in range(value):
-        print(key)
+    result[int(sys.stdin.readline())]+=1
+for k in range(len(result)):
+    print(f'{k}\n'* result[k], end='')
