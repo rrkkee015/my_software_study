@@ -1,29 +1,46 @@
-def backtrack(a, k, inpu,cnt):
-    global MAX
-    result = []
-    c=[0]*MAX
-    inp = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-    if k==inpu:
-        for i in range(11):
-            if a[i] == True:
-                result += [i]
-        if sum(result) == 10:
-            print(result)
+inp='2+3*4/5'
+inp='(6+5*(2-8)/2)'
+inp='3+((2+6)/2-4*3)+5-6*7'
+old='+-'
+young='*/'
+
+stack=[0]*100
+top=-1
+
+result=''
+
+for i in inp:
+    if top==-1 and i in '+-*/':
+        top+=1
+        stack[top]=i
+    elif i == '(':
+        top+=1
+        stack[top]=i
+    elif i == ')':
+        while stack[top]!='(':
+            result+=stack[top]
+            top-=1
+        stack[top]=0
+        top-=1
+    elif i in '+-*/':
+        if i in young:
+            if stack[top] in '*/':
+                result+=stack[top]
+                stack[top]=i
+            else:
+                top+=1
+                stack[top]=i
+        elif i in old:
+            if stack[top] in '*/+-':
+                result+=stack[top]
+                stack[top]=i
+            else:
+                top+=1
+                stack[top]=i
     else:
-        k+=1
-        ncandidates = construct_candidates(a , k, inpu, c)
-        for i in range(ncandidates):
-            a[k]=c[i]
-            if a[k]==True:
-                cnt+=k
-            backtrack(a, k, inpu,cnt)
-
-def construct_candidates(a, k, inpu, c):
-    c[0]=True
-    c[1]=False
-    return 2
-
-MAX=100
-a=[0]*MAX
-cnt=0
-print(backtrack(a,0,10,0))
+        result+=i
+else:
+    while top != -1:
+        result+=stack[top]
+        top-=1
+print(result)
