@@ -2,21 +2,12 @@ import sys
 sys.stdin=open('sample_input.txt','r')
 
 def winner(a,b):
-    if a[0]==1:
-        if b[0]==1 or b[0]==3:
-            return a
-        elif b[0]==2:
-            return b
-    elif a[0]==2:
-        if b[0]==2 or b[0]==1:
-            return a
-        elif b[0]==3:
-            return b
-    elif a[0]==3:
-        if b[0]==3 or b[0]==2:
-            return a
-        elif b[0]==1:
-            return b
+    if a[0]-b[0]==1 or a[0]-b[0]==-2:
+        return a
+    elif a[0]-b[0]==-1 or a[0]-b[0]==2:
+        return b
+    else:
+        return a
 
 def partition(lis):
     if len(lis)==2:

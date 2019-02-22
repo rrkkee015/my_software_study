@@ -7,13 +7,14 @@ def backtrack(c, top, sum):
         if min>sum:
             min=sum
     elif sum>min:
-        pass
+        return 0
     else:
         for i in range(N):
             if i not in c:
                 c.append(i)
                 backtrack(c,top+1,sum+matrix[top][i])
                 c.pop()
+                print(c)
 
 testcases=int(input())
 for tc in range(testcases):

@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeec9402-0775-48f0-9cbd-d023b0cd913f" name="Default Changelist" comment="" />
+    <list default="true" id="eeec9402-0775-48f0-9cbd-d023b0cd913f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../SWEA/.idea/SWEA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../SWEA/.idea/SWEA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SWEA/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SWEA/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SWEA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SWEA/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SWEA/4875_미로/4875_미로.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SWEA/4875_미로/4875_미로.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SWEA/4880_토너먼트_카드게임/4880_토너먼트_카드게임.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SWEA/4880_토너먼트_카드게임/4880_토너먼트_카드게임.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SWEA/4881_배열_최소_합/4881_배열_최소_합.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SWEA/4881_배열_최소_합/4881_배열_최소_합.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SWEA/4881_배열_최소_합/4881_배열_최소_합2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SWEA/4881_배열_최소_합/4881_배열_최소_합2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,20 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/9012_괄호.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/1986093431/builtins.py">
+        <entry file="file://$PROJECT_DIR$/4811_알약.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="493" column="31" lean-forward="true" selection-start-line="493" selection-start-column="31" selection-end-line="493" selection-end-column="31" />
+            <state relative-caret-position="252">
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -66,12 +66,12 @@
         <option value="$PROJECT_DIR$/1427_소트인사이드.py" />
         <option value="$PROJECT_DIR$/10989_수_정렬하기_3.py" />
         <option value="$PROJECT_DIR$/9012_괄호.py" />
+        <option value="$PROJECT_DIR$/4811_알약.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="809" />
-    <option name="y" value="36" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -81,7 +81,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -93,6 +92,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -110,7 +110,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.9012_괄호">
+  <component name="RunManager" selected="Python.4811_알약">
     <configuration name="10989_수_정렬하기_3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="baekjoon" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -174,7 +174,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="2798_블랙잭" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="4811_알약" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="baekjoon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -186,7 +186,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2798_블랙잭.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/4811_알약.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -218,11 +218,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.4811_알약" />
         <item itemvalue="Python.9012_괄호" />
         <item itemvalue="Python.10989_수_정렬하기_3" />
         <item itemvalue="Python.1427_소트인사이드" />
         <item itemvalue="Python.2750_수_정렬하기" />
-        <item itemvalue="Python.2798_블랙잭" />
       </list>
     </recent_temporary>
   </component>
@@ -240,7 +240,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="809" y="36" width="974" height="1047" extended-state="0" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24679486" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -397,6 +397,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/1986093431/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="493" column="31" selection-start-line="493" selection-start-column="31" selection-end-line="493" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/9012_괄호.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -404,10 +411,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/1986093431/builtins.py">
+    <entry file="file://$PROJECT_DIR$/4811_알약.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="493" column="31" lean-forward="true" selection-start-line="493" selection-start-column="31" selection-end-line="493" selection-end-column="31" />
+        <state relative-caret-position="252">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
         </state>
       </provider>
     </entry>
