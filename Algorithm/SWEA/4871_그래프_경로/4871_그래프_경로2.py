@@ -3,17 +3,19 @@ sys.stdin=open('sample_input.txt','r')
 
 testcases=int(input())
 
-def solve(x,y):
+def solve(x):
     global state
-    if x==y:
+    if x==G:
         state=True
-        return 1
+        return 0
     else:
-        if matrix[S][0] != 0:
-            matrix[S][0] -= 1
+        if matrix[x][0] != 0:
+            matrix[x][0] -= 1
             for k in range(1, len(matrix)):
                 if k != 0:
-                    solve(x,k)
+                    sub=matrix[x][k]
+                    matrix[x][k]=0
+                    solve(sub)
 
 for tc in range(testcases):
     V,E =tuple(map(int,input().split()))
@@ -27,9 +29,7 @@ for tc in range(testcases):
     stack = [0 for i in range(V)]
     stack[0]=S
     top=0
-    visited=[False for i in range(V+1)]
-    visited[S]=True
-    result = solve(S, G)
+    result = solve(S)
     if state==False:
         print(f'#{tc+1} 0')
     else:
