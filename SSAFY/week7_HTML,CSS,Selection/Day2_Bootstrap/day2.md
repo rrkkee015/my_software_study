@@ -359,7 +359,7 @@
 
   1. 구글에서 Bootstrap을 검색해서 download source를 하자. 압축도 풀자. 그 폴더 중에 dist 폴더=>css=>bootstrap 코드만 사용할 것이다. 이걸 복사해서 로컬 폴더로 가져가자
 
-  2. 그 파일을 찾아보면 기본으로 속성이 다 부여되어있다. 이것들을 ` <link rel="stylesheet" href="bootstrap.csss">태그를 이용해서 가져오자` 밑에 사진 보다시피 기본 속성이 달라진다. (밑에 애가 bootstrap 적용한 것)
+  2. 그 파일을 찾아보면 기본으로 속성이 다 부여되어있다. 이것들을 ` <link rel="stylesheet" href="bootstrap.css">태그를 이용해서 가져오자` 밑에 사진 보다시피 기본 속성이 달라진다. (밑에 애가 bootstrap 적용한 것)
 
      ![](image/18.png)
 
@@ -691,3 +691,4 @@
   ![](image/35.png)
 
   이렇게 하면 전체를 꽉 채울 컨텐츠를 제공할 때 하면된다.
+
