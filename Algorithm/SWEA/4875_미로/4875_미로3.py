@@ -14,7 +14,6 @@ def solving(stack, top):
             stack[top]=[y + dxdy[i][0], x + dxdy[i][1]]
             solving(stack, top)
     else:
-
         top-=1
 
 
