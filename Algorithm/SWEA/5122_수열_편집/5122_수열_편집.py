@@ -39,7 +39,7 @@ def I(item):
     else:
         p.prev.next=newnode
         p.prev=newnode
-    while p.next != No ne:
+    while p.next != None:
         p.item[0]+=1
         p=p.next
     if p.next == None:
