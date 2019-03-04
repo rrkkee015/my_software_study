@@ -1,11 +1,14 @@
-.Nanum{
-    font-family:'Nanum Gothic', sans-serif;
+h1{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-style:italic;
 }
-
-.bold{
-    font-weight: bold;
-}
-
-#pink{
+#programming{
     color:pink;
+}
+a{
+    font-size:50px
+}
+
+#python{
+    color:red;
 }
