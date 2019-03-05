@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0b2f7fe-c288-4f35-83b2-06c2e096b42a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../baekjoon/2822_점수_계산.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/SWEA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SWEA.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5176_이진탐색/5176_이진탐색.py" beforeDir="false" afterPath="$PROJECT_DIR$/5176_이진탐색/5176_이진탐색.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../baekjoon/.idea/baekjoon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../baekjoon/.idea/baekjoon.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../baekjoon/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../baekjoon/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../baekjoon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../baekjoon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../baekjoon/2636_치즈.py" beforeDir="false" afterPath="$PROJECT_DIR$/../baekjoon/2636_치즈.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,13 +18,44 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="2096359989">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="1226" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="1226" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/5177_이진_힙/5177_이진_힙.py">
+        <entry file="file://$PROJECT_DIR$/10158_개미.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+            <state>
+              <caret selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -59,7 +92,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/4880_토너먼트_카드게임/4880_토너먼트_카드게임.py" />
         <option value="$PROJECT_DIR$/4875_미로/4875_미로.py" />
         <option value="$PROJECT_DIR$/4875_미로/sample_input.txt" />
         <option value="$PROJECT_DIR$/4871_그래프_경로/sample_input.txt" />
@@ -107,15 +139,16 @@
         <option value="$PROJECT_DIR$/사칙연산/사칙연산.py" />
         <option value="$PROJECT_DIR$/중위순회/중위순회.py" />
         <option value="$PROJECT_DIR$/5174_subtree/5174_subtree.py" />
-        <option value="$PROJECT_DIR$/5176_이진탐색/5176_이진탐색.py" />
         <option value="$PROJECT_DIR$/5178_노드의_합/5178_노드의_합.py" />
         <option value="$PROJECT_DIR$/5177_이진_힙/5177_이진_힙.py" />
+        <option value="$PROJECT_DIR$/5176_이진탐색/5176_이진탐색.py" />
+        <option value="$PROJECT_DIR$/10158_개미.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="805" />
+    <option name="x" value="1198" />
+    <option name="width" value="729" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -126,6 +159,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -133,11 +167,15 @@
               <item name="SWEA" type="b2602c69:ProjectViewProjectNode" />
               <item name="SWEA" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="SWEA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SWEA" type="462c0819:PsiDirectoryNode" />
+              <item name="5176_이진탐색" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -160,8 +198,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.5177_이진_힙">
-    <configuration name="중위순회" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.10158_개미">
+    <configuration name="10158_개미" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SWEA" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -169,11 +207,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/중위순회" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/중위순회/중위순회.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/10158_개미.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -288,19 +326,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.중위순회" />
       <item itemvalue="Python.5174_subtree" />
       <item itemvalue="Python.5176_이진탐색" />
       <item itemvalue="Python.5178_노드의_합" />
       <item itemvalue="Python.5177_이진_힙" />
+      <item itemvalue="Python.10158_개미" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.10158_개미" />
+        <item itemvalue="Python.5176_이진탐색" />
         <item itemvalue="Python.5177_이진_힙" />
         <item itemvalue="Python.5178_노드의_합" />
-        <item itemvalue="Python.5176_이진탐색" />
         <item itemvalue="Python.5174_subtree" />
-        <item itemvalue="Python.중위순회" />
       </list>
     </recent_temporary>
   </component>
@@ -318,14 +356,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="805" height="1047" extended-state="0" />
+    <frame x="1198" y="0" width="729" height="1047" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21642764" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24023154" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3298731" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33734939" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3366228" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.595883" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -358,6 +396,9 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout-to-restore>
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -385,13 +426,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/4881_배열_최소_합/4881_배열_최소_합2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/연습문제_마이쮸.py" />
     <entry file="file://$PROJECT_DIR$/연습문제_큐_마이쮸(list).py" />
     <entry file="file://$PROJECT_DIR$/4875_미로/4875_미로.py">
@@ -594,17 +628,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/5176_이진탐색/5176_이진탐색.py">
+    <entry file="file://$PROJECT_DIR$/5177_이진_힙/5177_이진_힙.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        <state relative-caret-position="152">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/5177_이진_힙/5177_이진_힙.py">
+    <entry file="file://$PROJECT_DIR$/5176_이진탐색/5176_이진탐색.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+        <state relative-caret-position="76">
+          <caret line="4" column="14" selection-end-line="18" />
+          <folding>
+            <marker date="1551774244889" expanded="true" signature="81:175" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10158_개미.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
         </state>
       </provider>
     </entry>
