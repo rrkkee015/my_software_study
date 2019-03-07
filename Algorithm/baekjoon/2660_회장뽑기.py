@@ -57,6 +57,7 @@ for n in range(1,N+1):
     scores[n]=score
 cn=0
 result=''
+print(scores)
 for i in range(len(scores)):
     if scores[i]==min(scores):
         cn+=1
