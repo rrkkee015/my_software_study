@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="eeec9402-0775-48f0-9cbd-d023b0cd913f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/baekjoon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/baekjoon.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SWEA/.idea/SWEA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../SWEA/.idea/SWEA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SWEA/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SWEA/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2636_치즈.py" beforeDir="false" afterPath="$PROJECT_DIR$/2636_치즈.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,42 +18,51 @@
     <session id="870192898">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
-          <entry key="project.open.time.2" value="3" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.2" value="8" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="4" />
+          <entry key="py" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="4" />
+          <entry key="Python" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="5328" />
+          <entry key="py" value="13108" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="5328" />
+          <entry key="Python" value="13108" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/2660_회장뽑기.py">
+        <entry file="file://$PROJECT_DIR$/7576_토마토.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
-              <caret line="57" column="4" lean-forward="true" selection-end-line="65" selection-end-column="13" />
+            <state relative-caret-position="691">
+              <caret line="49" column="22" lean-forward="true" selection-end-line="52" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/2468_안전_영역.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="22" selection-end-column="15" />
               <folding>
-                <marker date="1551948451359" expanded="true" signature="40:410" ph="..." />
+                <marker date="1552025412740" expanded="true" signature="409:411" ph="..." />
               </folding>
             </state>
           </provider>
@@ -70,6 +80,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>print</find>
+      <find>p</find>
+      <find>q</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -78,10 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/2699_직사각형_네개의_합집합의_면적_구하기.py" />
-        <option value="$PROJECT_DIR$/2851_슈퍼 마리오.py" />
-        <option value="$PROJECT_DIR$/2953_나는_요리사다.py" />
-        <option value="$PROJECT_DIR$/9625_BABBA.py" />
         <option value="$PROJECT_DIR$/2847_게임을_만든_동준이.py" />
         <option value="$PROJECT_DIR$/2846_오르막길.py" />
         <option value="$PROJECT_DIR$/2804_크로스워드_만들기.py" />
@@ -95,7 +103,6 @@
         <option value="$PROJECT_DIR$/2578_빙고.py" />
         <option value="$PROJECT_DIR$/2442_별_찍기-5.py" />
         <option value="$PROJECT_DIR$/2445_별_찍기-8.py" />
-        <option value="$PROJECT_DIR$/2636_치즈.py" />
         <option value="$PROJECT_DIR$/10797_10부제.py" />
         <option value="$PROJECT_DIR$/2490_윷놀이.py" />
         <option value="$PROJECT_DIR$/2884_알람_시계.py" />
@@ -129,11 +136,16 @@
         <option value="$PROJECT_DIR$/2491_수열.py" />
         <option value="$PROJECT_DIR$/2564_경비원.py" />
         <option value="$PROJECT_DIR$/2660_회장뽑기.py" />
+        <option value="$PROJECT_DIR$/2606_바이러스.py" />
+        <option value="$PROJECT_DIR$/2636_치즈.py" />
+        <option value="$PROJECT_DIR$/2468_안전_영역.py" />
+        <option value="$PROJECT_DIR$/2589_보물섬.py" />
+        <option value="$PROJECT_DIR$/7576_토마토.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
+    <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -143,6 +155,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -154,7 +167,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -172,8 +184,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.2660_회장뽑기">
-    <configuration name="10163_색종이" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.7576_토마토">
+    <configuration name="2468_안전_영역" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="baekjoon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -185,7 +197,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/10163_색종이.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2468_안전_영역.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -194,7 +206,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="1713_후보 추천하기" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="2589_보물섬" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="baekjoon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -206,7 +218,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/1713_후보 추천하기.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2589_보물섬.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -215,7 +227,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="2491_수열" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="2606_바이러스" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="baekjoon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -227,7 +239,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2491_수열.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2606_바이러스.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -236,7 +248,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="2564_경비원" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="2636_치즈" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="baekjoon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -248,7 +260,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2564_경비원.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2636_치즈.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -257,7 +269,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="2660_회장뽑기" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="7576_토마토" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="baekjoon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -269,7 +281,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2660_회장뽑기.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/7576_토마토.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -279,19 +291,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.1713_후보 추천하기" />
-      <item itemvalue="Python.10163_색종이" />
-      <item itemvalue="Python.2491_수열" />
-      <item itemvalue="Python.2564_경비원" />
-      <item itemvalue="Python.2660_회장뽑기" />
+      <item itemvalue="Python.2606_바이러스" />
+      <item itemvalue="Python.2589_보물섬" />
+      <item itemvalue="Python.2636_치즈" />
+      <item itemvalue="Python.2468_안전_영역" />
+      <item itemvalue="Python.7576_토마토" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.2660_회장뽑기" />
-        <item itemvalue="Python.2564_경비원" />
-        <item itemvalue="Python.2491_수열" />
-        <item itemvalue="Python.10163_색종이" />
-        <item itemvalue="Python.1713_후보 추천하기" />
+        <item itemvalue="Python.7576_토마토" />
+        <item itemvalue="Python.2589_보물섬" />
+        <item itemvalue="Python.2468_안전_영역" />
+        <item itemvalue="Python.2636_치즈" />
+        <item itemvalue="Python.2606_바이러스" />
       </list>
     </recent_temporary>
   </component>
@@ -318,7 +330,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22222222" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -361,36 +373,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../SWEA/5122_수열_편집/sample_input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../SWEA/5122_수열_편집/성지니.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2578_빙고.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2442_별_찍기-5.py" />
-    <entry file="file://$PROJECT_DIR$/2445_별_찍기-8.py" />
-    <entry file="file://$PROJECT_DIR$/../SWEA/5122_수열_편집/5122_수열_편집.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/1001_A-B.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -399,13 +381,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../SWEA/중위순회/중위순회.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2636_치즈.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/10797_10부제.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -573,9 +548,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/2116_주사위_쌓기.py" />
-    <entry file="file://$PROJECT_DIR$/1011_Fly_me_to_the_Alpha_Centauri.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/1152_단어의_개수.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -633,11 +605,74 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/2660_회장뽑기.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="57" column="4" lean-forward="true" selection-end-line="65" selection-end-column="13" />
+        <state relative-caret-position="597">
+          <caret line="57" column="4" selection-end-line="66" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SWEA/섬의 개수와 최대 높이 섬.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1011_Fly_me_to_the_Alpha_Centauri.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2606_바이러스.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="22" selection-end-column="15" />
           <folding>
-            <marker date="1551948451359" expanded="true" signature="40:410" ph="..." />
+            <marker date="1552012362802" expanded="true" signature="11:16" ph="..." />
+            <marker date="1552012362802" expanded="true" signature="101:106" ph="..." />
+            <marker date="1552012362802" expanded="true" signature="250:255" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2636_치즈.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="74" column="13" selection-end-line="75" selection-end-column="13" />
+          <folding>
+            <marker date="1552022924634" expanded="true" signature="11:411" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1008_A나누기B.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2589_보물섬.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
+          <folding>
+            <marker date="1552029588597" expanded="true" signature="101:529" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2468_안전_영역.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="22" selection-end-column="15" />
+          <folding>
+            <marker date="1552025412740" expanded="true" signature="409:411" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/7576_토마토.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="691">
+          <caret line="49" column="22" lean-forward="true" selection-end-line="52" selection-end-column="13" />
         </state>
       </provider>
     </entry>
