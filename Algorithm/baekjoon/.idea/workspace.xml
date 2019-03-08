@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeec9402-0775-48f0-9cbd-d023b0cd913f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SWEA/.idea/SWEA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../SWEA/.idea/SWEA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SWEA/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SWEA/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2636_치즈.py" beforeDir="false" afterPath="$PROJECT_DIR$/2636_치즈.py" afterDir="false" />
-    </list>
+    <list default="true" id="eeec9402-0775-48f0-9cbd-d023b0cd913f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +12,9 @@
     <session id="870192898">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
-          <entry key="project.open.time.2" value="8" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.2" value="9" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -50,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/7576_토마토.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="691">
-              <caret line="49" column="22" lean-forward="true" selection-end-line="52" selection-end-column="13" />
+            <state relative-caret-position="692">
+              <caret line="49" column="22" selection-end-line="52" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -624,11 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="22" selection-end-column="15" />
-          <folding>
-            <marker date="1552012362802" expanded="true" signature="11:16" ph="..." />
-            <marker date="1552012362802" expanded="true" signature="101:106" ph="..." />
-            <marker date="1552012362802" expanded="true" signature="250:255" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -636,9 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="729">
           <caret line="74" column="13" selection-end-line="75" selection-end-column="13" />
-          <folding>
-            <marker date="1552022924634" expanded="true" signature="11:411" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -653,9 +639,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
           <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
-          <folding>
-            <marker date="1552029588597" expanded="true" signature="101:529" ph="..." />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/7576_토마토.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="692">
+          <caret line="49" column="22" selection-end-line="52" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -666,13 +656,6 @@
           <folding>
             <marker date="1552025412740" expanded="true" signature="409:411" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/7576_토마토.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="49" column="22" lean-forward="true" selection-end-line="52" selection-end-column="13" />
         </state>
       </provider>
     </entry>
