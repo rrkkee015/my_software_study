@@ -1,0 +1,79 @@
+arr='ABC'
+for i in range(3):
+    for j in range(3):
+        for k in range(3):
+            print(arr[i],arr[j],arr[k]) # 이렇게하면 중복순열
+
+for i in range(3):
+    for j in range(3):
+        if j==i:
+            continue
+        for k in range(3):
+            if k ==i or k ==j:
+                continue
+            else:
+                print(arr[i],arr[j],arr[k])
+
+def permutation(lis):
+    if len(temp)==3:
+        print(temp)
+        return
+    else:
+        for _ in range(len(arr)):
+            if arr[_] not in temp:
+                temp.append(arr[_])
+                permutation(temp)
+                temp.pop()
+temp=[]
+arr=['A','B','C']
+permutation(arr)
+
+order = [0] * 3 # 요소들의 인덱스를 저장
+arr = 'ABC'
+
+def perm(k, n): # k : 지금까지 선택(노드의 높이), n : 전체 선택(트리의 높이)
+    if k == n:
+        return
+    else:
+        used = [False] * n # 중복 안되게
+        for i in range(k):
+            used[order[i]] = True
+        for i in range(n):
+            if used[i]:
+                continue
+            else:
+                order[k] = i
+                perm(k+1, n)
+
+perm(0, 3)
+
+used = [False] * 3
+def perm(k, n): # k : 지금까지 선택(노드의 높이), n : 전체 선택(트리의 높이)
+    if k == n:
+        print(order)
+        return
+    else:
+        for i in range(n):
+            if used[i]:
+                continue
+            else:
+                order[k] = i
+                used[i] = True
+                perm(k+1, n)
+                used[i] = False
+perm(0, 3)
+
+# used를 매개변수로 만들기
+def perm(k, n, used): # k : 지금까지 선택(노드의 높이), n : 전체 선택(트리의 높이)
+    if k == n:
+        print(order)
+        return
+    else:
+        for i in range(n):
+            if used & (1<<i):
+                order[k]=i
+                perm(k+1,n,used | (1<<i))
+
+perm(0, 3, 0)
+
+# N=Queen 문제가 순열이다.
