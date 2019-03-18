@@ -15,6 +15,7 @@ def backtrack(a, k, inpu):
         k+=1
         ncandidates = construct_candidates(a , k, inpu, c)
         for i in range(ncandidates):
+            print(a)
             a[k]=c[i]
             backtrack(a, k, inpu)
 

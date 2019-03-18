@@ -12,22 +12,28 @@
 #         temp.append(lis[idx])
 #         combinations(idx+1,temp[:])
 
-def jiphap(temp):
+# 상태 공간 트리, 백트래킹 씨발 좆같네, 여기서 순열 만드는 법 씨발, 여기서 조합 만드는 법
+def power(k):
     global cnt
-    if sum(temp)==S:
-        cnt+=1
+    if k==N:
+        temp = []
+        for _ in range(N):
+            if include[_]:
+                temp+=[lis[_]]
+        print(temp,end=' ')
+        if temp != [] and sum(temp)==S:
+            cnt+=1
         return
-    else:
-        for i in lis:
-            temp.append(i)
-            jiphap(temp)
-            temp.pop(i)
+    include[k]=True
+    power(k+1)
+    include[k]=False
+    power(k+1)
 
 N,S = list(map(int,input().split()))
 lis=list(map(int,input().split()))
 cnt=0
-visited=[False]*(N+1)
-jiphap(visited)
+include=[0]*N
+power(0)
 print(cnt)
 
 # 라이브러리 사용
