@@ -1,27 +1,35 @@
-import sys
-sys.stdin=open('sample_input.txt','r')
-
-def bt(visited,depth,temp):
-    global min_
-    if depth==N:
-        if min_>temp:
-            min_=temp
-        return
-    elif min_<temp:
-        return
-    else:
-        for _ in range(N):
-            if visited[_]==0:
-                visited[_]=1
-                bt(visited,depth+1,temp+mat[depth][_])
-                visited[_]=0
+import copy
 
 
-testcases=int(input())
-for tc in range(testcases):
-    N=int(input())
-    mat=[list(map(int,input().split())) for _ in range(N)]
-    visited=[0]*N
-    min_=71623762178461387
-    bt(visited,0,0)
-    print(min_)
+def permute(l):
+    n = len(l)
+    result = []
+    c = n * [0]
+
+    result.append(l)
+
+    i = 0;
+    while i < n:
+        if c[i] < i:
+            if i % 2 == 0:
+                tmp = l[0]
+                l[0] = l[i]
+                l[i] = tmp
+
+            else:
+
+                tmp = l[c[i]]
+                l[c[i]] = l[i]
+                l[i] = tmp
+
+            result.append(copy.copy(l))
+            c[i] += 1
+            i = 0
+        else:
+            c[i] = 0
+            i += 1
+
+    return result
+
+l = [1, 2, 3, 4, 5]
+print(permute(l))
