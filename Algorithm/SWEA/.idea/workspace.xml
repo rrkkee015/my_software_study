@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="e6ca5319-3c5e-491d-a915-a724c05f5460" name="Default Changelist" comment="">
+=======
     <list default="true" id="f55cedcb-eb08-440c-bf57-50e98b1ebc8a" name="Default Changelist" comment="">
+>>>>>>> 176a11c8f84b33c60f76fe8331e0a506218e38ab
       <change beforePath="$PROJECT_DIR$/../../.ipynb_checkpoints/20190121_과목평가1-checkpoint.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.vscode/settings.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/Algorithm.iml" beforeDir="false" />
@@ -15,6 +19,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/../baekjoon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../baekjoon/.idea/workspace.xml" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/4881_배열_최소_합/4881_배열_최소_합2.py" beforeDir="false" afterPath="$PROJECT_DIR$/4881_배열_최소_합/4881_배열_최소_합2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../baekjoon/.idea/baekjoon.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../baekjoon/.idea/encodings.xml" beforeDir="false" />
@@ -25,6 +32,7 @@
       <change beforePath="$PROJECT_DIR$/../baekjoon/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../baekjoon/1182_부분수열의_합.py" beforeDir="false" afterPath="$PROJECT_DIR$/../baekjoon/1182_부분수열의_합.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../baekjoon/6603_로또.py" beforeDir="false" afterPath="$PROJECT_DIR$/../baekjoon/6603_로또.py" afterDir="false" />
+>>>>>>> 176a11c8f84b33c60f76fe8331e0a506218e38ab
       <change beforePath="$PROJECT_DIR$/../baekjoon/venv/Lib/site-packages/easy-install.pth" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../baekjoon/venv/Lib/site-packages/pip-10.0.1-py3.7.egg/EGG-INFO/PKG-INFO" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../baekjoon/venv/Lib/site-packages/pip-10.0.1-py3.7.egg/EGG-INFO/SOURCES.txt" beforeDir="false" />
@@ -384,6 +392,31 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+<<<<<<< HEAD
+    <SUITE FILE_PATH="coverage/SWEA$__2.coverage" NAME="비트_연습문제_2 Coverage Results" MODIFIED="1553062503130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SWEA$_2_.coverage" NAME="단순_2진_암호코드 Coverage Results" MODIFIED="1553064373979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/단순_2진_암호코드" />
+    <SUITE FILE_PATH="coverage/SWEA$__1.coverage" NAME="비트_연습문제_1 Coverage Results" MODIFIED="1553055434237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SWEA$__3.coverage" NAME="비트_연습문제_3 Coverage Results" MODIFIED="1553062586806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/비트_연습문제_3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="19" selection-start-line="19" selection-end-line="34" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/단순_2진_암호코드/단순_2진_암호코드.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="633">
+              <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+            </state>
+          </provider>
+=======
     <SUITE FILE_PATH="coverage/SWEA$4881___2.coverage" NAME="4881_배열_최소_합2 Coverage Results" MODIFIED="1553013482575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/4881_배열_최소_합" />
   </component>
   <component name="FileEditorManager">
@@ -395,23 +428,47 @@
               <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
             </state>
           </provider>
+>>>>>>> 176a11c8f84b33c60f76fe8331e0a506218e38ab
         </entry>
       </file>
     </leaf>
   </component>
+<<<<<<< HEAD
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+=======
+>>>>>>> 176a11c8f84b33c60f76fe8331e0a506218e38ab
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/비트_연습문제_!.py" />
+        <option value="$PROJECT_DIR$/비트_연습문제_1.py" />
+        <option value="$PROJECT_DIR$/비트_연습문제_2.py" />
+        <option value="$PROJECT_DIR$/비트_연습문제_3.py" />
+        <option value="$PROJECT_DIR$/단순_2진_암호코드/단순_2진_암호코드.py" />
+=======
         <option value="$PROJECT_DIR$/4881_배열_최소_합/4881_배열_최소_합2.py" />
+>>>>>>> 176a11c8f84b33c60f76fe8331e0a506218e38ab
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
+    <option name="x" value="-7" />
+    <option name="width" value="725" />
+=======
     <option name="x" value="801" />
     <option name="width" value="1126" />
+>>>>>>> 176a11c8f84b33c60f76fe8331e0a506218e38ab
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -427,11 +484,14 @@
               <item name="SWEA" type="b2602c69:ProjectViewProjectNode" />
               <item name="SWEA" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
+=======
             <path>
               <item name="SWEA" type="b2602c69:ProjectViewProjectNode" />
               <item name="SWEA" type="462c0819:PsiDirectoryNode" />
               <item name="4881_배열_최소_합" type="462c0819:PsiDirectoryNode" />
             </path>
+>>>>>>> 176a11c8f84b33c60f76fe8331e0a506218e38ab
           </expand>
           <select />
         </subPane>
@@ -457,8 +517,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="4881_배열_최소_합2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+<<<<<<< HEAD
+  <component name="RunManager" selected="Python.단순_2진_암호코드">
+    <configuration name="단순_2진_암호코드" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SWEA" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -466,12 +527,91 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/4881_배열_최소_합" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/단순_2진_암호코드" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/단순_2진_암호코드/단순_2진_암호코드.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="비트_연습문제_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+  <component name="RunManager">
+    <configuration name="4881_배열_최소_합2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> 176a11c8f84b33c60f76fe8331e0a506218e38ab
+      <module name="SWEA" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+<<<<<<< HEAD
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+=======
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/4881_배열_최소_합" />
+>>>>>>> 176a11c8f84b33c60f76fe8331e0a506218e38ab
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+<<<<<<< HEAD
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/비트_연습문제_1.py" />
+=======
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/4881_배열_최소_합/4881_배열_최소_합2.py" />
+>>>>>>> 176a11c8f84b33c60f76fe8331e0a506218e38ab
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+<<<<<<< HEAD
+    <configuration name="비트_연습문제_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="SWEA" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/비트_연습문제_2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="비트_연습문제_3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="SWEA" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/비트_연습문제_3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -482,7 +622,15 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.단순_2진_암호코드" />
+        <item itemvalue="Python.비트_연습문제_3" />
+        <item itemvalue="Python.비트_연습문제_2" />
+        <item itemvalue="Python.비트_연습문제_1" />
+=======
+    <recent_temporary>
+      <list>
         <item itemvalue="Python.4881_배열_최소_합2" />
+>>>>>>> 176a11c8f84b33c60f76fe8331e0a506218e38ab
       </list>
     </recent_temporary>
   </component>
@@ -491,16 +639,35 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
+      <changelist id="e6ca5319-3c5e-491d-a915-a724c05f5460" name="Default Changelist" comment="" />
+      <created>1553050076113</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1553050076113</updated>
+      <workItem from="1553050077609" duration="9857000" />
+=======
       <changelist id="f55cedcb-eb08-440c-bf57-50e98b1ebc8a" name="Default Changelist" comment="" />
       <created>1553012815465</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553012815465</updated>
       <workItem from="1553012818481" duration="1340000" />
+>>>>>>> 176a11c8f84b33c60f76fe8331e0a506218e38ab
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="9857000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="0" width="725" height="1047" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34332833" />
+=======
     <option name="totallyTimeSpent" value="1340000" />
   </component>
   <component name="ToolWindowManager">
@@ -508,6 +675,7 @@
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16697936" />
+>>>>>>> 176a11c8f84b33c60f76fe8331e0a506218e38ab
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -517,13 +685,24 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32996634" />
+=======
       <window_info anchor="bottom" id="Run" order="2" weight="0.32919955" />
+>>>>>>> 176a11c8f84b33c60f76fe8331e0a506218e38ab
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+<<<<<<< HEAD
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="R Packages" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="R Graphics" />
+=======
       <window_info anchor="right" id="SciView" />
       <window_info anchor="right" id="Database" />
+>>>>>>> 176a11c8f84b33c60f76fe8331e0a506218e38ab
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -533,10 +712,41 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/비트_연습문제_!.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/비트_연습문제_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="20" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/비트_연습문제_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="8" selection-start-line="8" selection-end-line="17" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/비트_연습문제_3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="19" selection-start-line="19" selection-end-line="34" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/단순_2진_암호코드/단순_2진_암호코드.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+=======
     <entry file="file://$PROJECT_DIR$/4881_배열_최소_합/4881_배열_최소_합2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+>>>>>>> 176a11c8f84b33c60f76fe8331e0a506218e38ab
         </state>
       </provider>
     </entry>
