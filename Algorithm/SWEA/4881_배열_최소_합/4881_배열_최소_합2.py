@@ -1,32 +1,29 @@
 import sys
 sys.stdin=open('sample_input.txt','r')
 
-def backtrack(c, top, sum):
-    global min
-    if top==N:
-        if min>sum:
-            min=sum
-    elif sum>min:
-        return 0
+def mat_min_sum(depth,num,visited):
+    global min_
+    depth+=1
+    if depth==len(mat) and min_ > num:
+        min_=num
+        return
     else:
-        for i in range(N):
-            if i not in c:
-                c.append(i)
-                backtrack(c,top+1,sum+matrix[top][i])
-                c.pop()
-                print(c)
+        for _ in range(len(mat)):
+            if visited[_]==False:
+                new_visited=visited[:]
+                new_visited[_]=True
+                new_num=num+mat[depth][_]
+                if new_num > min_ :
+                    continue
+                else:
+                    mat_min_sum(depth,new_num,new_visited)
 
 testcases=int(input())
+
 for tc in range(testcases):
     N=int(input())
-    matrix=[list(map(int,input().split())) for i in range(N)]
-    c=[]
-    min=99999
-    backtrack(c, 0, 0)
-    print(f'#{tc+1} {min}')
-
-# 1. DFS
-# 2. 가지친다.
-
-from itertools import permutations
-from itertools import
+    mat=[list(map(int,input().split())) for _ in range(N)]
+    result=[]
+    min_=1000000000000000
+    mat_min_sum(-1,0,[False]*N)
+    print(f'#{tc+1} {min_}')
