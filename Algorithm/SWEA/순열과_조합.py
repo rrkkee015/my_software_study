@@ -24,6 +24,7 @@ def permutation(lis):
                 temp.append(arr[_])
                 permutation(temp)
                 temp.pop()
+
 temp=[]
 arr=['A','B','C']
 permutation(arr)

@@ -1,10 +1,16 @@
 import sys
 sys.setrecursionlimit(10**9)
-def find(i):
-    visited[i]=False
-    for _ in range(len(mat[i])):
-        if visited[mat[i][_]]:
-            find(mat[i][_])
+# def find(i):
+#     visited[i]=False
+#     for _ in range(len(mat[i])):
+#         if visited[mat[i][_]]:
+#             find(mat[i][_])
+
+def dfs(i):
+    if visited[i]:
+        visited[i]=False
+        for _ in mat[i]:
+            dfs(_)
 
 N,M = list(map(int,input().split()))
 mat=[[] for _ in range(N+1)]
@@ -18,5 +24,5 @@ cnt=0
 for x in range(1,len(mat)):
     if visited[x]:
         cnt+=1
-        find(x)
+        dfs(x)
 print(cnt)
