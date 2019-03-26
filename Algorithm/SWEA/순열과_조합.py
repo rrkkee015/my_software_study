@@ -112,6 +112,6 @@ def combi(n,r):
         tr[r-1] = an[n-1]
         combi(n-1, r-1)
         combi(n-1, r)
-an = [1,2,3,4,5]
-tr = [0 for _ in range(3)]
+an = [0,1,2,3]
+tr = [0 for _ in range(2)]
 combi(len(an), len(tr))
