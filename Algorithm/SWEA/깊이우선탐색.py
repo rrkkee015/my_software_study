@@ -21,7 +21,23 @@ result+=[1]
 DFS(1)
 print(result)
 
+def DFS(u):
+    for v, w in G[u]:
+        if D[v] > D[u] + w:
+            D[v] = D[u] + w
+            P[v] = u
+            DFS(v)
 
+V, E = map(int, input().split())
+G = [[] for _ in range(V+1)]
+for i in range(E):
+    u, v, w = map(int, input().split())
+    G[u].append((v,w))
+    G[v].append((u,w))
+D = [0xfffff] * (V+1) # D[s] 는 충분히 큰 값
+P = [i for i in range(V+1)]
+D[1] =0
+DFS(1)
 
 
 

@@ -1,0 +1,1 @@
+x, y, w, h = list(map(int,input().split()))
