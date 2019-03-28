@@ -24,6 +24,8 @@ def postorder_traverse(T): #후위순회
 inp=list(map(int,input().split()))
 max_=max(inp)
 history=[[0,0,0] for i in range(max_+1)]
+# edges = 12 # 간선
+# history = [[0]*2 for _ in range(edges+2)]
 result=''
 
 for i in range(0,len(inp),2):
@@ -36,6 +38,7 @@ for i in range(0,len(inp),2):
     history[S][2]=P
 
 preorder_traverse(1)
+print(result)
 result=''
 inorder_traverse(1)
 print(result)
