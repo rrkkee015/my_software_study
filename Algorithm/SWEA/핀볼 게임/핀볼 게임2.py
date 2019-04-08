@@ -1,84 +1,63 @@
 import sys
 sys.stdin = open('sample_input.txt','r')
 
-def block(i, j, block_num):
-    if block_num == 1:
-        if (i, j) == (1, 0):
-            return (0, 1)
-        elif (i, j) == (0, -1):
-            return (-1, 0)
-        else:
-            return (-i, -j)
-    if block_num == 2:
-        if (i, j) == (-1, 0):
-            return (0, 1)
-        elif (i, j) == (0, -1):
-            return (1, 0)
-        else:
-            return (-i, -j)
-    if block_num == 3:
-        if (i, j) == (0, 1):
-            return (1, 0)
-        elif (i, j) == (-1, 0):
-            return (0, -1)
-        else:
-            return (-i, -j)
-    if block_num == 4:
-        if (i, j) == (1, 0):
-            return (0, -1)
-        elif (i, j) == (0, 1):
-            return (-1, 0)
-        else:
-            return (-i, -j)
-    if block_num == 5:
-        return (-i, -j)
+# 동서남북 방향 정하기
+ewsn = [(0,0,0), (1,0,1), (2,0,-1), (3,1,0), (4,-1,0)]
+block = [(0,0,0,0,0),
+         (0,2,4,1,3), # 1번 블록
+         (0,2,3,4,1), # 2번 블록
+         (0,3,1,4,2), # 3번 블록
+         (0,4,1,2,3), # 4번 블록
+         (0,2,1,4,3)] # 5번 블록
+wall = [0,2,1,4,3]
 
 testcases = int(input())
 for tc in range(testcases):
     N = int(input())
-    board = [list(map(int,input().split())) for _ in range(N)]
-    hole = [[] for _ in range(11)]
+    mat = [list(map(int,input().split())) for _ in range(N)]
+    max_ = 0 # 최댓값
+    wh = [[] for _ in range(11)]
     for i in range(N):
         for j in range(N):
-            if board[i][j] >= 6:
-                hole[board[i][j]].append([i, j])
-    max_ = 0
-    dxdy = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+            if 6 <= mat[i][j] <= 10:
+                wh[mat[i][j]].append([i,j])
+
     for i in range(N):
         for j in range(N):
-            if board[i][j] == 0:
-                for _ in dxdy:
-                    ini_i = i
-                    ini_j = j
-                    y = i
+            if mat[i][j] == 0: # 0일 때 게임 시작
+                ini_i = i # 처음 위치
+                ini_j = j
+                for _ in range(1, len(ewsn)):
+                    y = i  # 핀볼 이동 좌표
                     x = j
-                    ty = _[0]
-                    tx = _[1]
-                    sum_ = 0
+                    dn = ewsn[_][0]
+                    dy = ewsn[_][1]
+                    dx = ewsn[_][2]
+                    cnt = 0  # 점수
                     while True:
-                        y += ty
-                        x += tx
-                        if (y < 0 or N <= y) or (x < 0 or N <= x):
-                            ty = -ty
-                            tx = -tx
-                            sum_ += 1
-                        elif (board[y][x] == -1 or (y, x) == (ini_i, ini_j)):
-                            if max_ < sum_:
-                                max_ = sum_
-                            break
-                        elif 0 <= y < N and 0 <= x < N:
-                            if board[y][x] == 0:
-                                continue
-                            elif 6 <= board[y][x] <= 10:
-                                temp_hole = hole[board[y][x]]
-                                for _ in temp_hole:
+                        y += dy  # 전진
+                        x += dx
+                        if 0 <= y < N and 0 <= x < N: # 벽 안이면
+                            if (y == ini_i and x == ini_j) or mat[y][x] == -1: # 처음 위치이면 혹은 블랙홀이면
+                                break # 게임오버
+                            elif  1 <= mat[y][x] <= 5: # 블록을 만나면 dy dx를 바꾼다. 점수도 올리고
+                                cnt += 1
+                                temp = ewsn[block[mat[y][x]][dn]]
+                                dn = temp[0]
+                                dy = temp[1]
+                                dx = temp[2]
+                            elif 6 <= mat[y][x] <= 10: # 웜홀이면 다른 웜홀로 좌표를 옮긴다.
+                                for _ in wh[mat[y][x]]:
                                     if [y, x] != _:
                                         temp_y = _[0]
                                         temp_x = _[1]
-                                else: # for 문을 끝내고 웜홀을 이동해야한다. 안 그러면 중간에 값이 바뀌어서 이상하게 된다.
-                                    y = temp_y
-                                    x = temp_x
-                            else:
-                                ty, tx = block(ty, tx, board[y][x])
-                                sum_ += 1
+                                y = temp_y
+                                x = temp_x
+                        if not 0 <= y < N or not 0 <= x < N: # 벽을 벗어나면
+                            cnt += 1
+                            dn = wall[dn]
+                            dy = ewsn[dn][1]
+                            dx = ewsn[dn][2]
+                    if max_ < cnt:
+                        max_ = cnt
     print('#{} {}'.format(tc + 1, max_))
