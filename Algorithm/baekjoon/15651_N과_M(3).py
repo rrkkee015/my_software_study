@@ -1,15 +1,28 @@
-# def permutation(n, r):
-#     if n == r:
-#         print(lis)
-#         return
+# def product(lis):
+#     if len(lis) == M:
+#         print(' '.join(lis))
 #     else:
-#         for _ in range(r,n+1):
-#             lis[_-1],lis[r-1] = lis[r-1],lis[_-1]
-#             permutation(n,r+1)
-#             lis[_-1],lis[r-1] = lis[r-1],lis[_-1]
-from itertools import permutations # 그냥순열
-from itertools import product # 중복순열
-N, M = list(map(int,input().split()))
-lis = [str(_) for _ in range(1,N+1)]
-for _ in list(product(lis, repeat=M)):
-    print(' '.join(_))
+#         for _ in li:
+#             lis.append(str(_))
+#             product(lis)
+#             lis.pop()
+# N, M = list(map(int,input().split()))
+# li = [_+1 for _ in range(N)]
+# product([])
+#
+# import itertools
+#
+# N, M = list(map(int,input().split()))
+# li = [str(_ + 1) for _ in range(N)]
+# for _ in itertools.product(li, repeat=M):
+#     print(' '.join(_))
+
+def permu_pro(lis):
+    if len(lis) == M:
+        print(lis)
+    else:
+        for _ in arr:
+            permu_pro(lis + [_])
+N,M = map(int,input().split())
+arr = [_ + 1 for _ in range(N)]
+permu_pro([])
