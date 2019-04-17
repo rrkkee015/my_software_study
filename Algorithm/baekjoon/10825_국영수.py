@@ -57,13 +57,27 @@
 #     print(students[_][0])
 # sorted 이용
 
-N = int(input())
-students = []
-for _ in range(N):
-    stu = list(map(str,input().split()))
-    students.append([-int(stu[1]), int(stu[2]), -int(stu[3]), stu[0]])
-students.sort()
-for _ in range(len(students)):
-    print(students[_][3])
+# N = int(input())
+# students = []
+# for _ in range(N):
+#     stu = list(map(str,input().split()))
+#     students.append([-int(stu[1]), int(stu[2]), -int(stu[3]), stu[0]])
+# students.sort()
+# for _ in range(len(students)):
+#     print(students[_][3])
 
 # append 할 때 +, - 특성을 이용
+
+
+N = int(input())
+mat = []
+for _ in range(N):
+    na, ko, en, ma = map(str,input().split())
+    mat.append([na, int(ko), int(en), int(ma)])
+mat = sorted(mat, key=lambda x:(-x[1],x[2],-x[3],x[0]))
+for _ in mat:
+    print(_[0])
+
+
+
+

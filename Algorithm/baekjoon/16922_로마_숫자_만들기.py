@@ -33,4 +33,14 @@
 #                     continue
 # print(cnt)
 
-N=int(input())
+import itertools
+
+N = int(input())
+lis = [1, 5, 10, 50]
+result = {}
+for _ in itertools.combinations_with_replacement(lis, N):
+    if result.get(sum(_)) == None:
+        result[sum(_)] = 1
+    else:
+        continue
+print(len(result))
