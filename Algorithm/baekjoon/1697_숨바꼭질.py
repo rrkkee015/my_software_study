@@ -1,31 +1,34 @@
 from collections import deque
 
-N, M = list(map(int,input().split()))
-visited=[True]*200001
-brother=deque()
-p,cnt=N,0
-brother.append([p,cnt])
-min=10**9
-if N > M :
-    min=N-M
+o, y = map(int,input().split())
+if o > y:
+    result = o - y
 else:
-    while brother:
-        p, cnt = brother.popleft()
-        if p == M:
-            if min > cnt:
-                min = cnt
-            continue
-        if p > M:
-            if min > cnt + p - M:
-                min = cnt + p - M
-        else:
-            if p*1<100001 and visited[p+1]:
-                visited[p+1]=False
-                brother.append([p+1,cnt+1])
-            if p-1>=0 and visited[p-1]:
-                visited[p-1]=False
-                brother.append([p-1,cnt+1])
-            if p*2<200000 and visited[p*2]:
-                visited[p*2]=False
-                brother.append([p*2,cnt+1])
-print(min)
+    visited = [0] * 100001
+
+    q = deque()
+    visited[o] = 1
+    q.append([o, 0])
+
+    while q:
+        po, t = q.popleft()
+        if po == y:
+            result = t
+            break
+        if po > y:
+            if po - y != 1:
+                continue
+            else:
+                visited[po - 1] == 1
+                q.append([po - 1, t + 1])
+                continue
+        if po + 1 <= 100000 and visited[po + 1] == 0:
+            visited[po + 1] = 1
+            q.append([po + 1, t + 1])
+        if 0 <= po - 1 and visited[po - 1] == 0:
+            visited[po - 1] == 1
+            q.append([po - 1, t + 1])
+        if po * 2 <= 100000 and visited[po * 2] == 0:
+            visited[po * 2] = 1
+            q.append([po * 2, t + 1])
+print(result)
